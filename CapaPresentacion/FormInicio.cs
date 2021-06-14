@@ -1,5 +1,4 @@
-﻿using CapaPresentacion;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,20 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaHotel
+namespace CapaPresentacion
 {
-    public partial class Form1 : Form
+    public partial class FormInicio : Form
     {
-        public Form1()
+        public FormInicio()
         {
             InitializeComponent();
         }
 
-        private void loginBtn_Click(object sender, EventArgs e)
+        private void mantenedorClienteBtn_Click(object sender, EventArgs e)
         {
-            FormInicio inicio = new FormInicio();
-            inicio.Show();
-            this.Hide();
+
         }
     }
 }

@@ -87,6 +87,7 @@ namespace SistemaHotel
             this.loginBtn.TabIndex = 3;
             this.loginBtn.Text = "Ingresar";
             this.loginBtn.UseVisualStyleBackColor = true;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // Form1
             // 
