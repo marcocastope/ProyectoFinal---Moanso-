@@ -36,5 +36,10 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void listaPersonalGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

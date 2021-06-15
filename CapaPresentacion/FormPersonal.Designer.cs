@@ -36,21 +36,21 @@ namespace CapaPresentacion
             this.label3 = new System.Windows.Forms.Label();
             this.personalCorreoTxt = new System.Windows.Forms.TextBox();
             this.listaPersonalGBox = new System.Windows.Forms.GroupBox();
-            this.datosGBox = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.controlesGBox = new System.Windows.Forms.GroupBox();
-            this.nuevoPersonalBtn = new System.Windows.Forms.Button();
-            this.registrarPersonalBtn = new System.Windows.Forms.Button();
-            this.actualizarPersonalBtn = new System.Windows.Forms.Button();
-            this.eliminarPersonalBtn = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.personalTelefonoTxt = new System.Windows.Forms.TextBox();
             this.listaPersonalGridView = new System.Windows.Forms.DataGridView();
+            this.datosGBox = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.personalTelefonoTxt = new System.Windows.Forms.TextBox();
+            this.controlesGBox = new System.Windows.Forms.GroupBox();
+            this.registrarPersonalBtn = new System.Windows.Forms.Button();
+            this.eliminarPersonalBtn = new System.Windows.Forms.Button();
+            this.actualizarPersonalBtn = new System.Windows.Forms.Button();
+            this.nuevoPersonalBtn = new System.Windows.Forms.Button();
             this.listaPersonalGBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listaPersonalGridView)).BeginInit();
             this.datosGBox.SuspendLayout();
             this.controlesGBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaPersonalGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -116,6 +116,15 @@ namespace CapaPresentacion
             this.listaPersonalGBox.Text = "Lista de Personal";
             this.listaPersonalGBox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // listaPersonalGridView
+            // 
+            this.listaPersonalGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listaPersonalGridView.Location = new System.Drawing.Point(3, 19);
+            this.listaPersonalGridView.Name = "listaPersonalGridView";
+            this.listaPersonalGridView.Size = new System.Drawing.Size(623, 229);
+            this.listaPersonalGridView.TabIndex = 0;
+            this.listaPersonalGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listaPersonalGridView_CellContentClick);
+            // 
             // datosGBox
             // 
             this.datosGBox.Controls.Add(this.textBox1);
@@ -136,6 +145,23 @@ namespace CapaPresentacion
             this.datosGBox.Text = "Datos";
             this.datosGBox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(138, 77);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(260, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 15);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Teléfono";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -147,12 +173,12 @@ namespace CapaPresentacion
             this.label4.Text = "Dni";
             this.label4.Click += new System.EventHandler(this.label3_Click);
             // 
-            // textBox1
+            // personalTelefonoTxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(138, 77);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.personalTelefonoTxt.Location = new System.Drawing.Point(263, 37);
+            this.personalTelefonoTxt.Name = "personalTelefonoTxt";
+            this.personalTelefonoTxt.Size = new System.Drawing.Size(100, 20);
+            this.personalTelefonoTxt.TabIndex = 1;
             // 
             // controlesGBox
             // 
@@ -168,15 +194,6 @@ namespace CapaPresentacion
             this.controlesGBox.Text = "Controles";
             this.controlesGBox.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // nuevoPersonalBtn
-            // 
-            this.nuevoPersonalBtn.Location = new System.Drawing.Point(6, 19);
-            this.nuevoPersonalBtn.Name = "nuevoPersonalBtn";
-            this.nuevoPersonalBtn.Size = new System.Drawing.Size(100, 25);
-            this.nuevoPersonalBtn.TabIndex = 0;
-            this.nuevoPersonalBtn.Text = "Nuevo";
-            this.nuevoPersonalBtn.UseVisualStyleBackColor = true;
-            // 
             // registrarPersonalBtn
             // 
             this.registrarPersonalBtn.Location = new System.Drawing.Point(6, 72);
@@ -185,15 +202,6 @@ namespace CapaPresentacion
             this.registrarPersonalBtn.TabIndex = 0;
             this.registrarPersonalBtn.Text = "Registrar";
             this.registrarPersonalBtn.UseVisualStyleBackColor = true;
-            // 
-            // actualizarPersonalBtn
-            // 
-            this.actualizarPersonalBtn.Location = new System.Drawing.Point(145, 19);
-            this.actualizarPersonalBtn.Name = "actualizarPersonalBtn";
-            this.actualizarPersonalBtn.Size = new System.Drawing.Size(100, 25);
-            this.actualizarPersonalBtn.TabIndex = 0;
-            this.actualizarPersonalBtn.Text = "Actualizar";
-            this.actualizarPersonalBtn.UseVisualStyleBackColor = true;
             // 
             // eliminarPersonalBtn
             // 
@@ -204,30 +212,23 @@ namespace CapaPresentacion
             this.eliminarPersonalBtn.Text = "Eliminar";
             this.eliminarPersonalBtn.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // actualizarPersonalBtn
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(260, 19);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 15);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Teléfono";
+            this.actualizarPersonalBtn.Location = new System.Drawing.Point(145, 19);
+            this.actualizarPersonalBtn.Name = "actualizarPersonalBtn";
+            this.actualizarPersonalBtn.Size = new System.Drawing.Size(100, 25);
+            this.actualizarPersonalBtn.TabIndex = 0;
+            this.actualizarPersonalBtn.Text = "Actualizar";
+            this.actualizarPersonalBtn.UseVisualStyleBackColor = true;
             // 
-            // personalTelefonoTxt
+            // nuevoPersonalBtn
             // 
-            this.personalTelefonoTxt.Location = new System.Drawing.Point(263, 37);
-            this.personalTelefonoTxt.Name = "personalTelefonoTxt";
-            this.personalTelefonoTxt.Size = new System.Drawing.Size(100, 20);
-            this.personalTelefonoTxt.TabIndex = 1;
-            // 
-            // listaPersonalGridView
-            // 
-            this.listaPersonalGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listaPersonalGridView.Location = new System.Drawing.Point(3, 19);
-            this.listaPersonalGridView.Name = "listaPersonalGridView";
-            this.listaPersonalGridView.Size = new System.Drawing.Size(623, 229);
-            this.listaPersonalGridView.TabIndex = 0;
+            this.nuevoPersonalBtn.Location = new System.Drawing.Point(6, 19);
+            this.nuevoPersonalBtn.Name = "nuevoPersonalBtn";
+            this.nuevoPersonalBtn.Size = new System.Drawing.Size(100, 25);
+            this.nuevoPersonalBtn.TabIndex = 0;
+            this.nuevoPersonalBtn.Text = "Nuevo";
+            this.nuevoPersonalBtn.UseVisualStyleBackColor = true;
             // 
             // FormPersonal
             // 
@@ -242,10 +243,10 @@ namespace CapaPresentacion
             this.Text = "FormPersonal";
             this.Load += new System.EventHandler(this.FormPersonal_Load);
             this.listaPersonalGBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.listaPersonalGridView)).EndInit();
             this.datosGBox.ResumeLayout(false);
             this.datosGBox.PerformLayout();
             this.controlesGBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.listaPersonalGridView)).EndInit();
             this.ResumeLayout(false);
 
         }

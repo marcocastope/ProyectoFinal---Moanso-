@@ -37,8 +37,8 @@ namespace CapaPresentacion
             this.button1 = new System.Windows.Forms.Button();
             this.mantenedorClienteBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.containerForm = new System.Windows.Forms.Panel();
             this.salirBtn = new System.Windows.Forms.Button();
+            this.containerForm = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -78,6 +78,7 @@ namespace CapaPresentacion
             this.button2.TabIndex = 2;
             this.button2.Text = "Servicio";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel3
             // 
@@ -131,14 +132,6 @@ namespace CapaPresentacion
             this.panel2.Size = new System.Drawing.Size(650, 50);
             this.panel2.TabIndex = 1;
             // 
-            // containerForm
-            // 
-            this.containerForm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.containerForm.Location = new System.Drawing.Point(150, 49);
-            this.containerForm.Name = "containerForm";
-            this.containerForm.Size = new System.Drawing.Size(650, 401);
-            this.containerForm.TabIndex = 2;
-            // 
             // salirBtn
             // 
             this.salirBtn.BackColor = System.Drawing.Color.Red;
@@ -152,6 +145,14 @@ namespace CapaPresentacion
             this.salirBtn.Text = "Salir";
             this.salirBtn.UseVisualStyleBackColor = false;
             this.salirBtn.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // containerForm
+            // 
+            this.containerForm.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.containerForm.Location = new System.Drawing.Point(150, 49);
+            this.containerForm.Name = "containerForm";
+            this.containerForm.Size = new System.Drawing.Size(650, 401);
+            this.containerForm.TabIndex = 2;
             // 
             // FormInicio
             // 
