@@ -30,21 +30,24 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.mantenedorClienteBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.mantPersonalBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.mantenedorClienteBtn = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.containerForm = new System.Windows.Forms.Panel();
+            this.salirBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.mantPersonalBtn);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.button1);
@@ -55,35 +58,16 @@ namespace CapaPresentacion
             this.panel1.Size = new System.Drawing.Size(150, 450);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // mantPersonalBtn
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(150, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(650, 50);
-            this.panel2.TabIndex = 1;
-            // 
-            // mantenedorClienteBtn
-            // 
-            this.mantenedorClienteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mantenedorClienteBtn.Location = new System.Drawing.Point(12, 146);
-            this.mantenedorClienteBtn.Name = "mantenedorClienteBtn";
-            this.mantenedorClienteBtn.Size = new System.Drawing.Size(120, 50);
-            this.mantenedorClienteBtn.TabIndex = 2;
-            this.mantenedorClienteBtn.Text = "Clientes";
-            this.mantenedorClienteBtn.UseVisualStyleBackColor = true;
-            this.mantenedorClienteBtn.Click += new System.EventHandler(this.mantenedorClienteBtn_Click);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 202);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 50);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Habitaciones";
-            this.button1.UseVisualStyleBackColor = true;
+            this.mantPersonalBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mantPersonalBtn.Location = new System.Drawing.Point(12, 314);
+            this.mantPersonalBtn.Name = "mantPersonalBtn";
+            this.mantPersonalBtn.Size = new System.Drawing.Size(120, 50);
+            this.mantPersonalBtn.TabIndex = 2;
+            this.mantPersonalBtn.Text = "Personal";
+            this.mantPersonalBtn.UseVisualStyleBackColor = true;
+            this.mantPersonalBtn.Click += new System.EventHandler(this.mantPersonalBtn_Click);
             // 
             // button2
             // 
@@ -94,6 +78,16 @@ namespace CapaPresentacion
             this.button2.TabIndex = 2;
             this.button2.Text = "Servicio";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(242)))));
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(150, 50);
+            this.panel3.TabIndex = 2;
             // 
             // label1
             // 
@@ -106,31 +100,65 @@ namespace CapaPresentacion
             this.label1.TabIndex = 2;
             this.label1.Text = "Hotel Costa del Sol";
             // 
-            // panel3
+            // button1
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(242)))));
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(150, 50);
-            this.panel3.TabIndex = 2;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(12, 202);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 50);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Habitaciones";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // mantenedorClienteBtn
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(12, 314);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 50);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Personal";
-            this.button3.UseVisualStyleBackColor = true;
+            this.mantenedorClienteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mantenedorClienteBtn.Location = new System.Drawing.Point(12, 146);
+            this.mantenedorClienteBtn.Name = "mantenedorClienteBtn";
+            this.mantenedorClienteBtn.Size = new System.Drawing.Size(120, 50);
+            this.mantenedorClienteBtn.TabIndex = 2;
+            this.mantenedorClienteBtn.Text = "Clientes";
+            this.mantenedorClienteBtn.UseVisualStyleBackColor = true;
+            this.mantenedorClienteBtn.Click += new System.EventHandler(this.mantenedorClienteBtn_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.panel2.Controls.Add(this.salirBtn);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(150, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(650, 50);
+            this.panel2.TabIndex = 1;
+            // 
+            // containerForm
+            // 
+            this.containerForm.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.containerForm.Location = new System.Drawing.Point(150, 49);
+            this.containerForm.Name = "containerForm";
+            this.containerForm.Size = new System.Drawing.Size(650, 401);
+            this.containerForm.TabIndex = 2;
+            // 
+            // salirBtn
+            // 
+            this.salirBtn.BackColor = System.Drawing.Color.Red;
+            this.salirBtn.FlatAppearance.BorderSize = 0;
+            this.salirBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salirBtn.ForeColor = System.Drawing.Color.White;
+            this.salirBtn.Location = new System.Drawing.Point(558, 0);
+            this.salirBtn.Name = "salirBtn";
+            this.salirBtn.Size = new System.Drawing.Size(92, 50);
+            this.salirBtn.TabIndex = 0;
+            this.salirBtn.Text = "Salir";
+            this.salirBtn.UseVisualStyleBackColor = false;
+            this.salirBtn.Click += new System.EventHandler(this.button3_Click);
             // 
             // FormInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.containerForm);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FormInicio";
@@ -138,6 +166,7 @@ namespace CapaPresentacion
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -151,6 +180,8 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button mantPersonalBtn;
+        private System.Windows.Forms.Panel containerForm;
+        private System.Windows.Forms.Button salirBtn;
     }
 }

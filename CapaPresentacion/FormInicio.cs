@@ -21,5 +21,30 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void mantPersonalBtn_Click(object sender, EventArgs e)
+        {
+            navigateToMantenedorPersonal(new FormPersonal());
+        }
+
+
+        private void navigateToMantenedorPersonal(object form)
+        {
+            if(this.containerForm.Controls.Count > 0)
+            {
+                this.containerForm.Controls.RemoveAt(0);
+            }
+            Form fm = form as Form;
+            fm.TopLevel = false;
+            fm.Dock = DockStyle.Fill;
+            this.containerForm.Controls.Add(fm);
+            this.containerForm.Tag = fm;
+            fm.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

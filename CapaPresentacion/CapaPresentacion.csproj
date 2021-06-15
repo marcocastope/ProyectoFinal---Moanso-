@@ -50,6 +50,12 @@
     <Compile Include="FormInicio.Designer.cs">
       <DependentUpon>FormInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPersonal.Designer.cs">
+      <DependentUpon>FormPersonal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,6 +71,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FormInicio.resx">
       <DependentUpon>FormInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPersonal.resx">
+      <DependentUpon>FormPersonal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
