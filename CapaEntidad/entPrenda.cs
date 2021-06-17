@@ -8,7 +8,8 @@ namespace CapaEntidad
 {
     public class entPrenda
     {
-        public int codigo { get; set; }
+        // public int codigo { get; set; }
+        public int idCliente { get; set; }
         public string tipoPrenda { get; set; }
         public string nroPrenda { get; set; }
 
@@ -16,6 +17,6 @@ namespace CapaEntidad
         public string colorPrenda { get; set; }
         public DateTime fecRegPrenda { get; set; }
         public bool estAtencion { get; set; }
-        public int idCliente { get; set; }
+        
     }
 }
