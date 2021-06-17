@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    class Class2
+    class entTipoHabitacion
     {
     }
 }
