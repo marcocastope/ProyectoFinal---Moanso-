@@ -23,7 +23,7 @@ namespace CapaLogicaNegocio
 
         public List<entPrenda> ListarPrenda()
         {
-            return datPrenda.Instancia.ListarPrenda();
+            return datPrenda.Instancia.ListarPrenda();// ayudaaaaaaaaaaaa
         }
         public void insertaPrenda(entPrenda Pren)
 
