@@ -24,11 +24,11 @@ namespace CapaPresentacion
 
         private void mantPersonalBtn_Click(object sender, EventArgs e)
         {
-            navigateToMantenedorPersonal(new FormPersonal());
+            navigateToMantenedor(new MantenedorTipoHabitacion());
         }
 
 
-        private void navigateToMantenedorPersonal(object form)
+        private void navigateToMantenedor(object form)
         {
             if(this.containerForm.Controls.Count > 0)
             {
@@ -49,7 +49,12 @@ namespace CapaPresentacion
 
         private void button2_Click(object sender, EventArgs e)
         {
-            navigateToMantenedorPersonal(new MantenedorPrenda());
+            navigateToMantenedor(new MantenedorPrenda());
+        }
+
+        private void mantTipoHabitacionBtn_Click(object sender, EventArgs e)
+        {
+            navigateToMantenedor(new MantenedorTipoHabitacion());
         }
     }
 }

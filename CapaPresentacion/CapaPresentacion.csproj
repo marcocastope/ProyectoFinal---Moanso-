@@ -50,11 +50,11 @@
     <Compile Include="FormInicio.Designer.cs">
       <DependentUpon>FormInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPersonal.cs">
+    <Compile Include="MantenedorTipoHabitacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPersonal.Designer.cs">
-      <DependentUpon>FormPersonal.cs</DependentUpon>
+    <Compile Include="MantenedorTipoHabitacion.Designer.cs">
+      <DependentUpon>MantenedorTipoHabitacion.cs</DependentUpon>
     </Compile>
     <Compile Include="MantenedorPrenda.cs">
       <SubType>Form</SubType>
@@ -78,8 +78,8 @@
     <EmbeddedResource Include="FormInicio.resx">
       <DependentUpon>FormInicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPersonal.resx">
-      <DependentUpon>FormPersonal.cs</DependentUpon>
+    <EmbeddedResource Include="MantenedorTipoHabitacion.resx">
+      <DependentUpon>MantenedorTipoHabitacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MantenedorPrenda.resx">
       <DependentUpon>MantenedorPrenda.cs</DependentUpon>

@@ -30,7 +30,7 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.mantPersonalBtn = new System.Windows.Forms.Button();
+            this.mantTipoHabitacionBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@ namespace CapaPresentacion
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.panel1.Controls.Add(this.mantPersonalBtn);
+            this.panel1.Controls.Add(this.mantTipoHabitacionBtn);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.button1);
@@ -58,16 +58,16 @@ namespace CapaPresentacion
             this.panel1.Size = new System.Drawing.Size(150, 450);
             this.panel1.TabIndex = 0;
             // 
-            // mantPersonalBtn
+            // mantTipoHabitacionBtn
             // 
-            this.mantPersonalBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mantPersonalBtn.Location = new System.Drawing.Point(12, 314);
-            this.mantPersonalBtn.Name = "mantPersonalBtn";
-            this.mantPersonalBtn.Size = new System.Drawing.Size(120, 50);
-            this.mantPersonalBtn.TabIndex = 2;
-            this.mantPersonalBtn.Text = "Personal";
-            this.mantPersonalBtn.UseVisualStyleBackColor = true;
-            this.mantPersonalBtn.Click += new System.EventHandler(this.mantPersonalBtn_Click);
+            this.mantTipoHabitacionBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mantTipoHabitacionBtn.Location = new System.Drawing.Point(12, 314);
+            this.mantTipoHabitacionBtn.Name = "mantTipoHabitacionBtn";
+            this.mantTipoHabitacionBtn.Size = new System.Drawing.Size(120, 50);
+            this.mantTipoHabitacionBtn.TabIndex = 2;
+            this.mantTipoHabitacionBtn.Text = "Tipo Habitación";
+            this.mantTipoHabitacionBtn.UseVisualStyleBackColor = true;
+            this.mantTipoHabitacionBtn.Click += new System.EventHandler(this.mantTipoHabitacionBtn_Click);
             // 
             // button2
             // 
@@ -181,7 +181,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button mantPersonalBtn;
+        private System.Windows.Forms.Button mantTipoHabitacionBtn;
         private System.Windows.Forms.Panel containerForm;
         private System.Windows.Forms.Button salirBtn;
     }
