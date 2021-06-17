@@ -9,7 +9,7 @@ using CapaEntidad;
 
 namespace CapaAccesoDatos
 {
-    class datPrenda
+    public class datPrenda
     {
         //patron de Diseño Singleton
         #region singleton
