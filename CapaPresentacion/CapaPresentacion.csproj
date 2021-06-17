@@ -56,11 +56,11 @@
     <Compile Include="FormPersonal.Designer.cs">
       <DependentUpon>FormPersonal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormServicio.cs">
+    <Compile Include="MantenedorPrenda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormServicio.Designer.cs">
-      <DependentUpon>FormServicio.cs</DependentUpon>
+    <Compile Include="MantenedorPrenda.Designer.cs">
+      <DependentUpon>MantenedorPrenda.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -81,8 +81,8 @@
     <EmbeddedResource Include="FormPersonal.resx">
       <DependentUpon>FormPersonal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormServicio.resx">
-      <DependentUpon>FormServicio.cs</DependentUpon>
+    <EmbeddedResource Include="MantenedorPrenda.resx">
+      <DependentUpon>MantenedorPrenda.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

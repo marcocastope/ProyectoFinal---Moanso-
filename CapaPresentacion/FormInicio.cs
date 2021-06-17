@@ -49,7 +49,7 @@ namespace CapaPresentacion
 
         private void button2_Click(object sender, EventArgs e)
         {
-            navigateToMantenedorPersonal(new FormServicio());
+            navigateToMantenedorPersonal(new MantenedorPrenda());
         }
     }
 }

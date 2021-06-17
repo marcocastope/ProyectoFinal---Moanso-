@@ -1,7 +1,7 @@
 ﻿
 namespace CapaPresentacion
 {
-    partial class FormServicio
+    partial class MantenedorPrenda
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,13 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgVPrenda = new System.Windows.Forms.DataGridView();
             this.groupBoxDatosPrendas = new System.Windows.Forms.GroupBox();
+            this.cbkEstadoAtencion = new System.Windows.Forms.CheckBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtPickerRegPrenda = new System.Windows.Forms.DateTimePicker();
             this.labelFechaRegistro = new System.Windows.Forms.Label();
             this.textBoxColorPrenda = new System.Windows.Forms.TextBox();
             this.labelColorPrenda = new System.Windows.Forms.Label();
@@ -44,30 +45,32 @@ namespace CapaPresentacion
             this.labelEstadoprenda = new System.Windows.Forms.Label();
             this.textBoxTipoPrenda = new System.Windows.Forms.TextBox();
             this.labelTipoPrenda = new System.Windows.Forms.Label();
-            this.textBoxCodigoCliente = new System.Windows.Forms.TextBox();
-            this.labelCodigoCliente = new System.Windows.Forms.Label();
+            this.textBoxIdCliente = new System.Windows.Forms.TextBox();
+            this.labelIdCliente = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnDeshabilitar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgVPrenda)).BeginInit();
             this.groupBoxDatosPrendas.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgVPrenda
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(539, 242);
-            this.dataGridView1.TabIndex = 0;
+            this.dgVPrenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgVPrenda.Location = new System.Drawing.Point(1, 3);
+            this.dgVPrenda.Name = "dgVPrenda";
+            this.dgVPrenda.Size = new System.Drawing.Size(539, 242);
+            this.dgVPrenda.TabIndex = 0;
+            this.dgVPrenda.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgVPrenda_CellDoubleClick);
             // 
             // groupBoxDatosPrendas
             // 
+            this.groupBoxDatosPrendas.Controls.Add(this.cbkEstadoAtencion);
             this.groupBoxDatosPrendas.Controls.Add(this.btnCancelar);
             this.groupBoxDatosPrendas.Controls.Add(this.btnModificar);
             this.groupBoxDatosPrendas.Controls.Add(this.btnAgregar);
-            this.groupBoxDatosPrendas.Controls.Add(this.dateTimePicker1);
+            this.groupBoxDatosPrendas.Controls.Add(this.dtPickerRegPrenda);
             this.groupBoxDatosPrendas.Controls.Add(this.labelFechaRegistro);
             this.groupBoxDatosPrendas.Controls.Add(this.textBoxColorPrenda);
             this.groupBoxDatosPrendas.Controls.Add(this.labelColorPrenda);
@@ -77,14 +80,24 @@ namespace CapaPresentacion
             this.groupBoxDatosPrendas.Controls.Add(this.labelEstadoprenda);
             this.groupBoxDatosPrendas.Controls.Add(this.textBoxTipoPrenda);
             this.groupBoxDatosPrendas.Controls.Add(this.labelTipoPrenda);
-            this.groupBoxDatosPrendas.Controls.Add(this.textBoxCodigoCliente);
-            this.groupBoxDatosPrendas.Controls.Add(this.labelCodigoCliente);
+            this.groupBoxDatosPrendas.Controls.Add(this.textBoxIdCliente);
+            this.groupBoxDatosPrendas.Controls.Add(this.labelIdCliente);
             this.groupBoxDatosPrendas.Location = new System.Drawing.Point(23, 251);
             this.groupBoxDatosPrendas.Name = "groupBoxDatosPrendas";
             this.groupBoxDatosPrendas.Size = new System.Drawing.Size(638, 144);
             this.groupBoxDatosPrendas.TabIndex = 1;
             this.groupBoxDatosPrendas.TabStop = false;
             this.groupBoxDatosPrendas.Text = "Datos de prendas";
+            // 
+            // cbkEstadoAtencion
+            // 
+            this.cbkEstadoAtencion.AutoSize = true;
+            this.cbkEstadoAtencion.Location = new System.Drawing.Point(386, 55);
+            this.cbkEstadoAtencion.Name = "cbkEstadoAtencion";
+            this.cbkEstadoAtencion.Size = new System.Drawing.Size(119, 17);
+            this.cbkEstadoAtencion.TabIndex = 15;
+            this.cbkEstadoAtencion.Text = "Estado de Atencion";
+            this.cbkEstadoAtencion.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
@@ -105,6 +118,7 @@ namespace CapaPresentacion
             this.btnModificar.TabIndex = 13;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
@@ -115,13 +129,14 @@ namespace CapaPresentacion
             this.btnAgregar.TabIndex = 12;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // dateTimePicker1
+            // dtPickerRegPrenda
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(266, 102);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 11;
+            this.dtPickerRegPrenda.Location = new System.Drawing.Point(266, 102);
+            this.dtPickerRegPrenda.Name = "dtPickerRegPrenda";
+            this.dtPickerRegPrenda.Size = new System.Drawing.Size(200, 20);
+            this.dtPickerRegPrenda.TabIndex = 11;
             // 
             // labelFechaRegistro
             // 
@@ -201,22 +216,22 @@ namespace CapaPresentacion
             this.labelTipoPrenda.TabIndex = 2;
             this.labelTipoPrenda.Text = "Tipo de prenda";
             // 
-            // textBoxCodigoCliente
+            // textBoxIdCliente
             // 
-            this.textBoxCodigoCliente.Location = new System.Drawing.Point(6, 53);
-            this.textBoxCodigoCliente.Name = "textBoxCodigoCliente";
-            this.textBoxCodigoCliente.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCodigoCliente.TabIndex = 1;
+            this.textBoxIdCliente.Location = new System.Drawing.Point(6, 53);
+            this.textBoxIdCliente.Name = "textBoxIdCliente";
+            this.textBoxIdCliente.Size = new System.Drawing.Size(100, 20);
+            this.textBoxIdCliente.TabIndex = 1;
             // 
-            // labelCodigoCliente
+            // labelIdCliente
             // 
-            this.labelCodigoCliente.AutoSize = true;
-            this.labelCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCodigoCliente.Location = new System.Drawing.Point(3, 35);
-            this.labelCodigoCliente.Name = "labelCodigoCliente";
-            this.labelCodigoCliente.Size = new System.Drawing.Size(105, 15);
-            this.labelCodigoCliente.TabIndex = 0;
-            this.labelCodigoCliente.Text = "Código del cliente";
+            this.labelIdCliente.AutoSize = true;
+            this.labelIdCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIdCliente.Location = new System.Drawing.Point(3, 35);
+            this.labelIdCliente.Name = "labelIdCliente";
+            this.labelIdCliente.Size = new System.Drawing.Size(78, 15);
+            this.labelIdCliente.TabIndex = 0;
+            this.labelIdCliente.Text = "ID del cliente";
             // 
             // btnNuevo
             // 
@@ -227,6 +242,7 @@ namespace CapaPresentacion
             this.btnNuevo.TabIndex = 2;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click_1);
             // 
             // btnEditar
             // 
@@ -237,6 +253,7 @@ namespace CapaPresentacion
             this.btnEditar.TabIndex = 3;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnDeshabilitar
             // 
@@ -257,8 +274,9 @@ namespace CapaPresentacion
             this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // FormServicio
+            // MantenedorPrenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -268,11 +286,11 @@ namespace CapaPresentacion
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.groupBoxDatosPrendas);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgVPrenda);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormServicio";
+            this.Name = "MantenedorPrenda";
             this.Text = "FormServicio";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgVPrenda)).EndInit();
             this.groupBoxDatosPrendas.ResumeLayout(false);
             this.groupBoxDatosPrendas.PerformLayout();
             this.ResumeLayout(false);
@@ -281,10 +299,10 @@ namespace CapaPresentacion
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgVPrenda;
         private System.Windows.Forms.GroupBox groupBoxDatosPrendas;
-        private System.Windows.Forms.Label labelCodigoCliente;
-        private System.Windows.Forms.TextBox textBoxCodigoCliente;
+        private System.Windows.Forms.Label labelIdCliente;
+        private System.Windows.Forms.TextBox textBoxIdCliente;
         private System.Windows.Forms.TextBox textBoxColorPrenda;
         private System.Windows.Forms.Label labelColorPrenda;
         private System.Windows.Forms.TextBox textBoxNroPrenda;
@@ -296,11 +314,12 @@ namespace CapaPresentacion
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtPickerRegPrenda;
         private System.Windows.Forms.Label labelFechaRegistro;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnDeshabilitar;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.CheckBox cbkEstadoAtencion;
     }
 }
