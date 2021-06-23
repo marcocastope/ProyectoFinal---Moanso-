@@ -50,11 +50,19 @@
     <Compile Include="FormInicio.Designer.cs">
       <DependentUpon>FormInicio.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="MantenedorHabitacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MantenedorHabitacion.Designer.cs">
       <DependentUpon>MantenedorHabitacion.cs</DependentUpon>
+=======
+    <Compile Include="MantenedorCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenedorCliente.Designer.cs">
+      <DependentUpon>MantenedorCliente.cs</DependentUpon>
+>>>>>>> ee4c908cc95ce410e2017e42199ca5bcd9fdaf3e
     </Compile>
     <Compile Include="MantenedorTipoHabitacion.cs">
       <SubType>Form</SubType>
@@ -84,8 +92,13 @@
     <EmbeddedResource Include="FormInicio.resx">
       <DependentUpon>FormInicio.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="MantenedorHabitacion.resx">
       <DependentUpon>MantenedorHabitacion.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="MantenedorCliente.resx">
+      <DependentUpon>MantenedorCliente.cs</DependentUpon>
+>>>>>>> ee4c908cc95ce410e2017e42199ca5bcd9fdaf3e
     </EmbeddedResource>
     <EmbeddedResource Include="MantenedorTipoHabitacion.resx">
       <DependentUpon>MantenedorTipoHabitacion.cs</DependentUpon>
