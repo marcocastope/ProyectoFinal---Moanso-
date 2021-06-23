@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="datHabitacion.cs" />
     <Compile Include="datTipoHabitacion.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="datPrenda.cs" />

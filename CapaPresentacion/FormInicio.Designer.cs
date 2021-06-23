@@ -34,7 +34,7 @@ namespace CapaPresentacion
             this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.mantHabitacionBtn = new System.Windows.Forms.Button();
             this.mantenedorClienteBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.salirBtn = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@ namespace CapaPresentacion
             this.panel1.Controls.Add(this.mantTipoHabitacionBtn);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.mantHabitacionBtn);
             this.panel1.Controls.Add(this.mantenedorClienteBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -101,15 +101,16 @@ namespace CapaPresentacion
             this.label1.TabIndex = 2;
             this.label1.Text = "Hotel Costa del Sol";
             // 
-            // button1
+            // mantHabitacionBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 202);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 50);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Habitaciones";
-            this.button1.UseVisualStyleBackColor = true;
+            this.mantHabitacionBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mantHabitacionBtn.Location = new System.Drawing.Point(12, 202);
+            this.mantHabitacionBtn.Name = "mantHabitacionBtn";
+            this.mantHabitacionBtn.Size = new System.Drawing.Size(120, 50);
+            this.mantHabitacionBtn.TabIndex = 2;
+            this.mantHabitacionBtn.Text = "Habitaciones";
+            this.mantHabitacionBtn.UseVisualStyleBackColor = true;
+            this.mantHabitacionBtn.Click += new System.EventHandler(this.mantHabitacionBtn_Click);
             // 
             // mantenedorClienteBtn
             // 
@@ -176,7 +177,7 @@ namespace CapaPresentacion
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button mantHabitacionBtn;
         private System.Windows.Forms.Button mantenedorClienteBtn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
