@@ -56,5 +56,10 @@ namespace CapaPresentacion
         {
             navigateToMantenedor(new MantenedorTipoHabitacion());
         }
+
+        private void mantHabitacionBtn_Click(object sender, EventArgs e)
+        {
+            navigateToMantenedor(new MantenedorHabitacion());
+        }
     }
 }

@@ -41,7 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Compile Include="datHabitacion.cs" />
+=======
     <Compile Include="datCliente.cs" />
+>>>>>>> ee4c908cc95ce410e2017e42199ca5bcd9fdaf3e
     <Compile Include="datTipoHabitacion.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="datServicio.cs" />

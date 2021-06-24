@@ -41,8 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Compile Include="entHabitacion.cs" />
+=======
     <Compile Include="entCliente.cs" />
+<<<<<<< HEAD
     <Compile Include="entServicio.cs" />
+=======
+>>>>>>> ee4c908cc95ce410e2017e42199ca5bcd9fdaf3e
+    <Compile Include="entPrenda.cs" />
+>>>>>>> 6c0ca0abe17cb76a506785e705c883dfac7c39cd
     <Compile Include="entTipoHabitacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
