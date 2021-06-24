@@ -44,7 +44,7 @@
     <Compile Include="datCliente.cs" />
     <Compile Include="datTipoHabitacion.cs" />
     <Compile Include="Conexion.cs" />
-    <Compile Include="datPrenda.cs" />
+    <Compile Include="datServicio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
