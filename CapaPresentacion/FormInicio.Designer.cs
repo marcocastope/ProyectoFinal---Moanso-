@@ -136,7 +136,10 @@ namespace CapaPresentacion
             // salirBtn
             // 
             this.salirBtn.BackColor = System.Drawing.Color.Red;
+            this.salirBtn.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.salirBtn.FlatAppearance.BorderSize = 0;
+            this.salirBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.salirBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.salirBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salirBtn.ForeColor = System.Drawing.Color.White;
             this.salirBtn.Location = new System.Drawing.Point(558, 0);
