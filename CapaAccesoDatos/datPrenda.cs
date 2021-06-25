@@ -31,16 +31,16 @@ namespace CapaAccesoDatos
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("spListarPrenda", cn);
+                cmd = new SqlCommand("spListaPrenda", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     entPrenda Pren = new entPrenda();
-                    Pren.nroPrenda = Convert.ToInt32(dr["nroPrenda"]);
                     Pren.idCliente = Convert.ToInt32(dr["idCliente"]);
                     Pren.tipoPrenda = dr["tipoPrenda"].ToString();
+                    Pren.nroPrenda = dr["nroPrenda"].ToString();
                     Pren.estadoPrenda = dr["estadoPrenda"].ToString();
                     Pren.colorPrenda = dr["colorPrenda"].ToString();
                     Pren.fecRegPrenda = Convert.ToDateTime(dr["fecRegPrenda"]);
@@ -72,12 +72,13 @@ namespace CapaAccesoDatos
 
                 SqlConnection cn = Conexion.Instancia.Conectar();
 
-                cmd = new SqlCommand("spInsertarPrenda", cn);
+                cmd = new SqlCommand("spInsertaPrenda", cn);
 
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@idCliente", Pren.idCliente);
+
                 cmd.Parameters.AddWithValue("@tipoPrenda", Pren.tipoPrenda);
+                cmd.Parameters.AddWithValue("@nroPrenda", Pren.nroPrenda);
                 cmd.Parameters.AddWithValue("@estadoPrenda", Pren.estadoPrenda);
                 cmd.Parameters.AddWithValue("@colorPrenda", Pren.colorPrenda);
                 cmd.Parameters.AddWithValue("@fecRegPrenda", Pren.fecRegPrenda);
@@ -121,9 +122,10 @@ namespace CapaAccesoDatos
                 cmd = new SqlCommand("spEditarPrenda", cn);//Falta crear la base de datos 
 
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@nroPrenda", Pren.nroPrenda);
+
                 cmd.Parameters.AddWithValue("@idCliente", Pren.idCliente);
                 cmd.Parameters.AddWithValue("@tipoPrenda", Pren.tipoPrenda);
+                cmd.Parameters.AddWithValue("@nroPrenda", Pren.nroPrenda);
                 cmd.Parameters.AddWithValue("@estadoPrenda", Pren.estadoPrenda);
                 cmd.Parameters.AddWithValue("@colorPrenda", Pren.colorPrenda);
                 cmd.Parameters.AddWithValue("@fecRegPrenda", Pren.fecRegPrenda);
