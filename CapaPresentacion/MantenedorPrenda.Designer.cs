@@ -32,6 +32,7 @@ namespace CapaPresentacion
             this.dgVPrenda = new System.Windows.Forms.DataGridView();
             this.groupBoxDatosPrendas = new System.Windows.Forms.GroupBox();
             this.cbkEstadoAtencion = new System.Windows.Forms.CheckBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dtPickerRegPrenda = new System.Windows.Forms.DateTimePicker();
@@ -66,6 +67,7 @@ namespace CapaPresentacion
             // groupBoxDatosPrendas
             // 
             this.groupBoxDatosPrendas.Controls.Add(this.cbkEstadoAtencion);
+            this.groupBoxDatosPrendas.Controls.Add(this.btnCancelar);
             this.groupBoxDatosPrendas.Controls.Add(this.btnModificar);
             this.groupBoxDatosPrendas.Controls.Add(this.btnAgregar);
             this.groupBoxDatosPrendas.Controls.Add(this.dtPickerRegPrenda);
@@ -97,10 +99,20 @@ namespace CapaPresentacion
             this.cbkEstadoAtencion.Text = "Estado de Atencion";
             this.cbkEstadoAtencion.UseVisualStyleBackColor = true;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(523, 103);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 14;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(523, 99);
+            this.btnModificar.Location = new System.Drawing.Point(523, 55);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 13;
@@ -111,7 +123,7 @@ namespace CapaPresentacion
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(523, 49);
+            this.btnAgregar.Location = new System.Drawing.Point(523, 26);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 12;
@@ -155,7 +167,7 @@ namespace CapaPresentacion
             // 
             // textBoxNroPrenda
             // 
-            this.textBoxNroPrenda.Location = new System.Drawing.Point(6, 60);
+            this.textBoxNroPrenda.Location = new System.Drawing.Point(147, 53);
             this.textBoxNroPrenda.Name = "textBoxNroPrenda";
             this.textBoxNroPrenda.Size = new System.Drawing.Size(100, 20);
             this.textBoxNroPrenda.TabIndex = 7;
@@ -164,7 +176,7 @@ namespace CapaPresentacion
             // 
             this.labelNroPrenda.AutoSize = true;
             this.labelNroPrenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNroPrenda.Location = new System.Drawing.Point(6, 42);
+            this.labelNroPrenda.Location = new System.Drawing.Point(144, 35);
             this.labelNroPrenda.Name = "labelNroPrenda";
             this.labelNroPrenda.Size = new System.Drawing.Size(86, 15);
             this.labelNroPrenda.TabIndex = 6;
@@ -172,7 +184,7 @@ namespace CapaPresentacion
             // 
             // textBoxEstadoPrenda
             // 
-            this.textBoxEstadoPrenda.Location = new System.Drawing.Point(132, 102);
+            this.textBoxEstadoPrenda.Location = new System.Drawing.Point(148, 102);
             this.textBoxEstadoPrenda.Name = "textBoxEstadoPrenda";
             this.textBoxEstadoPrenda.Size = new System.Drawing.Size(100, 20);
             this.textBoxEstadoPrenda.TabIndex = 5;
@@ -181,7 +193,7 @@ namespace CapaPresentacion
             // 
             this.labelEstadoprenda.AutoSize = true;
             this.labelEstadoprenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEstadoprenda.Location = new System.Drawing.Point(129, 84);
+            this.labelEstadoprenda.Location = new System.Drawing.Point(144, 84);
             this.labelEstadoprenda.Name = "labelEstadoprenda";
             this.labelEstadoprenda.Size = new System.Drawing.Size(104, 15);
             this.labelEstadoprenda.TabIndex = 4;
@@ -189,7 +201,7 @@ namespace CapaPresentacion
             // 
             // textBoxTipoPrenda
             // 
-            this.textBoxTipoPrenda.Location = new System.Drawing.Point(130, 55);
+            this.textBoxTipoPrenda.Location = new System.Drawing.Point(6, 102);
             this.textBoxTipoPrenda.Name = "textBoxTipoPrenda";
             this.textBoxTipoPrenda.Size = new System.Drawing.Size(100, 20);
             this.textBoxTipoPrenda.TabIndex = 3;
@@ -198,7 +210,7 @@ namespace CapaPresentacion
             // 
             this.labelTipoPrenda.AutoSize = true;
             this.labelTipoPrenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTipoPrenda.Location = new System.Drawing.Point(129, 35);
+            this.labelTipoPrenda.Location = new System.Drawing.Point(3, 84);
             this.labelTipoPrenda.Name = "labelTipoPrenda";
             this.labelTipoPrenda.Size = new System.Drawing.Size(90, 15);
             this.labelTipoPrenda.TabIndex = 2;
@@ -206,7 +218,7 @@ namespace CapaPresentacion
             // 
             // textBoxIdCliente
             // 
-            this.textBoxIdCliente.Location = new System.Drawing.Point(6, 101);
+            this.textBoxIdCliente.Location = new System.Drawing.Point(6, 53);
             this.textBoxIdCliente.Name = "textBoxIdCliente";
             this.textBoxIdCliente.Size = new System.Drawing.Size(100, 20);
             this.textBoxIdCliente.TabIndex = 1;
@@ -215,7 +227,7 @@ namespace CapaPresentacion
             // 
             this.labelIdCliente.AutoSize = true;
             this.labelIdCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIdCliente.Location = new System.Drawing.Point(6, 83);
+            this.labelIdCliente.Location = new System.Drawing.Point(3, 35);
             this.labelIdCliente.Name = "labelIdCliente";
             this.labelIdCliente.Size = new System.Drawing.Size(78, 15);
             this.labelIdCliente.TabIndex = 0;
@@ -299,6 +311,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label labelEstadoprenda;
         private System.Windows.Forms.TextBox textBoxTipoPrenda;
         private System.Windows.Forms.Label labelTipoPrenda;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DateTimePicker dtPickerRegPrenda;

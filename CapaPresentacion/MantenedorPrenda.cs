@@ -20,7 +20,7 @@ namespace CapaPresentacion
             ListarPrenda();
             btnAgregar.Enabled = false;
             groupBoxDatosPrendas.Enabled = false;
-            textBoxNroPrenda.Enabled = false;
+            textBoxIdCliente.Enabled = false;
         }
         public void ListarPrenda()
         {
@@ -39,8 +39,9 @@ namespace CapaPresentacion
             {
 
                 entPrenda p = new entPrenda();
-                p.idCliente = int.Parse(textBoxIdCliente.Text.Trim());
+
                 p.tipoPrenda = textBoxTipoPrenda.Text.Trim();
+                p.nroPrenda = textBoxNroPrenda.Text.Trim();
                 p.estadoPrenda = textBoxEstadoPrenda.Text.Trim();
                 p.colorPrenda = textBoxColorPrenda.Text.Trim();
                 p.fecRegPrenda = dtPickerRegPrenda.Value;
@@ -75,9 +76,9 @@ namespace CapaPresentacion
             try
             {
                 entPrenda p = new entPrenda();
-                p.nroPrenda = int.Parse(textBoxNroPrenda.Text.Trim());
                 p.idCliente = int.Parse(textBoxIdCliente.Text.Trim());
                 p.tipoPrenda = textBoxTipoPrenda.Text.Trim();
+                p.nroPrenda = textBoxNroPrenda.Text.Trim();
                 p.estadoPrenda = textBoxEstadoPrenda.Text.Trim();
                 p.colorPrenda = textBoxColorPrenda.Text.Trim();
                 p.fecRegPrenda = dtPickerRegPrenda.Value;
@@ -100,9 +101,9 @@ namespace CapaPresentacion
         private void dgVPrenda_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow FilaActualMouse = dgVPrenda.Rows[e.RowIndex];
-            textBoxNroPrenda.Text = FilaActualMouse.Cells[0].Value.ToString();
-            textBoxIdCliente.Text = FilaActualMouse.Cells[1].Value.ToString();
-            textBoxTipoPrenda.Text = FilaActualMouse.Cells[2].Value.ToString();
+            textBoxIdCliente.Text = FilaActualMouse.Cells[0].Value.ToString();
+            textBoxTipoPrenda.Text = FilaActualMouse.Cells[1].Value.ToString();
+            textBoxNroPrenda.Text = FilaActualMouse.Cells[2].Value.ToString();
             textBoxEstadoPrenda.Text=FilaActualMouse.Cells[3].Value.ToString();
             textBoxColorPrenda.Text = FilaActualMouse.Cells[4].Value.ToString();
             dtPickerRegPrenda.Text = FilaActualMouse.Cells[5].Value.ToString();

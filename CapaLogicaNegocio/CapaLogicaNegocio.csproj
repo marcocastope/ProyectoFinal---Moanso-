@@ -41,11 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="logHabitacion.cs" />
-=======
-    <Compile Include="logCliente.cs" />
->>>>>>> ee4c908cc95ce410e2017e42199ca5bcd9fdaf3e
     <Compile Include="logPrenda.cs" />
     <Compile Include="logTipoHabitacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
