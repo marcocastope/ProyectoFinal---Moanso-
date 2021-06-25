@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CapaLogicaNegocio
 {
-    public class logTipoHabitacion
+    public class logTipoHabitacion : LogTipoHabitacionI
     {
         private static readonly logTipoHabitacion instance = new logTipoHabitacion();
 
@@ -17,14 +17,24 @@ namespace CapaLogicaNegocio
             get { return logTipoHabitacion.instance; }
         }
 
-        public List<entTipoHabitacion> listarTipoHabitacion()
+        public void desabilitarTipoHabitacion(entTipoHabitacion tipoHabitacion)
         {
-            return datTipoHabitacion.Instance.listarTipoHabitacion();
+            datTipoHabitacion.Instance.desabilitarTipoHabitacion(tipoHabitacion);
+        }
+
+        public void editarTipoHabitacion(entTipoHabitacion tipoHabitacion)
+        {
+             datTipoHabitacion.Instance.editarTipoHabitacion(tipoHabitacion);
         }
 
         public void insertarTipoHabitacion(entTipoHabitacion tipoHabitacion)
         {
-            datTipoHabitacion.Instance.insertarTipoHabitacion(tipoHabitacion);
+             datTipoHabitacion.Instance.insertarTipoHabitacion(tipoHabitacion);
+        }
+
+        public List<entTipoHabitacion> listarTipoHabitacion()
+        {
+            return datTipoHabitacion.Instance.listarTipoHabitacion();
         }
     }
 }

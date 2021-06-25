@@ -29,8 +29,8 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.tipolHabitacionTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,12 +38,14 @@ namespace CapaPresentacion
             this.listaTiposHabitacionGridView = new System.Windows.Forms.DataGridView();
             this.datosTipoHabitacionGBox = new System.Windows.Forms.GroupBox();
             this.tipoHabitacionDescripcionTxt = new System.Windows.Forms.TextBox();
-            this.estadoHabitacionCheck = new System.Windows.Forms.CheckBox();
+            this.estadoTipoHabitacionCheck = new System.Windows.Forms.CheckBox();
             this.controlesGBox = new System.Windows.Forms.GroupBox();
             this.registrarTipolBtn = new System.Windows.Forms.Button();
-            this.deshablitarTipoBtn = new System.Windows.Forms.Button();
+            this.deshablitarTipoHabitacionBtn = new System.Windows.Forms.Button();
             this.modificarTipoBtn = new System.Windows.Forms.Button();
             this.nuevoTipoBtn = new System.Windows.Forms.Button();
+            this.idTipoHabitacionTxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.listaPersonalGBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaTiposHabitacionGridView)).BeginInit();
             this.datosTipoHabitacionGBox.SuspendLayout();
@@ -54,7 +56,7 @@ namespace CapaPresentacion
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Location = new System.Drawing.Point(6, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 15);
             this.label1.TabIndex = 0;
@@ -62,7 +64,7 @@ namespace CapaPresentacion
             // 
             // tipolHabitacionTxt
             // 
-            this.tipolHabitacionTxt.Location = new System.Drawing.Point(6, 34);
+            this.tipolHabitacionTxt.Location = new System.Drawing.Point(6, 80);
             this.tipolHabitacionTxt.Name = "tipolHabitacionTxt";
             this.tipolHabitacionTxt.Size = new System.Drawing.Size(100, 20);
             this.tipolHabitacionTxt.TabIndex = 1;
@@ -71,7 +73,7 @@ namespace CapaPresentacion
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 57);
+            this.label2.Location = new System.Drawing.Point(6, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 15);
             this.label2.TabIndex = 0;
@@ -82,7 +84,7 @@ namespace CapaPresentacion
             this.listaPersonalGBox.Controls.Add(this.listaTiposHabitacionGridView);
             this.listaPersonalGBox.Location = new System.Drawing.Point(12, 12);
             this.listaPersonalGBox.Name = "listaPersonalGBox";
-            this.listaPersonalGBox.Size = new System.Drawing.Size(626, 248);
+            this.listaPersonalGBox.Size = new System.Drawing.Size(626, 197);
             this.listaPersonalGBox.TabIndex = 2;
             this.listaPersonalGBox.TabStop = false;
             this.listaPersonalGBox.Text = "Tipos de Habitación";
@@ -99,25 +101,25 @@ namespace CapaPresentacion
             this.listaTiposHabitacionGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.listaTiposHabitacionGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listaTiposHabitacionGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listaTiposHabitacionGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listaTiposHabitacionGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.listaTiposHabitacionGridView.ColumnHeadersHeight = 30;
             this.listaTiposHabitacionGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listaTiposHabitacionGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listaTiposHabitacionGridView.DefaultCellStyle = dataGridViewCellStyle10;
             this.listaTiposHabitacionGridView.EnableHeadersVisualStyles = false;
             this.listaTiposHabitacionGridView.Location = new System.Drawing.Point(3, 19);
             this.listaTiposHabitacionGridView.MultiSelect = false;
@@ -128,20 +130,22 @@ namespace CapaPresentacion
             this.listaTiposHabitacionGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.listaTiposHabitacionGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listaTiposHabitacionGridView.ShowEditingIcon = false;
-            this.listaTiposHabitacionGridView.Size = new System.Drawing.Size(623, 229);
+            this.listaTiposHabitacionGridView.Size = new System.Drawing.Size(623, 172);
             this.listaTiposHabitacionGridView.TabIndex = 0;
-            this.listaTiposHabitacionGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listaPersonalGridView_CellContentClick);
+            this.listaTiposHabitacionGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listaTiposHabitacionGridViewOnClick);
             // 
             // datosTipoHabitacionGBox
             // 
             this.datosTipoHabitacionGBox.Controls.Add(this.tipoHabitacionDescripcionTxt);
-            this.datosTipoHabitacionGBox.Controls.Add(this.estadoHabitacionCheck);
+            this.datosTipoHabitacionGBox.Controls.Add(this.estadoTipoHabitacionCheck);
+            this.datosTipoHabitacionGBox.Controls.Add(this.label3);
+            this.datosTipoHabitacionGBox.Controls.Add(this.idTipoHabitacionTxt);
             this.datosTipoHabitacionGBox.Controls.Add(this.label1);
             this.datosTipoHabitacionGBox.Controls.Add(this.tipolHabitacionTxt);
             this.datosTipoHabitacionGBox.Controls.Add(this.label2);
-            this.datosTipoHabitacionGBox.Location = new System.Drawing.Point(12, 277);
+            this.datosTipoHabitacionGBox.Location = new System.Drawing.Point(12, 215);
             this.datosTipoHabitacionGBox.Name = "datosTipoHabitacionGBox";
-            this.datosTipoHabitacionGBox.Size = new System.Drawing.Size(369, 112);
+            this.datosTipoHabitacionGBox.Size = new System.Drawing.Size(369, 174);
             this.datosTipoHabitacionGBox.TabIndex = 2;
             this.datosTipoHabitacionGBox.TabStop = false;
             this.datosTipoHabitacionGBox.Text = "Datos";
@@ -149,30 +153,30 @@ namespace CapaPresentacion
             // 
             // tipoHabitacionDescripcionTxt
             // 
-            this.tipoHabitacionDescripcionTxt.Location = new System.Drawing.Point(6, 75);
+            this.tipoHabitacionDescripcionTxt.Location = new System.Drawing.Point(6, 121);
             this.tipoHabitacionDescripcionTxt.Name = "tipoHabitacionDescripcionTxt";
             this.tipoHabitacionDescripcionTxt.Size = new System.Drawing.Size(100, 20);
             this.tipoHabitacionDescripcionTxt.TabIndex = 3;
             // 
-            // estadoHabitacionCheck
+            // estadoTipoHabitacionCheck
             // 
-            this.estadoHabitacionCheck.AutoSize = true;
-            this.estadoHabitacionCheck.Location = new System.Drawing.Point(242, 55);
-            this.estadoHabitacionCheck.Name = "estadoHabitacionCheck";
-            this.estadoHabitacionCheck.Size = new System.Drawing.Size(59, 17);
-            this.estadoHabitacionCheck.TabIndex = 2;
-            this.estadoHabitacionCheck.Text = "Estado";
-            this.estadoHabitacionCheck.UseVisualStyleBackColor = true;
+            this.estadoTipoHabitacionCheck.AutoSize = true;
+            this.estadoTipoHabitacionCheck.Location = new System.Drawing.Point(167, 83);
+            this.estadoTipoHabitacionCheck.Name = "estadoTipoHabitacionCheck";
+            this.estadoTipoHabitacionCheck.Size = new System.Drawing.Size(59, 17);
+            this.estadoTipoHabitacionCheck.TabIndex = 2;
+            this.estadoTipoHabitacionCheck.Text = "Estado";
+            this.estadoTipoHabitacionCheck.UseVisualStyleBackColor = true;
             // 
             // controlesGBox
             // 
             this.controlesGBox.Controls.Add(this.registrarTipolBtn);
-            this.controlesGBox.Controls.Add(this.deshablitarTipoBtn);
+            this.controlesGBox.Controls.Add(this.deshablitarTipoHabitacionBtn);
             this.controlesGBox.Controls.Add(this.modificarTipoBtn);
             this.controlesGBox.Controls.Add(this.nuevoTipoBtn);
-            this.controlesGBox.Location = new System.Drawing.Point(387, 277);
+            this.controlesGBox.Location = new System.Drawing.Point(387, 215);
             this.controlesGBox.Name = "controlesGBox";
-            this.controlesGBox.Size = new System.Drawing.Size(251, 112);
+            this.controlesGBox.Size = new System.Drawing.Size(251, 174);
             this.controlesGBox.TabIndex = 3;
             this.controlesGBox.TabStop = false;
             this.controlesGBox.Text = "Controles";
@@ -188,23 +192,25 @@ namespace CapaPresentacion
             this.registrarTipolBtn.UseVisualStyleBackColor = true;
             this.registrarTipolBtn.Click += new System.EventHandler(this.registrarTipolBtn_Click);
             // 
-            // deshablitarTipoBtn
+            // deshablitarTipoHabitacionBtn
             // 
-            this.deshablitarTipoBtn.Location = new System.Drawing.Point(145, 72);
-            this.deshablitarTipoBtn.Name = "deshablitarTipoBtn";
-            this.deshablitarTipoBtn.Size = new System.Drawing.Size(100, 40);
-            this.deshablitarTipoBtn.TabIndex = 0;
-            this.deshablitarTipoBtn.Text = "Deshabilitar";
-            this.deshablitarTipoBtn.UseVisualStyleBackColor = true;
+            this.deshablitarTipoHabitacionBtn.Location = new System.Drawing.Point(145, 72);
+            this.deshablitarTipoHabitacionBtn.Name = "deshablitarTipoHabitacionBtn";
+            this.deshablitarTipoHabitacionBtn.Size = new System.Drawing.Size(100, 40);
+            this.deshablitarTipoHabitacionBtn.TabIndex = 0;
+            this.deshablitarTipoHabitacionBtn.Text = "Deshabilitar";
+            this.deshablitarTipoHabitacionBtn.UseVisualStyleBackColor = true;
+            this.deshablitarTipoHabitacionBtn.Click += new System.EventHandler(this.deshablitarTipoHabitacionBtn_Click);
             // 
             // modificarTipoBtn
             // 
-            this.modificarTipoBtn.Location = new System.Drawing.Point(145, 19);
+            this.modificarTipoBtn.Location = new System.Drawing.Point(6, 121);
             this.modificarTipoBtn.Name = "modificarTipoBtn";
             this.modificarTipoBtn.Size = new System.Drawing.Size(100, 40);
             this.modificarTipoBtn.TabIndex = 0;
             this.modificarTipoBtn.Text = "Modificar";
             this.modificarTipoBtn.UseVisualStyleBackColor = true;
+            this.modificarTipoBtn.Click += new System.EventHandler(this.modificarTipoBtn_Click);
             // 
             // nuevoTipoBtn
             // 
@@ -215,6 +221,25 @@ namespace CapaPresentacion
             this.nuevoTipoBtn.Text = "Nuevo";
             this.nuevoTipoBtn.UseVisualStyleBackColor = true;
             this.nuevoTipoBtn.Click += new System.EventHandler(this.nuevoTipoBtn_Click);
+            // 
+            // idTipoHabitacionTxt
+            // 
+            this.idTipoHabitacionTxt.Enabled = false;
+            this.idTipoHabitacionTxt.Location = new System.Drawing.Point(6, 34);
+            this.idTipoHabitacionTxt.Name = "idTipoHabitacionTxt";
+            this.idTipoHabitacionTxt.ReadOnly = true;
+            this.idTipoHabitacionTxt.Size = new System.Drawing.Size(19, 20);
+            this.idTipoHabitacionTxt.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(19, 15);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "ID";
             // 
             // MantenedorTipoHabitacion
             // 
@@ -247,10 +272,12 @@ namespace CapaPresentacion
         private System.Windows.Forms.GroupBox controlesGBox;
         private System.Windows.Forms.Button nuevoTipoBtn;
         private System.Windows.Forms.Button registrarTipolBtn;
-        private System.Windows.Forms.Button deshablitarTipoBtn;
+        private System.Windows.Forms.Button deshablitarTipoHabitacionBtn;
         private System.Windows.Forms.Button modificarTipoBtn;
         private System.Windows.Forms.DataGridView listaTiposHabitacionGridView;
-        private System.Windows.Forms.CheckBox estadoHabitacionCheck;
+        private System.Windows.Forms.CheckBox estadoTipoHabitacionCheck;
         private System.Windows.Forms.TextBox tipoHabitacionDescripcionTxt;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox idTipoHabitacionTxt;
     }
 }

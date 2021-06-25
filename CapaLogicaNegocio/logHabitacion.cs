@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CapaLogicaNegocio
 {
-    public class logHabitacion
+    public class logHabitacion : LogHabitacionI
     {
         private static readonly logHabitacion instance = new logHabitacion();
 
@@ -17,14 +17,24 @@ namespace CapaLogicaNegocio
             get { return logHabitacion.instance; }
         }
 
-        public List<entHabitacion> listarHabitacion()
+        public List<entHabitacion> listarHabitaciones()
         {
-            return datHabitacion.Instance.listarHabitacion();
+            return datHabitacion.Instance.listarHabitaciones();
         }
 
         public void insertarHabitacion(entHabitacion habitacion)
         {
             datHabitacion.Instance.insertarHabitacion(habitacion);
+        }
+
+        public void editarHabitacion(entHabitacion habitacion)
+        {
+            datHabitacion.Instance.editarHabitacion(habitacion);
+        }
+
+        public void desabilitarHabitacion(entHabitacion habitacion)
+        {
+            datHabitacion.Instance.desabilitarHabitacion(habitacion);
         }
     }
 }

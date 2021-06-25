@@ -8,7 +8,7 @@ namespace CapaEntidad
 {
     public class entTipoHabitacion
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Tipo { get; set; }
         public string Descripcion { get; set; }
         public Boolean Estado { get; set; }

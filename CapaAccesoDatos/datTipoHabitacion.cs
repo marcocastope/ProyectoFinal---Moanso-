@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CapaAccesoDatos
 {
-    public class datTipoHabitacion
+    public class datTipoHabitacion : DatTipoHabitacionI
     {
         SqlDataReader reader;
 
@@ -37,7 +37,7 @@ namespace CapaAccesoDatos
                 while(reader.Read())
                 {
                     var tipoHabitacion = new entTipoHabitacion();
-                    tipoHabitacion.ID = Convert.ToInt32(reader["idTipoHab"]);
+                    tipoHabitacion.Id = Convert.ToInt32(reader["idTipoHab"]);
                     tipoHabitacion.Tipo = reader["tipo"].ToString();
                     tipoHabitacion.Descripcion = reader["descripcion"].ToString();
                     tipoHabitacion.Estado = Convert.ToBoolean(reader["estTipoHab"]);
@@ -51,32 +51,48 @@ namespace CapaAccesoDatos
             return tipos;
         }
 
-        public Boolean insertarTipoHabitacion(entTipoHabitacion tipoHabitacion)
+        public void insertarTipoHabitacion(entTipoHabitacion tipoHabitacion)
         {
             SqlCommand command = null;
-            bool seInserto = false;
+  
+            var connection = Conexion.Instancia.Conectar();
+            command = new SqlCommand("spInsertarTipoHabitacion", connection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@tipo", tipoHabitacion.Tipo);
+            command.Parameters.AddWithValue("@descripcion", tipoHabitacion.Descripcion);
+            command.Parameters.AddWithValue("@estTipoHab", tipoHabitacion.Estado);
+            connection.Open();
+            command.ExecuteNonQuery();
+            command.Connection.Close(); 
+        }
 
-            try
-            {
-                var connection = Conexion.Instancia.Conectar();
-                command = new SqlCommand("spInsertarTipoHabitacion", connection);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@tipo", tipoHabitacion.Tipo);
-                command.Parameters.AddWithValue("@descripcion", tipoHabitacion.Descripcion);
-                command.Parameters.AddWithValue("@estTipoHab", tipoHabitacion.Estado);
-                connection.Open();
+        public void editarTipoHabitacion(entTipoHabitacion tipoHabitacion)
+        {
+            SqlCommand command = null;
+            var connection = Conexion.Instancia.Conectar();
+            command = new SqlCommand("spEditarTipoHabitacion", connection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@tipo", tipoHabitacion.Tipo);
+            command.Parameters.AddWithValue("@descripcion", tipoHabitacion.Descripcion);
+            command.Parameters.AddWithValue("@estTipoHab", tipoHabitacion.Estado);
+            command.Parameters.AddWithValue("@idTipoHab", tipoHabitacion.Id);
+            connection.Open();
 
-                var i = command.ExecuteNonQuery();
-                if (i > 0)
-                {
-                    seInserto = true;
-                }
-            } catch(Exception e)
-            {
-                throw e;
-            } finally { command.Connection.Close(); }
+            command.ExecuteNonQuery();
+            command.Connection.Close();
+        }
 
-            return seInserto;
+        public void desabilitarTipoHabitacion(entTipoHabitacion tipoHabitacion)
+        {
+            SqlCommand command = null;
+            var connection = Conexion.Instancia.Conectar();
+            command = new SqlCommand("spDeshabilitarTipoHabitacion", connection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idTipoHab", tipoHabitacion.Id);
+            command.Parameters.AddWithValue("@estTipoHab", tipoHabitacion.Estado);
+            connection.Open();
+            command.ExecuteNonQuery();
+            command.Connection.Close(); 
         }
     }
 }

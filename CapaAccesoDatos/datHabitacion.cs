@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CapaAccesoDatos
 {
-    public class datHabitacion
+    public class datHabitacion : DatHabitacionI
     {
         SqlDataReader reader;
 
@@ -20,7 +20,7 @@ namespace CapaAccesoDatos
             get { return datHabitacion.instance; }
         }
 
-        public List<entHabitacion> listarHabitacion()
+        public List<entHabitacion> listarHabitaciones()
         {
             SqlCommand command = null;
             var habitaciones = new List<entHabitacion>();
@@ -57,37 +57,56 @@ namespace CapaAccesoDatos
             return habitaciones;
         }
 
-        public Boolean insertarHabitacion(entHabitacion habitacion)
+        public void insertarHabitacion(entHabitacion habitacion)
         {
             SqlCommand command = null;
-            bool seInserto = false;
+            var connection = Conexion.Instancia.Conectar();
+            command = new SqlCommand("spInsertarHabitacion", connection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@numHabitacion", habitacion.numeroHabitacion);
+            command.Parameters.AddWithValue("@cantCamas", habitacion.cantidadCamas);
+            command.Parameters.AddWithValue("@ubiPiso", habitacion.pisoHabitacion);
+            command.Parameters.AddWithValue("@precio", habitacion.precio);
+            command.Parameters.AddWithValue("@idTipoHab", habitacion.idTipoHabitacion);
+            command.Parameters.AddWithValue("@estHabitacion", habitacion.estadoHabitacion);
+            connection.Open();
 
-            try
-            {
-                var connection = Conexion.Instancia.Conectar();
-                command = new SqlCommand("spInsertarHabitacion", connection);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@numHabitacion", habitacion.numeroHabitacion);
-                command.Parameters.AddWithValue("@cantCamas", habitacion.cantidadCamas);
-                command.Parameters.AddWithValue("@ubiPiso", habitacion.pisoHabitacion);
-                command.Parameters.AddWithValue("@precio", habitacion.precio);
-                command.Parameters.AddWithValue("@idTipoHab", habitacion.idTipoHabitacion);
-                command.Parameters.AddWithValue("@estHabitacion", habitacion.estadoHabitacion);
-                connection.Open();
+            command.ExecuteNonQuery();
+            command.Connection.Close(); 
 
-                var i = command.ExecuteNonQuery();
-                if (i > 0)
-                {
-                    seInserto = true;
-                }
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-            finally { command.Connection.Close(); }
+          
+        }
 
-            return seInserto;
+        public void editarHabitacion(entHabitacion habitacion)
+        {
+            SqlCommand command = null;
+            var connection = Conexion.Instancia.Conectar();
+            command = new SqlCommand("spEditarHabitacion", connection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idHabitacion", habitacion.idHabitacion);
+            command.Parameters.AddWithValue("@numHabitacion", habitacion.numeroHabitacion);
+            command.Parameters.AddWithValue("@cantCamas", habitacion.cantidadCamas);
+            command.Parameters.AddWithValue("@ubiPiso", habitacion.pisoHabitacion);
+            command.Parameters.AddWithValue("@precio", habitacion.precio);
+            command.Parameters.AddWithValue("@idTipoHab", habitacion.idTipoHabitacion);
+            command.Parameters.AddWithValue("@estHabitacion", habitacion.estadoHabitacion);
+            connection.Open();
+
+            command.ExecuteNonQuery();
+            command.Connection.Close();
+        }
+
+        public void desabilitarHabitacion(entHabitacion habitacion)
+        {
+            SqlCommand command = null;
+            var connection = Conexion.Instancia.Conectar();
+            command = new SqlCommand("spDeshabilitarHabitacion", connection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idHabitacion", habitacion.idHabitacion);
+            command.Parameters.AddWithValue("@estHabitacion", habitacion.estadoHabitacion);
+            connection.Open();
+            command.ExecuteNonQuery();
+            command.Connection.Close();
         }
     }
 }
