@@ -11,8 +11,8 @@ namespace CapaEntidad
         public int NroServicio { get; set; }
         public int IdCliente { get; set; }
         public string Descripcion { get; set; }
-        public decimal PrecioServicio { get; set; }
-        public bool estAtencionServicio { get; set; }
+        public double PrecioServicio { get; set; }
+        public Boolean estAtencionServicio { get; set; }
         public DateTime fecRegServicio { get; set; }
     }
 }

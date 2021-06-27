@@ -43,7 +43,7 @@ namespace CapaPresentacion
                 entServicio s = new entServicio();
                 s.IdCliente = int.Parse(textBoxIdCliente.Text.Trim());
                 s.Descripcion = textBoxDescripcion.Text.Trim();
-                s.PrecioServicio = decimal.Parse(textBoxPrecioServicio.Text.Trim());
+                s.PrecioServicio = double.Parse(textBoxPrecioServicio.Text.Trim());
                 s.estAtencionServicio = cbkestAtencionServicio.Checked;
                 s.fecRegServicio = dtPickerRegServicio.Value;
 
@@ -76,7 +76,7 @@ namespace CapaPresentacion
                 s.NroServicio = int.Parse(textBoxNroServicio.Text.Trim());
                 s.IdCliente = int.Parse(textBoxIdCliente.Text.Trim());
                 s.Descripcion = textBoxDescripcion.Text.Trim();
-                s.PrecioServicio = decimal.Parse(textBoxPrecioServicio.Text.Trim());
+                s.PrecioServicio = double.Parse(textBoxPrecioServicio.Text.Trim());
                 s.estAtencionServicio = cbkestAtencionServicio.Checked;
                 s.fecRegServicio = dtPickerRegServicio.Value;
 
@@ -128,7 +128,6 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Error" + ex);
             }
-            MessageBox.Show("Habitacion deshablitado correctamente");
             limpiarFormulario();
             groupBoxDatosServicio.Enabled = false;
             ListarServicio();

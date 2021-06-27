@@ -38,10 +38,10 @@ namespace CapaAccesoDatos
                 while (dr.Read())
                 {
                     entServicio Serv = new entServicio();
-                    Serv.NroServicio = Convert.ToInt32(dr["NroServicio"]);
+                    Serv.NroServicio = Convert.ToInt32(dr["NroServicio"]); 
                     Serv.IdCliente = Convert.ToInt32(dr["IdCliente"]);
                     Serv.Descripcion = dr["Descripcion"].ToString();
-                    Serv.PrecioServicio = Convert.ToDecimal(dr["PrecioServicio"]);
+                    Serv.PrecioServicio = Convert.ToDouble(dr["PrecioServicio"]);
                     Serv.estAtencionServicio = Convert.ToBoolean(dr["estAtencionServicio"]);
                     Serv.fecRegServicio = Convert.ToDateTime(dr["fecRegServicio"]);
                     lista.Add(Serv);
