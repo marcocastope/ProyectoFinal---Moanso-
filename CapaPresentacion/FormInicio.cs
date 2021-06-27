@@ -49,7 +49,7 @@ namespace CapaPresentacion
 
         private void button2_Click(object sender, EventArgs e)
         {
-            navigateToMantenedor(new MantenedorPrenda());
+            navigateToMantenedor(new MantenedorServicio());
         }
 
         private void mantTipoHabitacionBtn_Click(object sender, EventArgs e)

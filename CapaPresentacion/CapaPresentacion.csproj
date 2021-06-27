@@ -62,11 +62,11 @@
     <Compile Include="MantenedorTipoHabitacion.Designer.cs">
       <DependentUpon>MantenedorTipoHabitacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="MantenedorPrenda.cs">
+    <Compile Include="MantenedorServicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MantenedorPrenda.Designer.cs">
-      <DependentUpon>MantenedorPrenda.cs</DependentUpon>
+    <Compile Include="MantenedorServicio.Designer.cs">
+      <DependentUpon>MantenedorServicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -90,8 +90,8 @@
     <EmbeddedResource Include="MantenedorTipoHabitacion.resx">
       <DependentUpon>MantenedorTipoHabitacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MantenedorPrenda.resx">
-      <DependentUpon>MantenedorPrenda.cs</DependentUpon>
+    <EmbeddedResource Include="MantenedorServicio.resx">
+      <DependentUpon>MantenedorServicio.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
