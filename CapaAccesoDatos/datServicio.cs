@@ -154,8 +154,42 @@ namespace CapaAccesoDatos
             return edita;
 
         }
-        //Inhabilitar
+        //Inhabilitar o deshabilitar
+        public Boolean DeshabilitarServicio(entServicio Serv)
+        {
+            SqlCommand cmd = null;
+
+            Boolean deshabilita = false;
+            try {
+
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("spDeshabilitarServicio", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@NroServicio", Serv.NroServicio);
+                cmd.Parameters.AddWithValue("@estAtencionServicio", Serv.estAtencionServicio);
+                cn.Open();
+
+                int i = cmd.ExecuteNonQuery();
+
+                if (i > 0)
+                {
+                    deshabilita = true;
+                }
+
+            }
+
+            catch (Exception e)
+
+            {
+                throw e;
+            }
+
+            finally { cmd.Connection.Close(); }
+
+            return deshabilita;
+        }
+    }
 
         #endregion metodos
-    }
-}
+ }

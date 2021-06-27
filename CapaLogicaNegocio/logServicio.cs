@@ -34,5 +34,9 @@ namespace CapaLogicaNegocio
         {
             datServicio.Instancia.EditarServicio(Serv);
         }
+        public void deshabilitaServicio(entServicio Serv)
+        {
+            datServicio.Instancia.DeshabilitarServicio(Serv);
+        }
     }
 }

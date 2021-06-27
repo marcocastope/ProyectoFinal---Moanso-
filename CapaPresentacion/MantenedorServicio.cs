@@ -32,6 +32,7 @@ namespace CapaPresentacion
         {
             btnAgregar.Enabled = true;
             groupBoxDatosServicio.Enabled = true;
+            limpiarFormulario();
         }
        
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -58,6 +59,7 @@ namespace CapaPresentacion
             groupBoxDatosServicio.Enabled = false;
 
             ListarServicio();
+            limpiarFormulario();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -90,6 +92,7 @@ namespace CapaPresentacion
             groupBoxDatosServicio.Enabled = false;
 
             ListarServicio();
+            limpiarFormulario();
         }
 
         private void dgVServicio_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -102,7 +105,33 @@ namespace CapaPresentacion
             cbkestAtencionServicio.Checked = Convert.ToBoolean(FilaActualMouse.Cells[4].Value.ToString());
             dtPickerRegServicio.Text = FilaActualMouse.Cells[5].Value.ToString();
         }
+        private void limpiarFormulario()
+        {
+            textBoxNroServicio.Clear();
+            textBoxIdCliente.Clear();
+            textBoxDescripcion.Clear();
+            textBoxPrecioServicio.Clear();
+            
+        }
 
-        
+        private void btnDeshabilitar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                entServicio s = new entServicio();
+                s.NroServicio= int.Parse(textBoxNroServicio.Text.Trim());
+                cbkestAtencionServicio.Checked = false;
+                s.estAtencionServicio= cbkestAtencionServicio.Checked;
+                logServicio.Instancia.deshabilitaServicio(s);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex);
+            }
+            MessageBox.Show("Habitacion deshablitado correctamente");
+            limpiarFormulario();
+            groupBoxDatosServicio.Enabled = false;
+            ListarServicio();
+        }
     }
 }

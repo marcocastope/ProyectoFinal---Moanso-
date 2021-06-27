@@ -59,7 +59,6 @@ namespace CapaPresentacion
             this.dgVServicio.Name = "dgVServicio";
             this.dgVServicio.Size = new System.Drawing.Size(550, 242);
             this.dgVServicio.TabIndex = 0;
-            
             this.dgVServicio.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgVServicio_CellDoubleClick);
             // 
             // groupBoxDatosServicio
@@ -243,6 +242,7 @@ namespace CapaPresentacion
             this.btnDeshabilitar.TabIndex = 4;
             this.btnDeshabilitar.Text = "Deshabilitar";
             this.btnDeshabilitar.UseVisualStyleBackColor = true;
+            this.btnDeshabilitar.Click += new System.EventHandler(this.btnDeshabilitar_Click);
             // 
             // MantenedorServicio
             // 
