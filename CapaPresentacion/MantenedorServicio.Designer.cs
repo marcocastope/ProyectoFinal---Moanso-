@@ -57,7 +57,7 @@ namespace CapaPresentacion
             this.dgVServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVServicio.Location = new System.Drawing.Point(1, 3);
             this.dgVServicio.Name = "dgVServicio";
-            this.dgVServicio.Size = new System.Drawing.Size(550, 242);
+            this.dgVServicio.Size = new System.Drawing.Size(568, 242);
             this.dgVServicio.TabIndex = 0;
             this.dgVServicio.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgVServicio_CellDoubleClick);
             // 
@@ -214,7 +214,7 @@ namespace CapaPresentacion
             // btnNuevo
             // 
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(557, 33);
+            this.btnNuevo.Location = new System.Drawing.Point(575, 33);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 23);
             this.btnNuevo.TabIndex = 2;
@@ -225,7 +225,7 @@ namespace CapaPresentacion
             // btnEditar
             // 
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(557, 86);
+            this.btnEditar.Location = new System.Drawing.Point(575, 86);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 3;
@@ -236,7 +236,7 @@ namespace CapaPresentacion
             // btnDeshabilitar
             // 
             this.btnDeshabilitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeshabilitar.Location = new System.Drawing.Point(557, 138);
+            this.btnDeshabilitar.Location = new System.Drawing.Point(575, 138);
             this.btnDeshabilitar.Name = "btnDeshabilitar";
             this.btnDeshabilitar.Size = new System.Drawing.Size(86, 23);
             this.btnDeshabilitar.TabIndex = 4;
