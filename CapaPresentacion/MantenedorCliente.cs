@@ -45,7 +45,7 @@ namespace CapaPresentacion
                 c.nombreCliente = textBoxNombreCliente.Text.Trim();
                 c.profesion = textBoxProfesion.Text.Trim();
                 c.IdTipoCliente =Convert.ToInt32(comboBoxTipoCliente.SelectedValue);
-                c.ciudad = comboBoxCiudad.Text.Trim();
+                c.IdCiudad =Convert.ToInt32(comboBoxCiudad.SelectedValue);
                 c.estAtencionCliente = cbkestAtencionCliente.Checked;
                 c.fecRegCliente = dtPickerRegCliente.Value;
 
@@ -81,7 +81,7 @@ namespace CapaPresentacion
                 c.nombreCliente = textBoxNombreCliente.Text.Trim();
                 c.profesion = textBoxProfesion.Text.Trim();
                 c.IdTipoCliente =Convert.ToInt32(comboBoxTipoCliente.SelectedValue);
-                c.ciudad = comboBoxCiudad.Text.Trim();
+                c.IdCiudad =Convert.ToInt32(comboBoxCiudad.SelectedValue);
                 c.estAtencionCliente = cbkestAtencionCliente.Checked;
                 c.fecRegCliente = dtPickerRegCliente.Value;
 

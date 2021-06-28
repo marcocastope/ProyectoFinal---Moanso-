@@ -17,5 +17,6 @@ namespace CapaEntidad
         public Boolean estAtencionCliente { get; set; }
         public DateTime fecRegCliente { get; set; }
         public int IdTipoCliente { get; set; }
+        public int IdCiudad { get; set; }
     }
 }
