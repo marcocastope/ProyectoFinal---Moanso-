@@ -30,27 +30,27 @@
         {
             this.dgVCliente = new System.Windows.Forms.DataGridView();
             this.groupBoxDatosCliente = new System.Windows.Forms.GroupBox();
-            this.labelIdCliente = new System.Windows.Forms.Label();
-            this.textBoxIdCliente = new System.Windows.Forms.TextBox();
-            this.labelNombreCliente = new System.Windows.Forms.Label();
-            this.textBoxNombreCliente = new System.Windows.Forms.TextBox();
-            this.labelDni = new System.Windows.Forms.Label();
-            this.textBoxDni = new System.Windows.Forms.TextBox();
-            this.labelProfesion = new System.Windows.Forms.Label();
-            this.textBoxProfesion = new System.Windows.Forms.TextBox();
-            this.labelCiudad = new System.Windows.Forms.Label();
-            this.comboBoxCiudad = new System.Windows.Forms.ComboBox();
-            this.labelTipoCliente = new System.Windows.Forms.Label();
-            this.comboBoxTipoCliente = new System.Windows.Forms.ComboBox();
-            this.dtPickerRegCliente = new System.Windows.Forms.DateTimePicker();
+            this.cbkestAtencionCliente = new System.Windows.Forms.CheckBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.labelFechaRegistro = new System.Windows.Forms.Label();
+            this.dtPickerRegCliente = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxTipoCliente = new System.Windows.Forms.ComboBox();
+            this.labelTipoCliente = new System.Windows.Forms.Label();
+            this.comboBoxCiudad = new System.Windows.Forms.ComboBox();
+            this.labelCiudad = new System.Windows.Forms.Label();
+            this.textBoxProfesion = new System.Windows.Forms.TextBox();
+            this.labelProfesion = new System.Windows.Forms.Label();
+            this.textBoxDni = new System.Windows.Forms.TextBox();
+            this.labelDni = new System.Windows.Forms.Label();
+            this.textBoxNombreCliente = new System.Windows.Forms.TextBox();
+            this.labelNombreCliente = new System.Windows.Forms.Label();
+            this.textBoxIdCliente = new System.Windows.Forms.TextBox();
+            this.labelIdCliente = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnDeshabilitar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.cbkestAtencionCliente = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgVCliente)).BeginInit();
             this.groupBoxDatosCliente.SuspendLayout();
             this.SuspendLayout();
@@ -91,56 +91,106 @@
             this.groupBoxDatosCliente.TabStop = false;
             this.groupBoxDatosCliente.Text = "Datos de Cliente";
             // 
-            // labelIdCliente
+            // cbkestAtencionCliente
             // 
-            this.labelIdCliente.AutoSize = true;
-            this.labelIdCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIdCliente.Location = new System.Drawing.Point(7, 20);
-            this.labelIdCliente.Name = "labelIdCliente";
-            this.labelIdCliente.Size = new System.Drawing.Size(55, 15);
-            this.labelIdCliente.TabIndex = 0;
-            this.labelIdCliente.Text = "IdCliente";
+            this.cbkestAtencionCliente.AutoSize = true;
+            this.cbkestAtencionCliente.Location = new System.Drawing.Point(358, 37);
+            this.cbkestAtencionCliente.Name = "cbkestAtencionCliente";
+            this.cbkestAtencionCliente.Size = new System.Drawing.Size(111, 19);
+            this.cbkestAtencionCliente.TabIndex = 20;
+            this.cbkestAtencionCliente.Text = "Esado Atencion";
+            this.cbkestAtencionCliente.UseVisualStyleBackColor = true;
             // 
-            // textBoxIdCliente
+            // btnCancelar
             // 
-            this.textBoxIdCliente.Location = new System.Drawing.Point(10, 39);
-            this.textBoxIdCliente.Name = "textBoxIdCliente";
-            this.textBoxIdCliente.Size = new System.Drawing.Size(60, 21);
-            this.textBoxIdCliente.TabIndex = 1;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(543, 94);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 19;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // labelNombreCliente
+            // btnModificar
             // 
-            this.labelNombreCliente.AutoSize = true;
-            this.labelNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombreCliente.Location = new System.Drawing.Point(95, 22);
-            this.labelNombreCliente.Name = "labelNombreCliente";
-            this.labelNombreCliente.Size = new System.Drawing.Size(119, 15);
-            this.labelNombreCliente.TabIndex = 2;
-            this.labelNombreCliente.Text = "Nombres y Apellidos";
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(543, 51);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 18;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // textBoxNombreCliente
+            // btnAgregar
             // 
-            this.textBoxNombreCliente.Location = new System.Drawing.Point(98, 38);
-            this.textBoxNombreCliente.Name = "textBoxNombreCliente";
-            this.textBoxNombreCliente.Size = new System.Drawing.Size(116, 21);
-            this.textBoxNombreCliente.TabIndex = 3;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(543, 22);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 17;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
             // 
-            // labelDni
+            // labelFechaRegistro
             // 
-            this.labelDni.AutoSize = true;
-            this.labelDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDni.Location = new System.Drawing.Point(10, 76);
-            this.labelDni.Name = "labelDni";
-            this.labelDni.Size = new System.Drawing.Size(26, 15);
-            this.labelDni.TabIndex = 4;
-            this.labelDni.Text = "Dni";
+            this.labelFechaRegistro.AutoSize = true;
+            this.labelFechaRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFechaRegistro.Location = new System.Drawing.Point(355, 75);
+            this.labelFechaRegistro.Name = "labelFechaRegistro";
+            this.labelFechaRegistro.Size = new System.Drawing.Size(90, 15);
+            this.labelFechaRegistro.TabIndex = 16;
+            this.labelFechaRegistro.Text = "Fecha Registro";
             // 
-            // textBoxDni
+            // dtPickerRegCliente
             // 
-            this.textBoxDni.Location = new System.Drawing.Point(10, 95);
-            this.textBoxDni.Name = "textBoxDni";
-            this.textBoxDni.Size = new System.Drawing.Size(82, 21);
-            this.textBoxDni.TabIndex = 5;
+            this.dtPickerRegCliente.Location = new System.Drawing.Point(344, 94);
+            this.dtPickerRegCliente.Name = "dtPickerRegCliente";
+            this.dtPickerRegCliente.Size = new System.Drawing.Size(162, 21);
+            this.dtPickerRegCliente.TabIndex = 15;
+            // 
+            // comboBoxTipoCliente
+            // 
+            this.comboBoxTipoCliente.FormattingEnabled = true;
+            this.comboBoxTipoCliente.Location = new System.Drawing.Point(223, 37);
+            this.comboBoxTipoCliente.Name = "comboBoxTipoCliente";
+            this.comboBoxTipoCliente.Size = new System.Drawing.Size(115, 23);
+            this.comboBoxTipoCliente.TabIndex = 14;
+            // 
+            // labelTipoCliente
+            // 
+            this.labelTipoCliente.AutoSize = true;
+            this.labelTipoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTipoCliente.Location = new System.Drawing.Point(220, 22);
+            this.labelTipoCliente.Name = "labelTipoCliente";
+            this.labelTipoCliente.Size = new System.Drawing.Size(89, 15);
+            this.labelTipoCliente.TabIndex = 13;
+            this.labelTipoCliente.Text = "Tipo de Cliente";
+            // 
+            // comboBoxCiudad
+            // 
+            this.comboBoxCiudad.FormattingEnabled = true;
+            this.comboBoxCiudad.Location = new System.Drawing.Point(223, 92);
+            this.comboBoxCiudad.Name = "comboBoxCiudad";
+            this.comboBoxCiudad.Size = new System.Drawing.Size(115, 23);
+            this.comboBoxCiudad.TabIndex = 10;
+            // 
+            // labelCiudad
+            // 
+            this.labelCiudad.AutoSize = true;
+            this.labelCiudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCiudad.Location = new System.Drawing.Point(220, 75);
+            this.labelCiudad.Name = "labelCiudad";
+            this.labelCiudad.Size = new System.Drawing.Size(46, 15);
+            this.labelCiudad.TabIndex = 8;
+            this.labelCiudad.Text = "Ciudad";
+            // 
+            // textBoxProfesion
+            // 
+            this.textBoxProfesion.Location = new System.Drawing.Point(98, 95);
+            this.textBoxProfesion.Name = "textBoxProfesion";
+            this.textBoxProfesion.Size = new System.Drawing.Size(117, 21);
+            this.textBoxProfesion.TabIndex = 7;
             // 
             // labelProfesion
             // 
@@ -152,65 +202,56 @@
             this.labelProfesion.TabIndex = 6;
             this.labelProfesion.Text = "Profesion";
             // 
-            // textBoxProfesion
+            // textBoxDni
             // 
-            this.textBoxProfesion.Location = new System.Drawing.Point(98, 95);
-            this.textBoxProfesion.Name = "textBoxProfesion";
-            this.textBoxProfesion.Size = new System.Drawing.Size(117, 21);
-            this.textBoxProfesion.TabIndex = 7;
+            this.textBoxDni.Location = new System.Drawing.Point(10, 95);
+            this.textBoxDni.Name = "textBoxDni";
+            this.textBoxDni.Size = new System.Drawing.Size(82, 21);
+            this.textBoxDni.TabIndex = 5;
             // 
-            // labelCiudad
+            // labelDni
             // 
-            this.labelCiudad.AutoSize = true;
-            this.labelCiudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCiudad.Location = new System.Drawing.Point(220, 20);
-            this.labelCiudad.Name = "labelCiudad";
-            this.labelCiudad.Size = new System.Drawing.Size(46, 15);
-            this.labelCiudad.TabIndex = 8;
-            this.labelCiudad.Text = "Ciudad";
+            this.labelDni.AutoSize = true;
+            this.labelDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDni.Location = new System.Drawing.Point(10, 76);
+            this.labelDni.Name = "labelDni";
+            this.labelDni.Size = new System.Drawing.Size(26, 15);
+            this.labelDni.TabIndex = 4;
+            this.labelDni.Text = "Dni";
             // 
-            // comboBoxCiudad
+            // textBoxNombreCliente
             // 
-            this.comboBoxCiudad.FormattingEnabled = true;
-            this.comboBoxCiudad.Location = new System.Drawing.Point(220, 37);
-            this.comboBoxCiudad.Name = "comboBoxCiudad";
-            this.comboBoxCiudad.Size = new System.Drawing.Size(115, 23);
-            this.comboBoxCiudad.TabIndex = 10;
+            this.textBoxNombreCliente.Location = new System.Drawing.Point(98, 38);
+            this.textBoxNombreCliente.Name = "textBoxNombreCliente";
+            this.textBoxNombreCliente.Size = new System.Drawing.Size(116, 21);
+            this.textBoxNombreCliente.TabIndex = 3;
             // 
-            // labelTipoCliente
+            // labelNombreCliente
             // 
-            this.labelTipoCliente.AutoSize = true;
-            this.labelTipoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTipoCliente.Location = new System.Drawing.Point(218, 75);
-            this.labelTipoCliente.Name = "labelTipoCliente";
-            this.labelTipoCliente.Size = new System.Drawing.Size(89, 15);
-            this.labelTipoCliente.TabIndex = 13;
-            this.labelTipoCliente.Text = "Tipo de Cliente";
+            this.labelNombreCliente.AutoSize = true;
+            this.labelNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombreCliente.Location = new System.Drawing.Point(95, 22);
+            this.labelNombreCliente.Name = "labelNombreCliente";
+            this.labelNombreCliente.Size = new System.Drawing.Size(119, 15);
+            this.labelNombreCliente.TabIndex = 2;
+            this.labelNombreCliente.Text = "Nombres y Apellidos";
             // 
-            // comboBoxTipoCliente
+            // textBoxIdCliente
             // 
-            this.comboBoxTipoCliente.FormattingEnabled = true;
-            this.comboBoxTipoCliente.Location = new System.Drawing.Point(221, 93);
-            this.comboBoxTipoCliente.Name = "comboBoxTipoCliente";
-            this.comboBoxTipoCliente.Size = new System.Drawing.Size(121, 23);
-            this.comboBoxTipoCliente.TabIndex = 14;
+            this.textBoxIdCliente.Location = new System.Drawing.Point(10, 39);
+            this.textBoxIdCliente.Name = "textBoxIdCliente";
+            this.textBoxIdCliente.Size = new System.Drawing.Size(60, 21);
+            this.textBoxIdCliente.TabIndex = 1;
             // 
-            // dtPickerRegCliente
+            // labelIdCliente
             // 
-            this.dtPickerRegCliente.Location = new System.Drawing.Point(358, 94);
-            this.dtPickerRegCliente.Name = "dtPickerRegCliente";
-            this.dtPickerRegCliente.Size = new System.Drawing.Size(138, 21);
-            this.dtPickerRegCliente.TabIndex = 15;
-            // 
-            // labelFechaRegistro
-            // 
-            this.labelFechaRegistro.AutoSize = true;
-            this.labelFechaRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFechaRegistro.Location = new System.Drawing.Point(355, 75);
-            this.labelFechaRegistro.Name = "labelFechaRegistro";
-            this.labelFechaRegistro.Size = new System.Drawing.Size(90, 15);
-            this.labelFechaRegistro.TabIndex = 16;
-            this.labelFechaRegistro.Text = "Fecha Registro";
+            this.labelIdCliente.AutoSize = true;
+            this.labelIdCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIdCliente.Location = new System.Drawing.Point(7, 20);
+            this.labelIdCliente.Name = "labelIdCliente";
+            this.labelIdCliente.Size = new System.Drawing.Size(55, 15);
+            this.labelIdCliente.TabIndex = 0;
+            this.labelIdCliente.Text = "IdCliente";
             // 
             // btnNuevo
             // 
@@ -241,47 +282,6 @@
             this.btnDeshabilitar.TabIndex = 4;
             this.btnDeshabilitar.Text = "Deshabilitar";
             this.btnDeshabilitar.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(543, 22);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 17;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(543, 51);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 18;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(543, 94);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 19;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // cbkestAtencionCliente
-            // 
-            this.cbkestAtencionCliente.AutoSize = true;
-            this.cbkestAtencionCliente.Location = new System.Drawing.Point(358, 37);
-            this.cbkestAtencionCliente.Name = "cbkestAtencionCliente";
-            this.cbkestAtencionCliente.Size = new System.Drawing.Size(111, 19);
-            this.cbkestAtencionCliente.TabIndex = 20;
-            this.cbkestAtencionCliente.Text = "Esado Atencion";
-            this.cbkestAtencionCliente.UseVisualStyleBackColor = true;
             // 
             // MantenedorCliente
             // 

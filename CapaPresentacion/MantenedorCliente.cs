@@ -44,11 +44,11 @@ namespace CapaPresentacion
                 c.dni = int.Parse(textBoxDni.Text.Trim());
                 c.nombreCliente = textBoxNombreCliente.Text.Trim();
                 c.profesion = textBoxProfesion.Text.Trim();
+                c.IdTipoCliente =Convert.ToInt32(comboBoxTipoCliente.SelectedValue);
                 c.ciudad = comboBoxCiudad.Text.Trim();
-                c.tipoCliente = comboBoxTipoCliente.Text.Trim();
                 c.estAtencionCliente = cbkestAtencionCliente.Checked;
                 c.fecRegCliente = dtPickerRegCliente.Value;
-  
+
                 logCliente.Instancia.insertaCliente(c);
             }
 
@@ -80,8 +80,8 @@ namespace CapaPresentacion
                 c.dni = int.Parse(textBoxDni.Text.Trim());
                 c.nombreCliente = textBoxNombreCliente.Text.Trim();
                 c.profesion = textBoxProfesion.Text.Trim();
+                c.IdTipoCliente =Convert.ToInt32(comboBoxTipoCliente.SelectedValue);
                 c.ciudad = comboBoxCiudad.Text.Trim();
-                c.tipoCliente = comboBoxTipoCliente.Text.Trim();
                 c.estAtencionCliente = cbkestAtencionCliente.Checked;
                 c.fecRegCliente = dtPickerRegCliente.Value;
 
@@ -107,8 +107,8 @@ namespace CapaPresentacion
             textBoxDni.Text = FilaActualMouse.Cells[1].Value.ToString();
             textBoxNombreCliente.Text = FilaActualMouse.Cells[2].Value.ToString();
             textBoxProfesion.Text = FilaActualMouse.Cells[3].Value.ToString();
-            comboBoxCiudad.Text = FilaActualMouse.Cells[4].Value.ToString();
-            comboBoxTipoCliente.Text = FilaActualMouse.Cells[5].Value.ToString();
+            comboBoxTipoCliente.Text = FilaActualMouse.Cells[4].Value.ToString();
+            comboBoxCiudad.Text = FilaActualMouse.Cells[5].Value.ToString();
             cbkestAtencionCliente.Checked = Convert.ToBoolean(FilaActualMouse.Cells[6].Value.ToString());
             dtPickerRegCliente.Text = FilaActualMouse.Cells[7].Value.ToString();
 
