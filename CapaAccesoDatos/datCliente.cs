@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using CapaEntidad;
+
 namespace CapaAccesoDatos
 {
-   public class datCliente
+    public class datCliente
     {
         //patron de Diseño Singleton
         #region singleton
@@ -30,21 +31,24 @@ namespace CapaAccesoDatos
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("spListaCliente", cn);
+                cmd = new SqlCommand("spListarCliente", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     entCliente Cli = new entCliente();
-                    Cli.idCliente=Convert.ToInt32(dr["idCliente"]);
-                    Cli.dniCliente=Convert.ToInt32(dr["dniCliente"]);
+
+                    Cli.IdCliente= Convert.ToInt32(dr["IdCliente"]);
+                    Cli.dni= Convert.ToInt32(dr["dni"]);
                     Cli.nombreCliente= dr["nombreCliente"].ToString();
-                    Cli.apellidoCliente= dr["apellidoCliente"].ToString();
-                    Cli.emailCliente= dr["emailCliente"].ToString();
-                    Cli.telefonoCliente= dr["telefonoCliente"].ToString();
+                    Cli.profesion= dr["profesion"].ToString();
+                    Cli.pais=dr["pais"].ToString();
+                    Cli.ciudad=dr["ciudad"].ToString();
+                    Cli.tipoCliente= dr["tipoCliente"].ToString();
+                    Cli.estAtencionCliente=Convert.ToBoolean(dr["@estAtencionCliente"]);
                     Cli.fecRegCliente= Convert.ToDateTime(dr["fecRegCliente"]);
-                                 
+
                     lista.Add(Cli);
                 }
 
@@ -72,15 +76,18 @@ namespace CapaAccesoDatos
 
                 SqlConnection cn = Conexion.Instancia.Conectar();
 
-                cmd = new SqlCommand("spInsertaCliente", cn);
+                cmd = new SqlCommand("spInsertarCliente", cn);
 
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@dniCliente",Cli.dniCliente);
-                cmd.Parameters.AddWithValue("@nombreCliente",Cli.nombreCliente);
-                cmd.Parameters.AddWithValue("@apellidoCliente",Cli.apellidoCliente);
-                cmd.Parameters.AddWithValue("@emailCliente",Cli.emailCliente);
-                cmd.Parameters.AddWithValue("@telefonoCliente",Cli.telefonoCliente);
-                cmd.Parameters.AddWithValue("@fecRegCliente",Cli.fecRegCliente);
+
+                cmd.Parameters.AddWithValue("@dni", Cli.dni);
+                cmd.Parameters.AddWithValue("@nombreCliente", Cli.nombreCliente);
+                cmd.Parameters.AddWithValue("@profesion", Cli.profesion);
+                cmd.Parameters.AddWithValue("@pais", Cli.pais);
+                cmd.Parameters.AddWithValue("@ciudad", Cli.ciudad);
+                cmd.Parameters.AddWithValue("@tipoCliente", Cli.tipoCliente);
+                cmd.Parameters.AddWithValue("@estAtencionCliente", Cli.estAtencionCliente);
+                cmd.Parameters.AddWithValue("@fecRegCliente", Cli.fecRegCliente);
 
                 cn.Open();
 
@@ -117,16 +124,20 @@ namespace CapaAccesoDatos
 
                 SqlConnection cn = Conexion.Instancia.Conectar();
 
-                cmd = new SqlCommand("spEditaCliente", cn);//Falta crear la base de datos 
+                cmd = new SqlCommand("spEditarCliente", cn);//Falta crear la base de datos 
 
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idCliente", Cli.idCliente);
-                cmd.Parameters.AddWithValue("@dniCliente", Cli.dniCliente);
+
+                cmd.Parameters.AddWithValue("@IdCliente", Cli.IdCliente);
+                cmd.Parameters.AddWithValue("@dni", Cli.dni);
                 cmd.Parameters.AddWithValue("@nombreCliente", Cli.nombreCliente);
-                cmd.Parameters.AddWithValue("@apellidoCliente", Cli.apellidoCliente);
-                cmd.Parameters.AddWithValue("@emailCliente", Cli.emailCliente);
-                cmd.Parameters.AddWithValue("@telefonoCliente", Cli.telefonoCliente);
+                cmd.Parameters.AddWithValue("@profesion", Cli.profesion);
+                cmd.Parameters.AddWithValue("@pais", Cli.pais);
+                cmd.Parameters.AddWithValue("@ciudad", Cli.ciudad);
+                cmd.Parameters.AddWithValue("@tipoCliente", Cli.tipoCliente);
+                cmd.Parameters.AddWithValue("@estAtencionCliente", Cli.estAtencionCliente);
                 cmd.Parameters.AddWithValue("@fecRegCliente", Cli.fecRegCliente);
+                
 
                 cn.Open();
 
@@ -135,9 +146,7 @@ namespace CapaAccesoDatos
                 if (i > 0)
 
                 {
-
                     edita = true;
-
                 }
 
             }
@@ -155,8 +164,42 @@ namespace CapaAccesoDatos
             return edita;
 
         }
-        //Inhabilitar
+        //Inhabilitar o deshabilitar
+        public Boolean DeshabilitarCliente(entCliente Cli)
+        {
+            SqlCommand cmd = null;
 
+            Boolean deshabilita = false;
+            try
+            {
+
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("spDeshabilitarCliente", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@IdCliente", Cli.IdCliente);
+                cmd.Parameters.AddWithValue("@estAtencionCliente", Cli.estAtencionCliente);
+                cn.Open();
+
+                int i = cmd.ExecuteNonQuery();
+
+                if (i > 0)
+                {
+                    deshabilita = true;
+                }
+
+            }
+
+            catch (Exception e)
+
+            {
+                throw e;
+            }
+
+            finally { cmd.Connection.Close(); }
+
+            return deshabilita;
+        }
         #endregion metodos
     }
 }

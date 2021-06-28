@@ -19,7 +19,7 @@ namespace CapaPresentacion
 
         private void mantenedorClienteBtn_Click(object sender, EventArgs e)
         {
-
+            navigateToMantenedor(new MantenedorCliente());
         }
 
         private void mantPersonalBtn_Click(object sender, EventArgs e)
@@ -60,6 +60,16 @@ namespace CapaPresentacion
         private void mantHabitacionBtn_Click(object sender, EventArgs e)
         {
             navigateToMantenedor(new MantenedorHabitacion());
+        }
+
+        private void btnTipoCliente_Click(object sender, EventArgs e)
+        {
+            navigateToMantenedor(new MantenedorTipoCliente());
+        }
+
+        private void btnCiudad_Click(object sender, EventArgs e)
+        {
+            navigateToMantenedor(new MantenedorCiudad());
         }
     }
 }

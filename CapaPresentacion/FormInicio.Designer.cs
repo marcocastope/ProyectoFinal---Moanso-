@@ -39,6 +39,8 @@ namespace CapaPresentacion
             this.panel2 = new System.Windows.Forms.Panel();
             this.salirBtn = new System.Windows.Forms.Button();
             this.containerForm = new System.Windows.Forms.Panel();
+            this.btnTipoCliente = new System.Windows.Forms.Button();
+            this.btnCiudad = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -47,6 +49,8 @@ namespace CapaPresentacion
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.panel1.Controls.Add(this.btnCiudad);
+            this.panel1.Controls.Add(this.btnTipoCliente);
             this.panel1.Controls.Add(this.mantTipoHabitacionBtn);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.panel3);
@@ -61,7 +65,7 @@ namespace CapaPresentacion
             // mantTipoHabitacionBtn
             // 
             this.mantTipoHabitacionBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mantTipoHabitacionBtn.Location = new System.Drawing.Point(12, 314);
+            this.mantTipoHabitacionBtn.Location = new System.Drawing.Point(12, 369);
             this.mantTipoHabitacionBtn.Name = "mantTipoHabitacionBtn";
             this.mantTipoHabitacionBtn.Size = new System.Drawing.Size(120, 50);
             this.mantTipoHabitacionBtn.TabIndex = 2;
@@ -72,7 +76,7 @@ namespace CapaPresentacion
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(12, 258);
+            this.button2.Location = new System.Drawing.Point(12, 313);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 50);
             this.button2.TabIndex = 2;
@@ -104,7 +108,7 @@ namespace CapaPresentacion
             // mantHabitacionBtn
             // 
             this.mantHabitacionBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mantHabitacionBtn.Location = new System.Drawing.Point(12, 202);
+            this.mantHabitacionBtn.Location = new System.Drawing.Point(12, 257);
             this.mantHabitacionBtn.Name = "mantHabitacionBtn";
             this.mantHabitacionBtn.Size = new System.Drawing.Size(120, 50);
             this.mantHabitacionBtn.TabIndex = 2;
@@ -115,7 +119,7 @@ namespace CapaPresentacion
             // mantenedorClienteBtn
             // 
             this.mantenedorClienteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mantenedorClienteBtn.Location = new System.Drawing.Point(12, 146);
+            this.mantenedorClienteBtn.Location = new System.Drawing.Point(12, 89);
             this.mantenedorClienteBtn.Name = "mantenedorClienteBtn";
             this.mantenedorClienteBtn.Size = new System.Drawing.Size(120, 50);
             this.mantenedorClienteBtn.TabIndex = 2;
@@ -155,6 +159,28 @@ namespace CapaPresentacion
             this.containerForm.Size = new System.Drawing.Size(650, 401);
             this.containerForm.TabIndex = 2;
             // 
+            // btnTipoCliente
+            // 
+            this.btnTipoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTipoCliente.Location = new System.Drawing.Point(12, 145);
+            this.btnTipoCliente.Name = "btnTipoCliente";
+            this.btnTipoCliente.Size = new System.Drawing.Size(120, 50);
+            this.btnTipoCliente.TabIndex = 3;
+            this.btnTipoCliente.Text = "Tipo Cliente";
+            this.btnTipoCliente.UseVisualStyleBackColor = true;
+            this.btnTipoCliente.Click += new System.EventHandler(this.btnTipoCliente_Click);
+            // 
+            // btnCiudad
+            // 
+            this.btnCiudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCiudad.Location = new System.Drawing.Point(12, 201);
+            this.btnCiudad.Name = "btnCiudad";
+            this.btnCiudad.Size = new System.Drawing.Size(120, 50);
+            this.btnCiudad.TabIndex = 4;
+            this.btnCiudad.Text = "Ciudad";
+            this.btnCiudad.UseVisualStyleBackColor = true;
+            this.btnCiudad.Click += new System.EventHandler(this.btnCiudad_Click);
+            // 
             // FormInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,5 +211,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.Button mantTipoHabitacionBtn;
         private System.Windows.Forms.Panel containerForm;
         private System.Windows.Forms.Button salirBtn;
+        private System.Windows.Forms.Button btnCiudad;
+        private System.Windows.Forms.Button btnTipoCliente;
     }
 }

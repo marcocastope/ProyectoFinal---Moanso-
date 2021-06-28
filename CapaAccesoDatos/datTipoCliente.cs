@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using System.Data.SqlClient;
 using CapaEntidad;
+using System.Data.SqlClient;
+using System.Data;
+
+
 
 namespace CapaAccesoDatos
 {
-   public class datServicio
+    public class datTipoCliente
     {
         //patron de Diseño Singleton
         #region singleton
-        private static readonly datServicio _instancia = new datServicio();
-        public static datServicio Instancia
+        private static readonly datTipoCliente _instancia = new datTipoCliente();
+        public static datTipoCliente Instancia
         {
-            get { return datServicio._instancia; }
+            get { return datTipoCliente._instancia; }
         }
         #endregion singleton
 
@@ -24,27 +26,25 @@ namespace CapaAccesoDatos
         #region metodos
         //Listado
 
-        public List<entServicio> ListarServicio()
+        public List<entTipoCliente> ListarTipoCliente()
         {
             SqlCommand cmd = null;
-            List<entServicio> lista = new List<entServicio>();
+            List<entTipoCliente> lista = new List<entTipoCliente>();
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("spListarServicio", cn);
+                cmd = new SqlCommand("spListarTipoCliente", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    entServicio Serv = new entServicio();
-                    Serv.NroServicio = Convert.ToInt32(dr["NroServicio"]); 
-                    Serv.IdCliente = Convert.ToInt32(dr["IdCliente"]);
-                    Serv.Descripcion = dr["Descripcion"].ToString();
-                    Serv.PrecioServicio = Convert.ToDouble(dr["PrecioServicio"]);
-                    Serv.estAtencionServicio = Convert.ToBoolean(dr["estAtencionServicio"]);
-                    Serv.fecRegServicio = Convert.ToDateTime(dr["fecRegServicio"]);
-                    lista.Add(Serv);
+                    entTipoCliente Tipo = new entTipoCliente();
+                    Tipo.IdTipoCliente= Convert.ToInt32(dr["IdTipoCliente"]);
+                    Tipo.TipoCliente = dr["TipoCliente"].ToString();
+                    Tipo.DescripcionTipoCliente = dr["DescripcionTipoCliente"].ToString();
+                    Tipo.EstadoTipoCliente =Convert.ToBoolean(dr["EstadoTipoCliente"]);
+                    lista.Add(Tipo);
                 }
 
             }
@@ -58,7 +58,7 @@ namespace CapaAccesoDatos
             return lista;
         }
         //Insertar
-        public Boolean InsertarServicio(entServicio Serv)
+        public Boolean InsertarTipoCliente(entTipoCliente Tipo)
 
         {
 
@@ -71,16 +71,14 @@ namespace CapaAccesoDatos
 
                 SqlConnection cn = Conexion.Instancia.Conectar();
 
-                cmd = new SqlCommand("spInsertarServicio", cn);
+                cmd = new SqlCommand("spInsertarTipoCliente", cn);
 
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@IdCliente", Serv.IdCliente);
-                cmd.Parameters.AddWithValue("@Descripcion", Serv.Descripcion);
-                cmd.Parameters.AddWithValue("@PrecioServicio", Serv.PrecioServicio);
-                cmd.Parameters.AddWithValue("@estAtencionServicio", Serv.estAtencionServicio);
-                cmd.Parameters.AddWithValue("@fecRegServicio", Serv.fecRegServicio);
-
+                cmd.Parameters.AddWithValue("@TipoCliente", Tipo.TipoCliente);
+                cmd.Parameters.AddWithValue("@DescripcionTipoCliente", Tipo.DescripcionTipoCliente);
+                cmd.Parameters.AddWithValue("@EstadoTipoCliente", Tipo.EstadoTipoCliente);
+                          
                 cn.Open();
 
                 int i = cmd.ExecuteNonQuery();
@@ -103,7 +101,7 @@ namespace CapaAccesoDatos
 
         }
         //Editar
-        public Boolean EditarServicio(entServicio Serv)
+        public Boolean EditarTipoCliente(entTipoCliente Tipo)
 
         {
 
@@ -116,16 +114,14 @@ namespace CapaAccesoDatos
 
                 SqlConnection cn = Conexion.Instancia.Conectar();
 
-                cmd = new SqlCommand("spEditarServicio", cn);//Falta crear la base de datos 
+                cmd = new SqlCommand("spEditarTipoCliente", cn);//Falta crear la base de datos 
 
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@NroServicio", Serv.NroServicio);
-                cmd.Parameters.AddWithValue("@IdCliente", Serv.IdCliente);
-                cmd.Parameters.AddWithValue("@Descripcion", Serv.Descripcion);
-                cmd.Parameters.AddWithValue("@PrecioServicio", Serv.PrecioServicio);
-                cmd.Parameters.AddWithValue("@estAtencionServicio", Serv.estAtencionServicio);
-                cmd.Parameters.AddWithValue("@fecRegServicio", Serv.fecRegServicio);
+                cmd.Parameters.AddWithValue("@IdTipoCliente", Tipo.IdTipoCliente);
+                cmd.Parameters.AddWithValue("@TipoCliente", Tipo.TipoCliente);
+                cmd.Parameters.AddWithValue("@DescripcionTipoCliente", Tipo.DescripcionTipoCliente);
+                cmd.Parameters.AddWithValue("@EstadoTipoCliente", Tipo.EstadoTipoCliente);
 
                 cn.Open();
 
@@ -134,9 +130,7 @@ namespace CapaAccesoDatos
                 if (i > 0)
 
                 {
-
                     edita = true;
-
                 }
 
             }
@@ -155,19 +149,20 @@ namespace CapaAccesoDatos
 
         }
         //Inhabilitar o deshabilitar
-        public Boolean DeshabilitarServicio(entServicio Serv)
+        public Boolean DeshabilitarTipoCliente(entTipoCliente Tipo)
         {
             SqlCommand cmd = null;
 
             Boolean deshabilita = false;
-            try {
+            try
+            {
 
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("spDeshabilitarServicio", cn);
+                cmd = new SqlCommand("spDeshabilitarTipoCliente", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@NroServicio", Serv.NroServicio);
-                cmd.Parameters.AddWithValue("@estAtencionServicio", Serv.estAtencionServicio);
+                cmd.Parameters.AddWithValue("@IdTipoCliente", Tipo.IdTipoCliente);
+                cmd.Parameters.AddWithValue("@EstadoTipoCliente", Tipo.EstadoTipoCliente);
                 cn.Open();
 
                 int i = cmd.ExecuteNonQuery();
@@ -191,5 +186,4 @@ namespace CapaAccesoDatos
         }
         #endregion metodos
     }
-
 }

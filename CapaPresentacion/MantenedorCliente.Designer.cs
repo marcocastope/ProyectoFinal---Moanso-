@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgVCliente = new System.Windows.Forms.DataGridView();
             this.groupBoxDatosCliente = new System.Windows.Forms.GroupBox();
             this.labelIdCliente = new System.Windows.Forms.Label();
             this.textBoxIdCliente = new System.Windows.Forms.TextBox();
@@ -40,11 +40,9 @@
             this.textBoxProfesion = new System.Windows.Forms.TextBox();
             this.labelCiudad = new System.Windows.Forms.Label();
             this.comboBoxCiudad = new System.Windows.Forms.ComboBox();
-            this.labelPais = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.labelTipoCliente = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxTipoCliente = new System.Windows.Forms.ComboBox();
+            this.dtPickerRegCliente = new System.Windows.Forms.DateTimePicker();
             this.labelFechaRegistro = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -52,29 +50,29 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.cbkestAtencionCliente = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgVCliente)).BeginInit();
             this.groupBoxDatosCliente.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgVCliente
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(568, 244);
-            this.dataGridView1.TabIndex = 0;
+            this.dgVCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgVCliente.Location = new System.Drawing.Point(3, 2);
+            this.dgVCliente.Name = "dgVCliente";
+            this.dgVCliente.Size = new System.Drawing.Size(568, 244);
+            this.dgVCliente.TabIndex = 0;
             // 
             // groupBoxDatosCliente
             // 
+            this.groupBoxDatosCliente.Controls.Add(this.cbkestAtencionCliente);
             this.groupBoxDatosCliente.Controls.Add(this.btnCancelar);
             this.groupBoxDatosCliente.Controls.Add(this.btnModificar);
             this.groupBoxDatosCliente.Controls.Add(this.btnAgregar);
             this.groupBoxDatosCliente.Controls.Add(this.labelFechaRegistro);
-            this.groupBoxDatosCliente.Controls.Add(this.dateTimePicker1);
-            this.groupBoxDatosCliente.Controls.Add(this.comboBox2);
+            this.groupBoxDatosCliente.Controls.Add(this.dtPickerRegCliente);
+            this.groupBoxDatosCliente.Controls.Add(this.comboBoxTipoCliente);
             this.groupBoxDatosCliente.Controls.Add(this.labelTipoCliente);
-            this.groupBoxDatosCliente.Controls.Add(this.comboBox1);
-            this.groupBoxDatosCliente.Controls.Add(this.labelPais);
             this.groupBoxDatosCliente.Controls.Add(this.comboBoxCiudad);
             this.groupBoxDatosCliente.Controls.Add(this.labelCiudad);
             this.groupBoxDatosCliente.Controls.Add(this.textBoxProfesion);
@@ -86,9 +84,9 @@
             this.groupBoxDatosCliente.Controls.Add(this.textBoxIdCliente);
             this.groupBoxDatosCliente.Controls.Add(this.labelIdCliente);
             this.groupBoxDatosCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxDatosCliente.Location = new System.Drawing.Point(22, 265);
+            this.groupBoxDatosCliente.Location = new System.Drawing.Point(22, 252);
             this.groupBoxDatosCliente.Name = "groupBoxDatosCliente";
-            this.groupBoxDatosCliente.Size = new System.Drawing.Size(640, 126);
+            this.groupBoxDatosCliente.Size = new System.Drawing.Size(640, 149);
             this.groupBoxDatosCliente.TabIndex = 1;
             this.groupBoxDatosCliente.TabStop = false;
             this.groupBoxDatosCliente.Text = "Datos de Cliente";
@@ -165,7 +163,7 @@
             // 
             this.labelCiudad.AutoSize = true;
             this.labelCiudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCiudad.Location = new System.Drawing.Point(228, 76);
+            this.labelCiudad.Location = new System.Drawing.Point(220, 20);
             this.labelCiudad.Name = "labelCiudad";
             this.labelCiudad.Size = new System.Drawing.Size(46, 15);
             this.labelCiudad.TabIndex = 8;
@@ -174,59 +172,41 @@
             // comboBoxCiudad
             // 
             this.comboBoxCiudad.FormattingEnabled = true;
-            this.comboBoxCiudad.Location = new System.Drawing.Point(231, 94);
+            this.comboBoxCiudad.Location = new System.Drawing.Point(220, 37);
             this.comboBoxCiudad.Name = "comboBoxCiudad";
             this.comboBoxCiudad.Size = new System.Drawing.Size(115, 23);
             this.comboBoxCiudad.TabIndex = 10;
-            // 
-            // labelPais
-            // 
-            this.labelPais.AutoSize = true;
-            this.labelPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPais.Location = new System.Drawing.Point(228, 22);
-            this.labelPais.Name = "labelPais";
-            this.labelPais.Size = new System.Drawing.Size(31, 15);
-            this.labelPais.TabIndex = 11;
-            this.labelPais.Text = "Pais";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(231, 38);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 12;
             // 
             // labelTipoCliente
             // 
             this.labelTipoCliente.AutoSize = true;
             this.labelTipoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTipoCliente.Location = new System.Drawing.Point(365, 22);
+            this.labelTipoCliente.Location = new System.Drawing.Point(218, 75);
             this.labelTipoCliente.Name = "labelTipoCliente";
             this.labelTipoCliente.Size = new System.Drawing.Size(89, 15);
             this.labelTipoCliente.TabIndex = 13;
             this.labelTipoCliente.Text = "Tipo de Cliente";
             // 
-            // comboBox2
+            // comboBoxTipoCliente
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(368, 37);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 23);
-            this.comboBox2.TabIndex = 14;
+            this.comboBoxTipoCliente.FormattingEnabled = true;
+            this.comboBoxTipoCliente.Location = new System.Drawing.Point(221, 93);
+            this.comboBoxTipoCliente.Name = "comboBoxTipoCliente";
+            this.comboBoxTipoCliente.Size = new System.Drawing.Size(121, 23);
+            this.comboBoxTipoCliente.TabIndex = 14;
             // 
-            // dateTimePicker1
+            // dtPickerRegCliente
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(368, 94);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(138, 21);
-            this.dateTimePicker1.TabIndex = 15;
+            this.dtPickerRegCliente.Location = new System.Drawing.Point(358, 94);
+            this.dtPickerRegCliente.Name = "dtPickerRegCliente";
+            this.dtPickerRegCliente.Size = new System.Drawing.Size(138, 21);
+            this.dtPickerRegCliente.TabIndex = 15;
             // 
             // labelFechaRegistro
             // 
             this.labelFechaRegistro.AutoSize = true;
             this.labelFechaRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFechaRegistro.Location = new System.Drawing.Point(368, 75);
+            this.labelFechaRegistro.Location = new System.Drawing.Point(355, 75);
             this.labelFechaRegistro.Name = "labelFechaRegistro";
             this.labelFechaRegistro.Size = new System.Drawing.Size(90, 15);
             this.labelFechaRegistro.TabIndex = 16;
@@ -291,6 +271,17 @@
             this.btnCancelar.TabIndex = 19;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // cbkestAtencionCliente
+            // 
+            this.cbkestAtencionCliente.AutoSize = true;
+            this.cbkestAtencionCliente.Location = new System.Drawing.Point(358, 37);
+            this.cbkestAtencionCliente.Name = "cbkestAtencionCliente";
+            this.cbkestAtencionCliente.Size = new System.Drawing.Size(111, 19);
+            this.cbkestAtencionCliente.TabIndex = 20;
+            this.cbkestAtencionCliente.Text = "Esado Atencion";
+            this.cbkestAtencionCliente.UseVisualStyleBackColor = true;
             // 
             // MantenedorCliente
             // 
@@ -301,11 +292,11 @@
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.groupBoxDatosCliente);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgVCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MantenedorCliente";
             this.Text = "MantenedorCliente";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgVCliente)).EndInit();
             this.groupBoxDatosCliente.ResumeLayout(false);
             this.groupBoxDatosCliente.PerformLayout();
             this.ResumeLayout(false);
@@ -314,7 +305,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgVCliente;
         private System.Windows.Forms.GroupBox groupBoxDatosCliente;
         private System.Windows.Forms.Label labelCiudad;
         private System.Windows.Forms.TextBox textBoxProfesion;
@@ -327,16 +318,15 @@
         private System.Windows.Forms.Label labelIdCliente;
         private System.Windows.Forms.ComboBox comboBoxCiudad;
         private System.Windows.Forms.Label labelFechaRegistro;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.DateTimePicker dtPickerRegCliente;
+        private System.Windows.Forms.ComboBox comboBoxTipoCliente;
         private System.Windows.Forms.Label labelTipoCliente;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label labelPais;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnDeshabilitar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.CheckBox cbkestAtencionCliente;
     }
 }
