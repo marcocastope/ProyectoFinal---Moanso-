@@ -29,8 +29,8 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.tipolHabitacionTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,13 +39,13 @@ namespace CapaPresentacion
             this.datosTipoHabitacionGBox = new System.Windows.Forms.GroupBox();
             this.tipoHabitacionDescripcionTxt = new System.Windows.Forms.TextBox();
             this.estadoTipoHabitacionCheck = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.idTipoHabitacionTxt = new System.Windows.Forms.TextBox();
             this.controlesGBox = new System.Windows.Forms.GroupBox();
             this.registrarTipolBtn = new System.Windows.Forms.Button();
             this.deshablitarTipoHabitacionBtn = new System.Windows.Forms.Button();
             this.modificarTipoBtn = new System.Windows.Forms.Button();
             this.nuevoTipoBtn = new System.Windows.Forms.Button();
-            this.idTipoHabitacionTxt = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.listaPersonalGBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaTiposHabitacionGridView)).BeginInit();
             this.datosTipoHabitacionGBox.SuspendLayout();
@@ -101,25 +101,25 @@ namespace CapaPresentacion
             this.listaTiposHabitacionGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.listaTiposHabitacionGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listaTiposHabitacionGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listaTiposHabitacionGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listaTiposHabitacionGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.listaTiposHabitacionGridView.ColumnHeadersHeight = 30;
             this.listaTiposHabitacionGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listaTiposHabitacionGridView.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listaTiposHabitacionGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.listaTiposHabitacionGridView.EnableHeadersVisualStyles = false;
             this.listaTiposHabitacionGridView.Location = new System.Drawing.Point(3, 19);
             this.listaTiposHabitacionGridView.MultiSelect = false;
@@ -167,6 +167,23 @@ namespace CapaPresentacion
             this.estadoTipoHabitacionCheck.TabIndex = 2;
             this.estadoTipoHabitacionCheck.Text = "Estado";
             this.estadoTipoHabitacionCheck.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(19, 15);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "ID";
+            // 
+            // idTipoHabitacionTxt
+            // 
+            this.idTipoHabitacionTxt.Location = new System.Drawing.Point(6, 34);
+            this.idTipoHabitacionTxt.Name = "idTipoHabitacionTxt";
+            this.idTipoHabitacionTxt.Size = new System.Drawing.Size(19, 20);
+            this.idTipoHabitacionTxt.TabIndex = 1;
             // 
             // controlesGBox
             // 
@@ -221,25 +238,6 @@ namespace CapaPresentacion
             this.nuevoTipoBtn.Text = "Nuevo";
             this.nuevoTipoBtn.UseVisualStyleBackColor = true;
             this.nuevoTipoBtn.Click += new System.EventHandler(this.nuevoTipoBtn_Click);
-            // 
-            // idTipoHabitacionTxt
-            // 
-            this.idTipoHabitacionTxt.Enabled = false;
-            this.idTipoHabitacionTxt.Location = new System.Drawing.Point(6, 34);
-            this.idTipoHabitacionTxt.Name = "idTipoHabitacionTxt";
-            this.idTipoHabitacionTxt.ReadOnly = true;
-            this.idTipoHabitacionTxt.Size = new System.Drawing.Size(19, 20);
-            this.idTipoHabitacionTxt.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(19, 15);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "ID";
             // 
             // MantenedorTipoHabitacion
             // 

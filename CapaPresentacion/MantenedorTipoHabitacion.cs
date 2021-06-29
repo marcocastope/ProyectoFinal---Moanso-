@@ -18,7 +18,7 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             listarTiposHabitacion();
-            datosTipoHabitacionGBox.Enabled = false;
+            datosTipoHabitacionGBox.Enabled = false; 
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -45,21 +45,31 @@ namespace CapaPresentacion
 
         private void registrarTipolBtn_Click(object sender, EventArgs e)
         {
-            try
+            var tipo = tipolHabitacionTxt.Text.Trim(); 
+            var descripcion = tipoHabitacionDescripcionTxt.Text.Trim();
+            if (tipo != "" && descripcion != "")
             {
-                var tipoHabitacion = new entTipoHabitacion();
+                try
+                {
+                    var tipoHabitacion = new entTipoHabitacion();
 
-                tipoHabitacion.Tipo = tipolHabitacionTxt.Text.Trim();
-                tipoHabitacion.Descripcion = tipoHabitacionDescripcionTxt.Text.Trim();
-                tipoHabitacion.Estado = estadoTipoHabitacionCheck.Checked;
-                logTipoHabitacion.Instance.insertarTipoHabitacion(tipoHabitacion);
-            } catch(Exception ex)
+                    tipoHabitacion.Tipo = tipo;
+                    tipoHabitacion.Descripcion = descripcion;
+                    tipoHabitacion.Estado = estadoTipoHabitacionCheck.Checked;
+                    logTipoHabitacion.Instance.insertarTipoHabitacion(tipoHabitacion);
+                }
+                catch (Exception ex)
+                {
+                    showMessage("Error" + ex);
+                }
+                showMessage("Tipo de habitacion registrado correctamente");
+                listarTiposHabitacion();
+                limpiarFormulario();
+            } else
             {
-                MessageBox.Show("Error" + ex);
+                showMessage("Los campos no pueden estar vacíos");
             }
-            MessageBox.Show("Tipo de habitacion registrado correctamente");
-            listarTiposHabitacion();
-            limpiarFormulario();
+
         }
 
         private void nuevoTipoBtn_Click(object sender, EventArgs e)
@@ -93,42 +103,65 @@ namespace CapaPresentacion
 
         private void deshablitarTipoHabitacionBtn_Click(object sender, EventArgs e)
         {
-           
-            try {
-                var tipoHabitacion = new entTipoHabitacion();
-                tipoHabitacion.Id = int.Parse(idTipoHabitacionTxt.Text.Trim());
-                estadoTipoHabitacionCheck.Checked = false;
-                tipoHabitacion.Estado = estadoTipoHabitacionCheck.Checked;
-                logTipoHabitacion.Instance.desabilitarTipoHabitacion(tipoHabitacion);
-            
-            } catch(Exception ex)
+            var id = idTipoHabitacionTxt.Text.Trim();
+            if (id != "")
             {
-                MessageBox.Show("Error" + ex);
+                try
+                {
+                    var tipoHabitacion = new entTipoHabitacion();
+                    tipoHabitacion.Id = int.Parse(id);
+                    estadoTipoHabitacionCheck.Checked = false;
+                    tipoHabitacion.Estado = estadoTipoHabitacionCheck.Checked;
+                    logTipoHabitacion.Instance.desabilitarTipoHabitacion(tipoHabitacion);
+
+                }
+                catch (Exception ex)
+                {
+                    showMessage("Error" + ex);
+                }
+                showMessage("Tipo de habitacion deshablitado correctamente");
+                limpiarFormulario();
+                datosTipoHabitacionGBox.Enabled = false;
+                listarTiposHabitacion();
+            } else
+            {
+                showMessage("Los campos no pueden estar vacíos");
             }
-            MessageBox.Show("Tipo de habitacion deshablitado correctamente");
-            limpiarFormulario();
-            datosTipoHabitacionGBox.Enabled = false;
-            listarTiposHabitacion();
+            
         }
 
         private void modificarTipoBtn_Click(object sender, EventArgs e)
         {
-            try
+            var tipo = tipolHabitacionTxt.Text.Trim();
+            var descripcion = tipoHabitacionDescripcionTxt.Text.Trim();
+            if (tipo != "" && descripcion != "")
             {
-                var tipoHabitacion = new entTipoHabitacion();
-                tipoHabitacion.Id = int.Parse(idTipoHabitacionTxt.Text.Trim());
-                tipoHabitacion.Tipo = tipolHabitacionTxt.Text.Trim();
-                tipoHabitacion.Descripcion = tipoHabitacionDescripcionTxt.Text.Trim();
-                tipoHabitacion.Estado = estadoTipoHabitacionCheck.Checked;
-                logTipoHabitacion.Instance.editarTipoHabitacion(tipoHabitacion);
-            }
-            catch (Exception ex)
+                try
+                {
+                    var tipoHabitacion = new entTipoHabitacion();
+                    tipoHabitacion.Id = int.Parse(idTipoHabitacionTxt.Text.Trim()); ;
+                    tipoHabitacion.Tipo = tipo;
+                    tipoHabitacion.Descripcion = descripcion;
+                    tipoHabitacion.Estado = estadoTipoHabitacionCheck.Checked;
+                    logTipoHabitacion.Instance.editarTipoHabitacion(tipoHabitacion);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error" + ex);
+                }
+                MessageBox.Show("Tipo de habitacion modificado correctamente");
+                listarTiposHabitacion();
+                limpiarFormulario();
+            } else
             {
-                MessageBox.Show("Error" + ex);
+                showMessage("Los campos no pueden estar vacíos");
             }
-            MessageBox.Show("Tipo de habitacion modificado correctamente");
-            listarTiposHabitacion();
-            limpiarFormulario();
+
+        }
+
+        private void showMessage(string message)
+        {
+            MessageBox.Show(message);
         }
     }
 }
