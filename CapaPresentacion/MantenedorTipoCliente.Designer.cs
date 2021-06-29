@@ -53,8 +53,9 @@ namespace CapaPresentacion
             this.dgVTipoCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVTipoCliente.Location = new System.Drawing.Point(1, 1);
             this.dgVTipoCliente.Name = "dgVTipoCliente";
-            this.dgVTipoCliente.Size = new System.Drawing.Size(629, 201);
+            this.dgVTipoCliente.Size = new System.Drawing.Size(511, 201);
             this.dgVTipoCliente.TabIndex = 0;
+            this.dgVTipoCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgVTipoCliente_CellDoubleClick);
             // 
             // groupBoxDatos
             // 
@@ -70,7 +71,7 @@ namespace CapaPresentacion
             this.groupBoxDatos.Controls.Add(this.labelIdTipoCliente);
             this.groupBoxDatos.Location = new System.Drawing.Point(12, 230);
             this.groupBoxDatos.Name = "groupBoxDatos";
-            this.groupBoxDatos.Size = new System.Drawing.Size(776, 145);
+            this.groupBoxDatos.Size = new System.Drawing.Size(614, 145);
             this.groupBoxDatos.TabIndex = 1;
             this.groupBoxDatos.TabStop = false;
             this.groupBoxDatos.Text = "Datos";
@@ -78,7 +79,7 @@ namespace CapaPresentacion
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(635, 59);
+            this.btnCancelar.Location = new System.Drawing.Point(504, 59);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 9;
@@ -88,22 +89,24 @@ namespace CapaPresentacion
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(497, 88);
+            this.btnModificar.Location = new System.Drawing.Point(411, 93);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 8;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(497, 19);
+            this.btnAgregar.Location = new System.Drawing.Point(411, 19);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 7;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // textBoxDescripcionTipoCliente
             // 
@@ -168,38 +171,41 @@ namespace CapaPresentacion
             // btnNuevo
             // 
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(669, 29);
+            this.btnNuevo.Location = new System.Drawing.Point(529, 36);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(82, 23);
             this.btnNuevo.TabIndex = 2;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEditar
             // 
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(669, 90);
+            this.btnEditar.Location = new System.Drawing.Point(529, 93);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(82, 23);
             this.btnEditar.TabIndex = 3;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnDeshabilitar
             // 
             this.btnDeshabilitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeshabilitar.Location = new System.Drawing.Point(669, 153);
+            this.btnDeshabilitar.Location = new System.Drawing.Point(529, 160);
             this.btnDeshabilitar.Name = "btnDeshabilitar";
             this.btnDeshabilitar.Size = new System.Drawing.Size(82, 23);
             this.btnDeshabilitar.TabIndex = 4;
             this.btnDeshabilitar.Text = "Deshabilitar";
             this.btnDeshabilitar.UseVisualStyleBackColor = true;
+            this.btnDeshabilitar.Click += new System.EventHandler(this.btnDeshabilitar_Click);
             // 
             // MantenedorTipoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 408);
+            this.ClientSize = new System.Drawing.Size(651, 391);
             this.Controls.Add(this.btnDeshabilitar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
