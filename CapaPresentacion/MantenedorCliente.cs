@@ -21,105 +21,130 @@ namespace CapaPresentacion
             btnAgregar.Enabled = false;
             groupBoxDatosCliente.Enabled = false;
             textBoxIdCliente.Enabled = false;
+            btnModificar.Enabled = false;
         }
-
         public void ListarCliente()
         {
             dgVCliente.DataSource = logCliente.Instancia.ListarCliente();
         }
 
-        private void btnAgregar_Click_1(object sender, EventArgs e)
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            btnAgregar.Enabled = true;
+            groupBoxDatosCliente.Enabled = true;
+            limpiarFormulario();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
             {
 
                 entCliente c = new entCliente();
-                c.dniCliente = int.Parse(textBoxDniCliente.Text.Trim());
+                c.dni = int.Parse(textBoxDni.Text.Trim());
                 c.nombreCliente = textBoxNombreCliente.Text.Trim();
-                c.apellidoCliente = textBoxApellidoCliente.Text.Trim();
-                c.emailCliente = textBoxEmailCliente.Text.Trim();
-                c.telefonoCliente = textBoxTelefono.Text.Trim();
+                c.profesion = textBoxProfesion.Text.Trim();
+                c.IdTipoCliente =Convert.ToInt32(comboBoxTipoCliente.SelectedValue);
+                c.IdCiudad =Convert.ToInt32(comboBoxCiudad.SelectedValue);
+                c.estAtencionCliente = cbkestAtencionCliente.Checked;
                 c.fecRegCliente = dtPickerRegCliente.Value;
 
                 logCliente.Instancia.insertaCliente(c);
-
-
-
             }
 
             catch (Exception ex)
 
             {
-
                 MessageBox.Show("Error" + ex);
-
-
-
             }
 
             groupBoxDatosCliente.Enabled = false;
 
             ListarCliente();
-        }
-
-        
-
-        private void dgVCliente_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow FilaActualMouseCliente = dgVCliente.Rows[e.RowIndex];
-            textBoxIdCliente.Text= FilaActualMouseCliente.Cells[0].Value.ToString();
-            textBoxDniCliente.Text= FilaActualMouseCliente.Cells[1].Value.ToString();
-            textBoxNombreCliente.Text = FilaActualMouseCliente.Cells[2].Value.ToString();
-            textBoxApellidoCliente.Text = FilaActualMouseCliente.Cells[3].Value.ToString();
-            textBoxEmailCliente.Text = FilaActualMouseCliente.Cells[4].Value.ToString();
-            textBoxTelefono.Text = FilaActualMouseCliente.Cells[5].Value.ToString();
-            dtPickerRegCliente.Text= FilaActualMouseCliente.Cells[6].Value.ToString();
-        }
-
-        private void btnSalir_Click_1(object sender, EventArgs e)
-        {
-            Close();
+            limpiarFormulario();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-                groupBoxDatosCliente.Enabled = true;
+            groupBoxDatosCliente.Enabled = true;
+            btnModificar.Enabled = true;
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-                try
-                {
-                    entCliente c = new entCliente();
-                    c.idCliente = int.Parse(textBoxIdCliente.Text.Trim());
-                    c.dniCliente = int.Parse(textBoxDniCliente.Text.Trim());
-                    c.nombreCliente = textBoxNombreCliente.Text.Trim();
-                    c.apellidoCliente = textBoxApellidoCliente.Text.Trim();
-                    c.emailCliente = textBoxEmailCliente.Text.Trim();
-                    c.telefonoCliente = textBoxTelefono.Text.Trim();
-                    c.fecRegCliente = dtPickerRegCliente.Value;
+            try
+            {
+                entCliente c = new entCliente();
 
-                    logCliente.Instancia.editaCliente(c);
-                }
+                c.IdCliente = int.Parse(textBoxIdCliente.Text.Trim());
+                c.dni = int.Parse(textBoxDni.Text.Trim());
+                c.nombreCliente = textBoxNombreCliente.Text.Trim();
+                c.profesion = textBoxProfesion.Text.Trim();
+                c.IdTipoCliente =Convert.ToInt32(comboBoxTipoCliente.SelectedValue);
+                c.IdCiudad =Convert.ToInt32(comboBoxCiudad.SelectedValue);
+                c.estAtencionCliente = cbkestAtencionCliente.Checked;
+                c.fecRegCliente = dtPickerRegCliente.Value;
 
-                catch (Exception ex)
+                logCliente.Instancia.editaCliente(c);
+            }
 
-                {
-                    MessageBox.Show("Error" + ex);
+            catch (Exception ex)
 
-                }
+            {
+                MessageBox.Show("Error" + ex);
 
-                groupBoxDatosCliente.Enabled = false;
+            }
+            groupBoxDatosCliente.Enabled = false;
 
-                ListarCliente();
+            ListarCliente();
+            limpiarFormulario();
         }
 
-        private void btnNuevo_Click_1(object sender, EventArgs e)
+        private void dgVServicio_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnAgregar.Enabled = true;
-            groupBoxDatosCliente.Enabled = true;
+            DataGridViewRow FilaActualMouse = dgVCliente.Rows[e.RowIndex];
+            textBoxIdCliente.Text = FilaActualMouse.Cells[0].Value.ToString();
+            textBoxDni.Text = FilaActualMouse.Cells[1].Value.ToString();
+            textBoxNombreCliente.Text = FilaActualMouse.Cells[2].Value.ToString();
+            textBoxProfesion.Text = FilaActualMouse.Cells[3].Value.ToString();
+            comboBoxTipoCliente.Text = FilaActualMouse.Cells[4].Value.ToString();
+            comboBoxCiudad.Text = FilaActualMouse.Cells[5].Value.ToString();
+            cbkestAtencionCliente.Checked = Convert.ToBoolean(FilaActualMouse.Cells[6].Value.ToString());
+            dtPickerRegCliente.Text = FilaActualMouse.Cells[7].Value.ToString();
+
+
+
+        }
+        private void limpiarFormulario()
+        {
+            textBoxIdCliente.Clear();
+            textBoxDni.Clear();
+            textBoxNombreCliente.Clear();
+            textBoxProfesion.Clear();
+        }
+
+        private void btnDeshabilitar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                entCliente c = new entCliente();
+                c.IdCliente= int.Parse(textBoxIdCliente.Text.Trim());
+                cbkestAtencionCliente.Checked = false;
+                c.estAtencionCliente = cbkestAtencionCliente.Checked;
+                logCliente.Instancia.deshabilitaCliente(c);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex);
+            }
+            limpiarFormulario();
+            groupBoxDatosCliente.Enabled = false;
+            ListarCliente();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
 
         }
     }
 }
-

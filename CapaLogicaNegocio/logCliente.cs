@@ -34,5 +34,9 @@ namespace CapaLogicaNegocio
         {
             datCliente.Instancia.EditarCliente(Cli);
         }
+        public void deshabilitaCliente(entCliente Cli)
+        {
+            datCliente.Instancia.DeshabilitarCliente(Cli);
+        }
     }
 }
