@@ -21,7 +21,7 @@ namespace CapaAccesoDatos
         public SqlConnection Conectar()
         {
             SqlConnection cn = new SqlConnection();
-            cn.ConnectionString = "Data Source=DESKTOP-I8JI3BQ\\MSSQLSERVER01; Initial Catalog = DB ProyectoHotel; Integrated Security=true";
+            cn.ConnectionString = "Data Source=DESKTOP-I8JI3BQ\\MSSQLSERVER01; Initial Catalog = ProyectoHotel; Integrated Security=true";
             //cn.ConnectionString = @"Server=127.0.0.1,1433;Database=ProyectoHotel;User Id=SA;Password=Secret_123";
             return cn;
         }
