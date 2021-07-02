@@ -71,5 +71,10 @@ namespace CapaPresentacion
         {
             navigateToMantenedor(new MantenedorCiudad());
         }
+
+        private void coreReservasBtn_Click(object sender, EventArgs e)
+        {
+            navigateToMantenedor(new CoreReservas());
+        }
     }
 }

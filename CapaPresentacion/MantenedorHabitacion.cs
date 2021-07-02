@@ -17,6 +17,7 @@ namespace CapaPresentacion
         public MantenedorHabitacion()
         {
             InitializeComponent();
+            listaHabitacionesGridView.Columns[7].Visible = false;
             listarHabitaciones();
             llenarDatosComboBoxTipo();
             datosHabitacionGBox.Enabled = false;
