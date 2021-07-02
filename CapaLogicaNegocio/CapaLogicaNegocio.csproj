@@ -45,6 +45,8 @@
     <Compile Include="logCliente.cs" />
     <Compile Include="logHabitacion.cs" />
     <Compile Include="LogHabitacionI.cs" />
+    <Compile Include="logReserva.cs" />
+    <Compile Include="LogReservaI.cs" />
     <Compile Include="logServicio.cs" />
     <Compile Include="logTipoCliente.cs" />
     <Compile Include="logTipoHabitacion.cs" />

@@ -146,5 +146,15 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void btnAgregar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNuevo_Click_1(object sender, EventArgs e)
+        {
+            groupBoxDatosCliente.Enabled = true;
+        }
     }
 }

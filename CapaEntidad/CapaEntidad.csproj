@@ -44,6 +44,7 @@
     <Compile Include="entCiudad.cs" />
     <Compile Include="entCliente.cs" />
     <Compile Include="entHabitacion.cs" />
+    <Compile Include="entReserva.cs" />
     <Compile Include="entServicio.cs" />
     <Compile Include="entTipoCliente.cs" />
     <Compile Include="entTipoHabitacion.cs" />
