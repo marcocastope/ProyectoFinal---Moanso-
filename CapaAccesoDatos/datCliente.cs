@@ -45,7 +45,7 @@ namespace CapaAccesoDatos
                     Cli.profesion= dr["profesion"].ToString();
                     Cli.tipoCliente = dr["tipoCliente"].ToString();
                     Cli.ciudad=dr["ciudad"].ToString();
-                    Cli.estAtencionCliente=Convert.ToBoolean(dr["@estAtencionCliente"]);
+                    Cli.estAtencionCliente=Convert.ToBoolean(dr["estAtencionCliente"]);
                     Cli.fecRegCliente= Convert.ToDateTime(dr["fecRegCliente"]);
                     Cli.IdTipoCliente= Convert.ToInt32(dr["IdTipoCliente"]);
                     Cli.IdCiudad = Convert.ToInt32(dr["IdCiudad"]);
