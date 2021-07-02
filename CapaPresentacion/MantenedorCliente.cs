@@ -18,7 +18,14 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             ListarCliente();
-            btnAgregar.Enabled = false;
+            comboBoxCiudad.DataSource = logCiudad.Instancia.ListarCiudad();
+            comboBoxCiudad.DisplayMember = "ciudad";
+            comboBoxCiudad.ValueMember = "IdCiudad";
+
+            comboBoxTipoCliente.DataSource = logTipoCliente.Instancia.ListarTipoCliente();
+            comboBoxTipoCliente.DisplayMember = "TipoCliente";
+            comboBoxTipoCliente.ValueMember = "IdTipoCliente";
+            
             groupBoxDatosCliente.Enabled = false;
             textBoxIdCliente.Enabled = false;
             btnModificar.Enabled = false;
@@ -37,31 +44,7 @@ namespace CapaPresentacion
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-                entCliente c = new entCliente();
-                c.dni = int.Parse(textBoxDni.Text.Trim());
-                c.nombreCliente = textBoxNombreCliente.Text.Trim();
-                c.profesion = textBoxProfesion.Text.Trim();
-                c.IdTipoCliente =Convert.ToInt32(comboBoxTipoCliente.SelectedValue);
-                c.IdCiudad =Convert.ToInt32(comboBoxCiudad.SelectedValue);
-                c.estAtencionCliente = cbkestAtencionCliente.Checked;
-                c.fecRegCliente = dtPickerRegCliente.Value;
-
-                logCliente.Instancia.insertaCliente(c);
-            }
-
-            catch (Exception ex)
-
-            {
-                MessageBox.Show("Error" + ex);
-            }
-
-            groupBoxDatosCliente.Enabled = false;
-
-            ListarCliente();
-            limpiarFormulario();
+            
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -149,7 +132,31 @@ namespace CapaPresentacion
 
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
+            try
+            {
 
+                entCliente c = new entCliente();
+                c.dni = int.Parse(textBoxDni.Text.Trim());
+                c.nombreCliente = textBoxNombreCliente.Text.Trim();
+                c.profesion = textBoxProfesion.Text.Trim();
+                c.IdTipoCliente = Convert.ToInt32(comboBoxTipoCliente.SelectedValue);
+                c.IdCiudad = Convert.ToInt32(comboBoxCiudad.SelectedValue);
+                c.estAtencionCliente = cbkestAtencionCliente.Checked;
+                c.fecRegCliente = dtPickerRegCliente.Value;
+
+                logCliente.Instancia.insertaCliente(c);
+            }
+
+            catch (Exception ex)
+
+            {
+                MessageBox.Show("Error" + ex);
+            }
+
+            groupBoxDatosCliente.Enabled = false;
+
+            ListarCliente();
+            limpiarFormulario();
         }
 
         private void btnNuevo_Click_1(object sender, EventArgs e)
