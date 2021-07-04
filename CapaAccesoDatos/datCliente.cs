@@ -39,6 +39,7 @@ namespace CapaAccesoDatos
                 {
                     entCliente Cli = new entCliente();
 
+<<<<<<< HEAD
                     Cli.IdCliente= Convert.ToInt32(dr["IdCliente"]);
                     //Cli.dni= dr["dni"].ToString();
                     Cli.nombreCliente= dr["nombreCliente"].ToString();
@@ -50,6 +51,16 @@ namespace CapaAccesoDatos
 >>>>>>> marcoluis
                     Cli.estAtencionCliente=Convert.ToBoolean(dr["estAtencionCliente"]);
                     Cli.fecRegCliente= Convert.ToDateTime(dr["fecRegCliente"]);
+=======
+                    Cli.IdCliente= Convert.ToInt32(dr["ClienteID"]);
+                    Cli.dni= dr["Dni"].ToString();
+                    Cli.nombreCliente= dr["Nombre"].ToString();
+                    Cli.profesion= dr["Profesion"].ToString();           
+                    Cli.ciudad=dr["Ciudad"].ToString();
+                    Cli.tipoCliente = dr["Tipo"].ToString();
+                    Cli.estAtencionCliente=Convert.ToBoolean(dr["Estadoatencion"]);
+                    //Cli.fecRegCliente= Convert.ToDateTime(dr["fecRegCliente"]);
+>>>>>>> marcoluis
                     lista.Add(Cli);
                 }
 
@@ -81,13 +92,13 @@ namespace CapaAccesoDatos
 
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@dni", Cli.dni);
-                cmd.Parameters.AddWithValue("@nombreCliente", Cli.nombreCliente);
-                cmd.Parameters.AddWithValue("@profesion", Cli.profesion);
-                cmd.Parameters.AddWithValue("@IdTipoCliente", Cli.IdTipoCliente);
-                cmd.Parameters.AddWithValue("@IdCiudad", Cli.IdCiudad);
-                cmd.Parameters.AddWithValue("@estAtencionCliente", Cli.estAtencionCliente);
-                cmd.Parameters.AddWithValue("@fecRegCliente", Cli.fecRegCliente);
+                cmd.Parameters.AddWithValue("@Dni", Cli.dni);
+                cmd.Parameters.AddWithValue("@Nombre", Cli.nombreCliente);
+                cmd.Parameters.AddWithValue("@Profesion", Cli.profesion);
+                cmd.Parameters.AddWithValue("@TipoclienteID", Cli.IdTipoCliente);
+                cmd.Parameters.AddWithValue("@CiudadID", Cli.IdCiudad);
+                cmd.Parameters.AddWithValue("@Estadoatencion", Cli.estAtencionCliente);
+                //cmd.Parameters.AddWithValue("@fecRegCliente", Cli.fecRegCliente);
 
                 cn.Open();
 

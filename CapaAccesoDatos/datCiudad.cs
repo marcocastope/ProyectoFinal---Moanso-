@@ -31,16 +31,16 @@ namespace CapaAccesoDatos
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("spListarCiudad", cn);
+                cmd = new SqlCommand("spListarCiudades", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     entCiudad Ciu = new entCiudad();
-                    Ciu.IdCiudad= Convert.ToInt32(dr["IdCiudad"]);
+                    Ciu.IdCiudad= Convert.ToInt32(dr["CiudadID"]);
                     Ciu.Ciudad = dr["Ciudad"].ToString();
-                    Ciu.EstadoCiudad= Convert.ToBoolean(dr["EstadoCiudad"]);
+                    Ciu.EstadoCiudad= Convert.ToBoolean(dr["Estado"]);
 
                     lista.Add(Ciu);
                 }
@@ -74,7 +74,7 @@ namespace CapaAccesoDatos
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@Ciudad", Ciu.Ciudad);
-                cmd.Parameters.AddWithValue("@EstadoCiudad", Ciu.EstadoCiudad);
+                cmd.Parameters.AddWithValue("@Estado", Ciu.EstadoCiudad);
 
                 cn.Open();
 
