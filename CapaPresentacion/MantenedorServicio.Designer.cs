@@ -29,6 +29,7 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgVServicio = new System.Windows.Forms.DataGridView();
             this.groupBoxDatosServicio = new System.Windows.Forms.GroupBox();
             this.cbkestAtencionServicio = new System.Windows.Forms.CheckBox();
@@ -54,10 +55,27 @@ namespace CapaPresentacion
             // 
             // dgVServicio
             // 
-            this.dgVServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgVServicio.Location = new System.Drawing.Point(1, 3);
+            this.dgVServicio.AllowUserToResizeColumns = false;
+            this.dgVServicio.AllowUserToResizeRows = false;
+            this.dgVServicio.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgVServicio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgVServicio.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgVServicio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgVServicio.ColumnHeadersHeight = 30;
+            this.dgVServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgVServicio.EnableHeadersVisualStyles = false;
+            this.dgVServicio.Location = new System.Drawing.Point(12, 12);
             this.dgVServicio.Name = "dgVServicio";
-            this.dgVServicio.Size = new System.Drawing.Size(568, 242);
+            this.dgVServicio.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgVServicio.RowHeadersVisible = false;
+            this.dgVServicio.Size = new System.Drawing.Size(541, 233);
             this.dgVServicio.TabIndex = 0;
             this.dgVServicio.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgVServicio_CellDoubleClick);
             // 
@@ -77,9 +95,9 @@ namespace CapaPresentacion
             this.groupBoxDatosServicio.Controls.Add(this.labelNroServicio);
             this.groupBoxDatosServicio.Controls.Add(this.textBoxIdCliente);
             this.groupBoxDatosServicio.Controls.Add(this.labelIdCliente);
-            this.groupBoxDatosServicio.Location = new System.Drawing.Point(23, 251);
+            this.groupBoxDatosServicio.Location = new System.Drawing.Point(12, 251);
             this.groupBoxDatosServicio.Name = "groupBoxDatosServicio";
-            this.groupBoxDatosServicio.Size = new System.Drawing.Size(638, 144);
+            this.groupBoxDatosServicio.Size = new System.Drawing.Size(626, 144);
             this.groupBoxDatosServicio.TabIndex = 1;
             this.groupBoxDatosServicio.TabStop = false;
             this.groupBoxDatosServicio.Text = "Datos de Servicios";
@@ -107,7 +125,7 @@ namespace CapaPresentacion
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(523, 55);
+            this.btnModificar.Location = new System.Drawing.Point(523, 65);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 13;
@@ -214,7 +232,7 @@ namespace CapaPresentacion
             // btnNuevo
             // 
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(575, 33);
+            this.btnNuevo.Location = new System.Drawing.Point(563, 34);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 23);
             this.btnNuevo.TabIndex = 2;
@@ -225,7 +243,7 @@ namespace CapaPresentacion
             // btnEditar
             // 
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(575, 86);
+            this.btnEditar.Location = new System.Drawing.Point(563, 84);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 3;
@@ -236,7 +254,7 @@ namespace CapaPresentacion
             // btnDeshabilitar
             // 
             this.btnDeshabilitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeshabilitar.Location = new System.Drawing.Point(575, 138);
+            this.btnDeshabilitar.Location = new System.Drawing.Point(563, 135);
             this.btnDeshabilitar.Name = "btnDeshabilitar";
             this.btnDeshabilitar.Size = new System.Drawing.Size(86, 23);
             this.btnDeshabilitar.TabIndex = 4;
@@ -248,7 +266,7 @@ namespace CapaPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 398);
+            this.ClientSize = new System.Drawing.Size(650, 401);
             this.Controls.Add(this.btnDeshabilitar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);

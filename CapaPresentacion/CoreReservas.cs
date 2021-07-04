@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class CoreReservas : Form
+    public partial class CoreReservas : Form, CustomUserInterface
     {
         public CoreReservas()
         {
@@ -56,6 +56,7 @@ namespace CapaPresentacion
         private void listarReservas()
         {
             dataGridViewReservas.DataSource = logReserva.Instance.listarReservas();
+            setCustomColumHeader();
         }
 
         private void llenarDatosComboBox()
@@ -72,6 +73,18 @@ namespace CapaPresentacion
         private void limpiarFormulario()
         {
             
+        }
+
+        public void setCustomColumHeader()
+        {
+            dataGridViewReservas.Columns[0].HeaderText = "ID";
+            dataGridViewReservas.Columns[1].HeaderText = "Cliente";
+            dataGridViewReservas.Columns[2].HeaderText = "Habitación";
+            dataGridViewReservas.Columns[3].HeaderText = "CheckIn";
+            dataGridViewReservas.Columns[4].HeaderText = "CheckOut";
+            dataGridViewReservas.Columns[5].HeaderText = "Estado";
+            dataGridViewReservas.Columns[6].Visible = false;
+            dataGridViewReservas.Columns[7].Visible = false;
         }
     }
 }

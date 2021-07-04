@@ -31,7 +31,7 @@ namespace CapaAccesoDatos
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("spListarCliente", cn);
+                cmd = new SqlCommand("spListarClientes", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -40,15 +40,13 @@ namespace CapaAccesoDatos
                     entCliente Cli = new entCliente();
 
                     Cli.IdCliente= Convert.ToInt32(dr["IdCliente"]);
-                    Cli.dni= Convert.ToInt32(dr["dni"]);
+                    //Cli.dni= dr["dni"].ToString();
                     Cli.nombreCliente= dr["nombreCliente"].ToString();
-                    Cli.profesion= dr["profesion"].ToString();
-                    Cli.tipoCliente = dr["tipoCliente"].ToString();
+                    Cli.profesion= dr["profesion"].ToString();           
                     Cli.ciudad=dr["ciudad"].ToString();
-                    Cli.estAtencionCliente=Convert.ToBoolean(dr["@estAtencionCliente"]);
+                    Cli.tipoCliente = dr["tipoCliente"].ToString();
+                    Cli.estAtencionCliente=Convert.ToBoolean(dr["estAtencionCliente"]);
                     Cli.fecRegCliente= Convert.ToDateTime(dr["fecRegCliente"]);
-                    Cli.IdTipoCliente= Convert.ToInt32(dr["IdTipoCliente"]);
-                    Cli.IdCiudad = Convert.ToInt32(dr["IdCiudad"]);
                     lista.Add(Cli);
                 }
 

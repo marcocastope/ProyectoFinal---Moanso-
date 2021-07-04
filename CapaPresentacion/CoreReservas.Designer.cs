@@ -29,10 +29,12 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.reservasGBox = new System.Windows.Forms.GroupBox();
             this.dataGridViewReservas = new System.Windows.Forms.DataGridView();
             this.nuevoReservaBtn = new System.Windows.Forms.Button();
             this.datosReservaGBox = new System.Windows.Forms.GroupBox();
+            this.checkBoxEstadoReserva = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePickerCheckOut = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,7 +46,6 @@ namespace CapaPresentacion
             this.controlesGBox = new System.Windows.Forms.GroupBox();
             this.anularReservaBtn = new System.Windows.Forms.Button();
             this.registrarReservaBtn = new System.Windows.Forms.Button();
-            this.checkBoxEstadoReserva = new System.Windows.Forms.CheckBox();
             this.reservasGBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservas)).BeginInit();
             this.datosReservaGBox.SuspendLayout();
@@ -56,17 +57,38 @@ namespace CapaPresentacion
             this.reservasGBox.Controls.Add(this.dataGridViewReservas);
             this.reservasGBox.Location = new System.Drawing.Point(12, 12);
             this.reservasGBox.Name = "reservasGBox";
-            this.reservasGBox.Size = new System.Drawing.Size(610, 178);
+            this.reservasGBox.Size = new System.Drawing.Size(626, 217);
             this.reservasGBox.TabIndex = 0;
             this.reservasGBox.TabStop = false;
             this.reservasGBox.Text = "Reservas";
             // 
             // dataGridViewReservas
             // 
-            this.dataGridViewReservas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewReservas.Location = new System.Drawing.Point(6, 19);
+            this.dataGridViewReservas.AllowUserToAddRows = false;
+            this.dataGridViewReservas.AllowUserToDeleteRows = false;
+            this.dataGridViewReservas.AllowUserToResizeColumns = false;
+            this.dataGridViewReservas.AllowUserToResizeRows = false;
+            this.dataGridViewReservas.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewReservas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewReservas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewReservas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewReservas.ColumnHeadersHeight = 30;
+            this.dataGridViewReservas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridViewReservas.EnableHeadersVisualStyles = false;
+            this.dataGridViewReservas.Location = new System.Drawing.Point(9, 19);
+            this.dataGridViewReservas.MultiSelect = false;
             this.dataGridViewReservas.Name = "dataGridViewReservas";
-            this.dataGridViewReservas.Size = new System.Drawing.Size(598, 150);
+            this.dataGridViewReservas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridViewReservas.RowHeadersVisible = false;
+            this.dataGridViewReservas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridViewReservas.Size = new System.Drawing.Size(611, 192);
             this.dataGridViewReservas.TabIndex = 0;
             // 
             // nuevoReservaBtn
@@ -89,13 +111,23 @@ namespace CapaPresentacion
             this.datosReservaGBox.Controls.Add(this.label1);
             this.datosReservaGBox.Controls.Add(this.comboBoxHabitacion);
             this.datosReservaGBox.Controls.Add(this.comboBoxCliente);
-            this.datosReservaGBox.Location = new System.Drawing.Point(12, 196);
+            this.datosReservaGBox.Location = new System.Drawing.Point(12, 235);
             this.datosReservaGBox.Name = "datosReservaGBox";
             this.datosReservaGBox.Size = new System.Drawing.Size(438, 154);
             this.datosReservaGBox.TabIndex = 2;
             this.datosReservaGBox.TabStop = false;
             this.datosReservaGBox.Text = "Datos Reserva";
             this.datosReservaGBox.Enter += new System.EventHandler(this.datosReservaGBox_Enter);
+            // 
+            // checkBoxEstadoReserva
+            // 
+            this.checkBoxEstadoReserva.AutoSize = true;
+            this.checkBoxEstadoReserva.Location = new System.Drawing.Point(6, 131);
+            this.checkBoxEstadoReserva.Name = "checkBoxEstadoReserva";
+            this.checkBoxEstadoReserva.Size = new System.Drawing.Size(59, 17);
+            this.checkBoxEstadoReserva.TabIndex = 4;
+            this.checkBoxEstadoReserva.Text = "Estado";
+            this.checkBoxEstadoReserva.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -168,7 +200,7 @@ namespace CapaPresentacion
             this.controlesGBox.Controls.Add(this.anularReservaBtn);
             this.controlesGBox.Controls.Add(this.registrarReservaBtn);
             this.controlesGBox.Controls.Add(this.nuevoReservaBtn);
-            this.controlesGBox.Location = new System.Drawing.Point(456, 196);
+            this.controlesGBox.Location = new System.Drawing.Point(456, 235);
             this.controlesGBox.Name = "controlesGBox";
             this.controlesGBox.Size = new System.Drawing.Size(160, 154);
             this.controlesGBox.TabIndex = 2;
@@ -194,21 +226,11 @@ namespace CapaPresentacion
             this.registrarReservaBtn.UseVisualStyleBackColor = true;
             this.registrarReservaBtn.Click += new System.EventHandler(this.registrarReservaBtn_Click);
             // 
-            // checkBoxEstadoReserva
-            // 
-            this.checkBoxEstadoReserva.AutoSize = true;
-            this.checkBoxEstadoReserva.Location = new System.Drawing.Point(6, 131);
-            this.checkBoxEstadoReserva.Name = "checkBoxEstadoReserva";
-            this.checkBoxEstadoReserva.Size = new System.Drawing.Size(59, 17);
-            this.checkBoxEstadoReserva.TabIndex = 4;
-            this.checkBoxEstadoReserva.Text = "Estado";
-            this.checkBoxEstadoReserva.UseVisualStyleBackColor = true;
-            // 
             // CoreReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 362);
+            this.ClientSize = new System.Drawing.Size(650, 401);
             this.Controls.Add(this.controlesGBox);
             this.Controls.Add(this.datosReservaGBox);
             this.Controls.Add(this.reservasGBox);
