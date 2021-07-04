@@ -28,7 +28,7 @@ namespace CapaAccesoDatos
             try
             {
                 var connection = Conexion.Instancia.Conectar();
-                command = new SqlCommand("spListarHabitacion", connection);
+                command = new SqlCommand("spListarHabitaciones", connection);
 
                 command.CommandType = CommandType.StoredProcedure;
                 connection.Open();
@@ -37,14 +37,14 @@ namespace CapaAccesoDatos
                 while (reader.Read())
                 {
                     var habitacion = new entHabitacion();
-                    habitacion.idHabitacion = Convert.ToInt32(reader["idHabitacion"]);
-                    habitacion.numeroHabitacion = reader["numHabitacion"].ToString();
-                    habitacion.tipoHabitacion = reader["tipo"].ToString();
-                    habitacion.cantidadCamas = Convert.ToInt32(reader["cantCamas"].ToString());
-                    habitacion.pisoHabitacion = reader["ubiPiso"].ToString();
-                    habitacion.precio = Convert.ToDouble(reader["precio"]);
-                    habitacion.estadoHabitacion = Convert.ToBoolean(reader["estHabitacion"]);
-                    habitacion.idTipoHabitacion = Convert.ToInt32(reader["idTipoHab"]);
+                    habitacion.idHabitacion = Convert.ToInt32(reader["HabitacionID"]);
+                    habitacion.numeroHabitacion = reader["Numero"].ToString();
+                    habitacion.tipoHabitacion = reader["Tipo"].ToString();
+                    habitacion.cantidadCamas = Convert.ToInt32(reader["Cantcamas"].ToString());
+                    habitacion.pisoHabitacion = reader["Ubicacionpiso"].ToString();
+                    habitacion.precio = Convert.ToDouble(reader["Precio"]);
+                    habitacion.estadoHabitacion = Convert.ToBoolean(reader["Estado"]);
+                    habitacion.idTipoHabitacion = Convert.ToInt32(reader["TipoHabitacionID"]);
                     habitaciones.Add(habitacion);
                 }
             }
@@ -63,12 +63,12 @@ namespace CapaAccesoDatos
             var connection = Conexion.Instancia.Conectar();
             command = new SqlCommand("spInsertarHabitacion", connection);
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@numHabitacion", habitacion.numeroHabitacion);
-            command.Parameters.AddWithValue("@cantCamas", habitacion.cantidadCamas);
-            command.Parameters.AddWithValue("@ubiPiso", habitacion.pisoHabitacion);
-            command.Parameters.AddWithValue("@precio", habitacion.precio);
-            command.Parameters.AddWithValue("@idTipoHab", habitacion.idTipoHabitacion);
-            command.Parameters.AddWithValue("@estHabitacion", habitacion.estadoHabitacion);
+            command.Parameters.AddWithValue("@Numero", habitacion.numeroHabitacion);
+            command.Parameters.AddWithValue("@Cantcamas", habitacion.cantidadCamas);
+            command.Parameters.AddWithValue("@Ubicacionpiso", habitacion.pisoHabitacion);
+            command.Parameters.AddWithValue("@Precio", habitacion.precio);
+            command.Parameters.AddWithValue("@TipohabitacionID", habitacion.idTipoHabitacion);
+            command.Parameters.AddWithValue("@Estado", habitacion.estadoHabitacion);
             connection.Open();
 
             command.ExecuteNonQuery();

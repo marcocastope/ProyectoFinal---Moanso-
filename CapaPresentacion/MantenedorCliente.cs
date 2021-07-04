@@ -12,7 +12,7 @@ using CapaLogicaNegocio;
 
 namespace CapaPresentacion
 {
-    public partial class MantenedorCliente : Form
+    public partial class MantenedorCliente : Form, CustomUserInterface
     {
         public MantenedorCliente()
         {
@@ -33,6 +33,7 @@ namespace CapaPresentacion
         public void ListarCliente()
         {
             dgVCliente.DataSource = logCliente.Instancia.ListarCliente();
+            setCustomColumHeader();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -60,7 +61,7 @@ namespace CapaPresentacion
                 entCliente c = new entCliente();
 
                 c.IdCliente = int.Parse(textBoxIdCliente.Text.Trim());
-                c.dni = int.Parse(textBoxDni.Text.Trim());
+                c.dni = textBoxDni.Text.Trim();
                 c.nombreCliente = textBoxNombreCliente.Text.Trim();
                 c.profesion = textBoxProfesion.Text.Trim();
                 c.IdTipoCliente =Convert.ToInt32(comboBoxTipoCliente.SelectedValue);
@@ -136,7 +137,7 @@ namespace CapaPresentacion
             {
 
                 entCliente c = new entCliente();
-                c.dni = int.Parse(textBoxDni.Text.Trim());
+                c.dni = textBoxDni.Text.Trim();
                 c.nombreCliente = textBoxNombreCliente.Text.Trim();
                 c.profesion = textBoxProfesion.Text.Trim();
                 c.IdTipoCliente = Convert.ToInt32(comboBoxTipoCliente.SelectedValue);
@@ -162,6 +163,30 @@ namespace CapaPresentacion
         private void btnNuevo_Click_1(object sender, EventArgs e)
         {
             groupBoxDatosCliente.Enabled = true;
+        }
+
+        private void dgVCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void groupBoxDatosCliente_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        public void setCustomColumHeader()
+        {
+            dgVCliente.Columns[0].HeaderText = "ID";
+            dgVCliente.Columns[1].HeaderText = "DNI";
+            dgVCliente.Columns[2].HeaderText = "Cliente";
+            dgVCliente.Columns[3].HeaderText = "Profesión";
+            dgVCliente.Columns[4].HeaderText = "Ciudad";
+            dgVCliente.Columns[5].HeaderText = "Tipo Cliente";
+            dgVCliente.Columns[6].HeaderText = "Estado Atención";
+            dgVCliente.Columns[7].HeaderText = "Fecha Registro";
+            dgVCliente.Columns[8].Visible = false;
+            dgVCliente.Columns[9].Visible = false;
         }
     }
 }

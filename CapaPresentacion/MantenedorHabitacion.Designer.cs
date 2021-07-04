@@ -39,11 +39,13 @@ namespace CapaPresentacion
             this.precioHabitacionTxt = new System.Windows.Forms.TextBox();
             this.tipoHabitacionCbo = new System.Windows.Forms.ComboBox();
             this.cantCamasTxt = new System.Windows.Forms.TextBox();
+            this.idHabitacionTxt = new System.Windows.Forms.TextBox();
             this.numeroHabitacionTxt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.deshabilitarHabitacionBtn = new System.Windows.Forms.Button();
@@ -51,8 +53,6 @@ namespace CapaPresentacion
             this.registrarHabtacionBtn = new System.Windows.Forms.Button();
             this.nuevoHabitacionBtn = new System.Windows.Forms.Button();
             this.listaHabitacionesGridView = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.idHabitacionTxt = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.datosHabitacionGBox.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -129,6 +129,14 @@ namespace CapaPresentacion
             this.cantCamasTxt.Size = new System.Drawing.Size(118, 20);
             this.cantCamasTxt.TabIndex = 1;
             // 
+            // idHabitacionTxt
+            // 
+            this.idHabitacionTxt.Enabled = false;
+            this.idHabitacionTxt.Location = new System.Drawing.Point(9, 29);
+            this.idHabitacionTxt.Name = "idHabitacionTxt";
+            this.idHabitacionTxt.Size = new System.Drawing.Size(25, 20);
+            this.idHabitacionTxt.TabIndex = 1;
+            // 
             // numeroHabitacionTxt
             // 
             this.numeroHabitacionTxt.Location = new System.Drawing.Point(6, 68);
@@ -171,6 +179,15 @@ namespace CapaPresentacion
             this.label3.Size = new System.Drawing.Size(28, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Tipo";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 13);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(18, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "ID";
             // 
             // label2
             // 
@@ -243,7 +260,7 @@ namespace CapaPresentacion
             this.listaHabitacionesGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -279,23 +296,6 @@ namespace CapaPresentacion
             this.listaHabitacionesGridView.Size = new System.Drawing.Size(626, 176);
             this.listaHabitacionesGridView.TabIndex = 3;
             this.listaHabitacionesGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listarHabitacionesOnClick);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 13);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(18, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "ID";
-            // 
-            // idHabitacionTxt
-            // 
-            this.idHabitacionTxt.Enabled = false;
-            this.idHabitacionTxt.Location = new System.Drawing.Point(9, 29);
-            this.idHabitacionTxt.Name = "idHabitacionTxt";
-            this.idHabitacionTxt.Size = new System.Drawing.Size(25, 20);
-            this.idHabitacionTxt.TabIndex = 1;
             // 
             // groupBox3
             // 

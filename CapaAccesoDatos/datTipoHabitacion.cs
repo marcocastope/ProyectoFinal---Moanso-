@@ -28,7 +28,7 @@ namespace CapaAccesoDatos
             try
             {
                 var connection = Conexion.Instancia.Conectar();
-                command = new SqlCommand("spListarTipoHabitacion", connection);
+                command = new SqlCommand("spListarTiposHabitacion", connection);
 
                 command.CommandType = CommandType.StoredProcedure;
                 connection.Open();
@@ -37,10 +37,10 @@ namespace CapaAccesoDatos
                 while(reader.Read())
                 {
                     var tipoHabitacion = new entTipoHabitacion();
-                    tipoHabitacion.Id = Convert.ToInt32(reader["idTipoHab"]);
-                    tipoHabitacion.Tipo = reader["tipo"].ToString();
-                    tipoHabitacion.Descripcion = reader["descripcion"].ToString();
-                    tipoHabitacion.Estado = Convert.ToBoolean(reader["estTipoHab"]);
+                    tipoHabitacion.Id = Convert.ToInt32(reader["TipohabitacionID"]);
+                    tipoHabitacion.Tipo = reader["Tipo"].ToString();
+                    tipoHabitacion.Descripcion = reader["Descripcion"].ToString();
+                    tipoHabitacion.Estado = Convert.ToBoolean(reader["Estado"]);
                     tipos.Add(tipoHabitacion);
                 }
             } catch (Exception e)
@@ -58,9 +58,9 @@ namespace CapaAccesoDatos
             var connection = Conexion.Instancia.Conectar();
             command = new SqlCommand("spInsertarTipoHabitacion", connection);
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@tipo", tipoHabitacion.Tipo);
-            command.Parameters.AddWithValue("@descripcion", tipoHabitacion.Descripcion);
-            command.Parameters.AddWithValue("@estTipoHab", tipoHabitacion.Estado);
+            command.Parameters.AddWithValue("@Tipo", tipoHabitacion.Tipo);
+            command.Parameters.AddWithValue("@Descripcion", tipoHabitacion.Descripcion);
+            command.Parameters.AddWithValue("@EsTado", tipoHabitacion.Estado);
             connection.Open();
             command.ExecuteNonQuery();
             command.Connection.Close(); 

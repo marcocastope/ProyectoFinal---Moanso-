@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgVCliente = new System.Windows.Forms.DataGridView();
             this.groupBoxDatosCliente = new System.Windows.Forms.GroupBox();
             this.cbkestAtencionCliente = new System.Windows.Forms.CheckBox();
@@ -57,11 +58,34 @@
             // 
             // dgVCliente
             // 
-            this.dgVCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgVCliente.Location = new System.Drawing.Point(3, 2);
+            this.dgVCliente.AllowUserToAddRows = false;
+            this.dgVCliente.AllowUserToDeleteRows = false;
+            this.dgVCliente.AllowUserToResizeColumns = false;
+            this.dgVCliente.AllowUserToResizeRows = false;
+            this.dgVCliente.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgVCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgVCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgVCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgVCliente.ColumnHeadersHeight = 30;
+            this.dgVCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgVCliente.EnableHeadersVisualStyles = false;
+            this.dgVCliente.Location = new System.Drawing.Point(12, 12);
+            this.dgVCliente.MultiSelect = false;
             this.dgVCliente.Name = "dgVCliente";
-            this.dgVCliente.Size = new System.Drawing.Size(568, 244);
+            this.dgVCliente.ReadOnly = true;
+            this.dgVCliente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgVCliente.RowHeadersVisible = false;
+            this.dgVCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgVCliente.Size = new System.Drawing.Size(537, 244);
             this.dgVCliente.TabIndex = 0;
+            this.dgVCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgVCliente_CellContentClick);
             // 
             // groupBoxDatosCliente
             // 
@@ -84,12 +108,13 @@
             this.groupBoxDatosCliente.Controls.Add(this.textBoxIdCliente);
             this.groupBoxDatosCliente.Controls.Add(this.labelIdCliente);
             this.groupBoxDatosCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxDatosCliente.Location = new System.Drawing.Point(22, 252);
+            this.groupBoxDatosCliente.Location = new System.Drawing.Point(12, 262);
             this.groupBoxDatosCliente.Name = "groupBoxDatosCliente";
-            this.groupBoxDatosCliente.Size = new System.Drawing.Size(640, 149);
+            this.groupBoxDatosCliente.Size = new System.Drawing.Size(626, 127);
             this.groupBoxDatosCliente.TabIndex = 1;
             this.groupBoxDatosCliente.TabStop = false;
             this.groupBoxDatosCliente.Text = "Datos de Cliente";
+            this.groupBoxDatosCliente.Enter += new System.EventHandler(this.groupBoxDatosCliente_Enter);
             // 
             // cbkestAtencionCliente
             // 
@@ -104,7 +129,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(543, 94);
+            this.btnCancelar.Location = new System.Drawing.Point(543, 80);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 19;
@@ -257,7 +282,7 @@
             // btnNuevo
             // 
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(587, 52);
+            this.btnNuevo.Location = new System.Drawing.Point(555, 50);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(85, 23);
             this.btnNuevo.TabIndex = 2;
@@ -268,7 +293,7 @@
             // btnEditar
             // 
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(587, 121);
+            this.btnEditar.Location = new System.Drawing.Point(555, 121);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(85, 23);
             this.btnEditar.TabIndex = 3;
@@ -278,7 +303,7 @@
             // btnDeshabilitar
             // 
             this.btnDeshabilitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeshabilitar.Location = new System.Drawing.Point(587, 180);
+            this.btnDeshabilitar.Location = new System.Drawing.Point(555, 179);
             this.btnDeshabilitar.Name = "btnDeshabilitar";
             this.btnDeshabilitar.Size = new System.Drawing.Size(85, 23);
             this.btnDeshabilitar.TabIndex = 4;
@@ -289,7 +314,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 403);
+            this.ClientSize = new System.Drawing.Size(650, 401);
             this.Controls.Add(this.btnDeshabilitar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);

@@ -64,8 +64,6 @@ namespace CapaAccesoDatos
             var connection = Conexion.Instancia.Conectar();
             command = new SqlCommand("spInsertarReserva", connection);
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@nombreCliente", reserva.nombreCliente);
-            command.Parameters.AddWithValue("@numeroHabitacion", reserva.numeroHabitacion);
             command.Parameters.AddWithValue("@checkIn", reserva.checkIn);
             command.Parameters.AddWithValue("@checkOut", reserva.checkOut);
             command.Parameters.AddWithValue("@estadoReserva", reserva.estadoReserva);

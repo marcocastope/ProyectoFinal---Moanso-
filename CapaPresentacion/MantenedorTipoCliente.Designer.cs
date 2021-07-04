@@ -29,6 +29,7 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgVTipoCliente = new System.Windows.Forms.DataGridView();
             this.groupBoxDatos = new System.Windows.Forms.GroupBox();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -50,9 +51,33 @@ namespace CapaPresentacion
             // 
             // dgVTipoCliente
             // 
-            this.dgVTipoCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgVTipoCliente.Location = new System.Drawing.Point(1, 1);
+            this.dgVTipoCliente.AllowUserToAddRows = false;
+            this.dgVTipoCliente.AllowUserToDeleteRows = false;
+            this.dgVTipoCliente.AllowUserToResizeColumns = false;
+            this.dgVTipoCliente.AllowUserToResizeRows = false;
+            this.dgVTipoCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgVTipoCliente.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgVTipoCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgVTipoCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgVTipoCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgVTipoCliente.ColumnHeadersHeight = 30;
+            this.dgVTipoCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgVTipoCliente.EnableHeadersVisualStyles = false;
+            this.dgVTipoCliente.Location = new System.Drawing.Point(12, 12);
+            this.dgVTipoCliente.MultiSelect = false;
             this.dgVTipoCliente.Name = "dgVTipoCliente";
+            this.dgVTipoCliente.ReadOnly = true;
+            this.dgVTipoCliente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgVTipoCliente.RowHeadersVisible = false;
+            this.dgVTipoCliente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgVTipoCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVTipoCliente.Size = new System.Drawing.Size(511, 201);
             this.dgVTipoCliente.TabIndex = 0;
             this.dgVTipoCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgVTipoCliente_CellDoubleClick);

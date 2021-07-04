@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class MantenedorHabitacion : Form
+    public partial class MantenedorHabitacion : Form, CustomUserInterface
     {
         public MantenedorHabitacion()
         {
             InitializeComponent();
-            listaHabitacionesGridView.Columns[7].Visible = false;
+            //listaHabitacionesGridView.Columns[7].Visible = false;
             listarHabitaciones();
             llenarDatosComboBoxTipo();
             datosHabitacionGBox.Enabled = false;
@@ -48,7 +48,9 @@ namespace CapaPresentacion
 
         private void listarHabitaciones()
         {
+
             listaHabitacionesGridView.DataSource = logHabitacion.Instance.listarHabitaciones();
+            setCustomColumHeader();
         }
 
         private void llenarDatosComboBoxTipo() {
@@ -126,6 +128,18 @@ namespace CapaPresentacion
             ubicacionPisoTxt.Text = filaActual.Cells[4].Value.ToString();
             precioHabitacionTxt.Text = filaActual.Cells[5].Value.ToString();
             estHabitacionCheck.Checked = Convert.ToBoolean(filaActual.Cells[6].Value.ToString());
+        }
+
+        public void setCustomColumHeader()
+        {
+            listaHabitacionesGridView.Columns[0].HeaderText = "ID";
+            listaHabitacionesGridView.Columns[1].HeaderText = "Número";
+            listaHabitacionesGridView.Columns[2].HeaderText = "Tipo";
+            listaHabitacionesGridView.Columns[3].HeaderText = "Camas";
+            listaHabitacionesGridView.Columns[4].HeaderText = "Piso";
+            listaHabitacionesGridView.Columns[5].HeaderText = "Precio";
+            listaHabitacionesGridView.Columns[6].HeaderText = "Estado";
+            listaHabitacionesGridView.Columns[7].Visible = false;
         }
     }
 }

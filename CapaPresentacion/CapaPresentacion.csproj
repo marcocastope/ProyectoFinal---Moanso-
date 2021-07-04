@@ -50,6 +50,7 @@
     <Compile Include="CoreReservas.Designer.cs">
       <DependentUpon>CoreReservas.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomUserInterface.cs" />
     <Compile Include="FormInicio.cs">
       <SubType>Form</SubType>
     </Compile>
