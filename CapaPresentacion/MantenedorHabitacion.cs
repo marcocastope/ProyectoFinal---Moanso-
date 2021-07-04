@@ -17,7 +17,6 @@ namespace CapaPresentacion
         public MantenedorHabitacion()
         {
             InitializeComponent();
-            //listaHabitacionesGridView.Columns[7].Visible = false;
             listarHabitaciones();
             llenarDatosComboBoxTipo();
             datosHabitacionGBox.Enabled = false;
@@ -139,7 +138,8 @@ namespace CapaPresentacion
             listaHabitacionesGridView.Columns[4].HeaderText = "Piso";
             listaHabitacionesGridView.Columns[5].HeaderText = "Precio";
             listaHabitacionesGridView.Columns[6].HeaderText = "Estado";
-            listaHabitacionesGridView.Columns[7].Visible = false;
+            listaHabitacionesGridView.Columns[7].HeaderText = "Disponibilidad";
+            listaHabitacionesGridView.Columns[8].Visible = false;
         }
     }
 }

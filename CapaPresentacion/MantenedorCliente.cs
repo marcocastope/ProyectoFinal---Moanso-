@@ -67,7 +67,7 @@ namespace CapaPresentacion
                 c.IdTipoCliente =Convert.ToInt32(comboBoxTipoCliente.SelectedValue);
                 c.IdCiudad =Convert.ToInt32(comboBoxCiudad.SelectedValue);
                 c.estAtencionCliente = cbkestAtencionCliente.Checked;
-                c.fecRegCliente = dtPickerRegCliente.Value;
+               
 
                 logCliente.Instancia.editaCliente(c);
             }
@@ -94,10 +94,7 @@ namespace CapaPresentacion
             comboBoxTipoCliente.Text = FilaActualMouse.Cells[4].Value.ToString();
             comboBoxCiudad.Text = FilaActualMouse.Cells[5].Value.ToString();
             cbkestAtencionCliente.Checked = Convert.ToBoolean(FilaActualMouse.Cells[6].Value.ToString());
-            dtPickerRegCliente.Text = FilaActualMouse.Cells[7].Value.ToString();
-
-
-
+     
         }
         private void limpiarFormulario()
         {
@@ -143,8 +140,7 @@ namespace CapaPresentacion
                 c.IdTipoCliente = Convert.ToInt32(comboBoxTipoCliente.SelectedValue);
                 c.IdCiudad = Convert.ToInt32(comboBoxCiudad.SelectedValue);
                 c.estAtencionCliente = cbkestAtencionCliente.Checked;
-                //c.fecRegCliente = dtPickerRegCliente.Value;
-
+               
                 logCliente.Instancia.insertaCliente(c);
             }
 

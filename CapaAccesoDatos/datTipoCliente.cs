@@ -44,6 +44,8 @@ namespace CapaAccesoDatos
                     Tipo.TipoCliente = dr["Tipo"].ToString();
                     Tipo.DescripcionTipoCliente = dr["Descripcion"].ToString();
                     Tipo.EstadoTipoCliente =Convert.ToBoolean(dr["Estado"]);
+                    Tipo.Createdat =Convert.ToDateTime(dr["Createdat"]);
+                    Tipo.Updatedat =Convert.ToDateTime(dr["Updatedat"]);
                     lista.Add(Tipo);
                 }
 
@@ -114,14 +116,14 @@ namespace CapaAccesoDatos
 
                 SqlConnection cn = Conexion.Instancia.Conectar();
 
-                cmd = new SqlCommand("spEditarTipoCliente", cn);//Falta crear la base de datos 
+                cmd = new SqlCommand("spEditarTipoCliente", cn);
 
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@IdTipoCliente", Tipo.IdTipoCliente);
-                cmd.Parameters.AddWithValue("@TipoCliente", Tipo.TipoCliente);
-                cmd.Parameters.AddWithValue("@DescripcionTipoCliente", Tipo.DescripcionTipoCliente);
-                cmd.Parameters.AddWithValue("@EstadoTipoCliente", Tipo.EstadoTipoCliente);
+                cmd.Parameters.AddWithValue("@TipoclienteID", Tipo.IdTipoCliente);
+                cmd.Parameters.AddWithValue("@Tipo", Tipo.TipoCliente);
+                cmd.Parameters.AddWithValue("@Descripcion", Tipo.DescripcionTipoCliente);
+                cmd.Parameters.AddWithValue("@Estado", Tipo.EstadoTipoCliente);
 
                 cn.Open();
 

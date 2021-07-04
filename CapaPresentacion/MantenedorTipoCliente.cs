@@ -12,7 +12,7 @@ using CapaLogicaNegocio;
 
 namespace CapaPresentacion
 {
-    public partial class MantenedorTipoCliente : Form
+    public partial class MantenedorTipoCliente : Form, CustomUserInterface
     {
         public MantenedorTipoCliente()
         {
@@ -25,6 +25,7 @@ namespace CapaPresentacion
         public void ListarTipoCliente()
         {
             dgVTipoCliente.DataSource = logTipoCliente.Instancia.ListarTipoCliente();
+            setCustomColumHeader();
         }
 
         private void limpiarFormulario()
@@ -142,6 +143,16 @@ namespace CapaPresentacion
                 textBoxDescripcionTipoCliente.Text = FilaActualMouse.Cells[2].Value.ToString();
                 checkBoxEstadoTipoCliente.Checked = Convert.ToBoolean(FilaActualMouse.Cells[3].Value.ToString());
             
+        }
+
+        public void setCustomColumHeader()
+        {
+            dgVTipoCliente.Columns[0].HeaderText = "ID";
+            dgVTipoCliente.Columns[1].HeaderText = "Tipo";
+            dgVTipoCliente.Columns[2].HeaderText = "Descripción";
+            dgVTipoCliente.Columns[3].HeaderText = "Estado";
+            dgVTipoCliente.Columns[4].HeaderText = "Registro";
+            dgVTipoCliente.Columns[5].HeaderText = "Modificación";
         }
     }
 }

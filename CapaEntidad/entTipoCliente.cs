@@ -12,5 +12,7 @@ namespace CapaEntidad
         public string TipoCliente { get; set; }
         public string DescripcionTipoCliente { get; set; }
         public Boolean EstadoTipoCliente { get; set; }
+        public DateTime Createdat { get; set; }
+        public DateTime Updatedat { get; set; }
     }
 }

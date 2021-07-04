@@ -44,6 +44,11 @@ namespace CapaAccesoDatos
                     habitacion.pisoHabitacion = reader["Ubicacionpiso"].ToString();
                     habitacion.precio = Convert.ToDouble(reader["Precio"]);
                     habitacion.estadoHabitacion = Convert.ToBoolean(reader["Estado"]);
+                    if(!Convert.ToBoolean(reader["Disponibilidad"]))
+                    {
+                        habitacion.disponibilidad = "Disponible";
+                    }
+                    //habitacion.disponibilidad = Convert.ToBoolean(reader["Disponibilidad"]);
                     habitacion.idTipoHabitacion = Convert.ToInt32(reader["TipoHabitacionID"]);
                     habitaciones.Add(habitacion);
                 }

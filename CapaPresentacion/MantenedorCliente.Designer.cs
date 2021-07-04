@@ -35,8 +35,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.labelFechaRegistro = new System.Windows.Forms.Label();
-            this.dtPickerRegCliente = new System.Windows.Forms.DateTimePicker();
             this.comboBoxTipoCliente = new System.Windows.Forms.ComboBox();
             this.labelTipoCliente = new System.Windows.Forms.Label();
             this.comboBoxCiudad = new System.Windows.Forms.ComboBox();
@@ -93,8 +91,6 @@
             this.groupBoxDatosCliente.Controls.Add(this.btnCancelar);
             this.groupBoxDatosCliente.Controls.Add(this.btnModificar);
             this.groupBoxDatosCliente.Controls.Add(this.btnAgregar);
-            this.groupBoxDatosCliente.Controls.Add(this.labelFechaRegistro);
-            this.groupBoxDatosCliente.Controls.Add(this.dtPickerRegCliente);
             this.groupBoxDatosCliente.Controls.Add(this.comboBoxTipoCliente);
             this.groupBoxDatosCliente.Controls.Add(this.labelTipoCliente);
             this.groupBoxDatosCliente.Controls.Add(this.comboBoxCiudad);
@@ -157,23 +153,6 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
-            // 
-            // labelFechaRegistro
-            // 
-            this.labelFechaRegistro.AutoSize = true;
-            this.labelFechaRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFechaRegistro.Location = new System.Drawing.Point(355, 75);
-            this.labelFechaRegistro.Name = "labelFechaRegistro";
-            this.labelFechaRegistro.Size = new System.Drawing.Size(90, 15);
-            this.labelFechaRegistro.TabIndex = 16;
-            this.labelFechaRegistro.Text = "Fecha Registro";
-            // 
-            // dtPickerRegCliente
-            // 
-            this.dtPickerRegCliente.Location = new System.Drawing.Point(344, 94);
-            this.dtPickerRegCliente.Name = "dtPickerRegCliente";
-            this.dtPickerRegCliente.Size = new System.Drawing.Size(162, 21);
-            this.dtPickerRegCliente.TabIndex = 15;
             // 
             // comboBoxTipoCliente
             // 
@@ -344,8 +323,6 @@
         private System.Windows.Forms.TextBox textBoxIdCliente;
         private System.Windows.Forms.Label labelIdCliente;
         private System.Windows.Forms.ComboBox comboBoxCiudad;
-        private System.Windows.Forms.Label labelFechaRegistro;
-        private System.Windows.Forms.DateTimePicker dtPickerRegCliente;
         private System.Windows.Forms.ComboBox comboBoxTipoCliente;
         private System.Windows.Forms.Label labelTipoCliente;
         private System.Windows.Forms.Button btnNuevo;

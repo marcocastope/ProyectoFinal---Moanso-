@@ -46,7 +46,7 @@ namespace CapaAccesoDatos
                     Cli.ciudad=dr["Ciudad"].ToString();
                     Cli.tipoCliente = dr["Tipo"].ToString();
                     Cli.estAtencionCliente=Convert.ToBoolean(dr["Estadoatencion"]);
-                    //Cli.fecRegCliente= Convert.ToDateTime(dr["fecRegCliente"]);
+                    Cli.fecRegCliente= Convert.ToDateTime(dr["Createdat"]);
                     lista.Add(Cli);
                 }
 
