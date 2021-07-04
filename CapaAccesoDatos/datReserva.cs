@@ -37,14 +37,14 @@ namespace CapaAccesoDatos
                 while (reader.Read())
                 {
                     var reserva = new entReserva();
-                    reserva.idReserva = Convert.ToInt32(reader["idReserva"]);
-                    reserva.nombreCliente = reader["nombreCliente"].ToString();
-                    reserva.numeroHabitacion = reader["numHabitacion"].ToString();
-                    reserva.checkIn = Convert.ToDateTime(reader["checkIn"]);
-                    reserva.checkOut = Convert.ToDateTime(reader["checkOut"]);
-                    reserva.estadoReserva = Convert.ToBoolean(reader["estadoReserva"]);
-                    reserva.idCliente = Convert.ToInt32(reader["idCliente"]);
-                    reserva.idHabitacion = Convert.ToInt32(reader["idHabitacion"]);
+                    reserva.idReserva = Convert.ToInt32(reader["ReservaID"]);
+                    reserva.nombreCliente = reader["Nombre"].ToString();
+                    reserva.numeroHabitacion = reader["Numero"].ToString();
+                    reserva.checkIn = Convert.ToDateTime(reader["checkint"]);
+                    reserva.checkOut = Convert.ToDateTime(reader["checkout"]);
+                    reserva.estadoReserva = Convert.ToBoolean(reader["Estado"]);
+                    reserva.idCliente = Convert.ToInt32(reader["ClienteID"]);
+                    reserva.idHabitacion = Convert.ToInt32(reader["HabitacionID"]);
                     reservas.Add(reserva);
                 }
             }
@@ -64,11 +64,11 @@ namespace CapaAccesoDatos
             var connection = Conexion.Instancia.Conectar();
             command = new SqlCommand("spInsertarReserva", connection);
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@checkIn", reserva.checkIn);
-            command.Parameters.AddWithValue("@checkOut", reserva.checkOut);
-            command.Parameters.AddWithValue("@estadoReserva", reserva.estadoReserva);
-            command.Parameters.AddWithValue("@idCliente", reserva.idCliente);
-            command.Parameters.AddWithValue("@idHabitacion", reserva.idHabitacion);
+            command.Parameters.AddWithValue("@checkint", reserva.checkIn);
+            command.Parameters.AddWithValue("@checkout", reserva.checkOut);
+            command.Parameters.AddWithValue("@Estado", reserva.estadoReserva);
+            command.Parameters.AddWithValue("@ClienteID", reserva.idCliente);
+            command.Parameters.AddWithValue("@HabitacionID", reserva.idHabitacion);
             connection.Open();
             command.ExecuteNonQuery();
             command.Connection.Close();

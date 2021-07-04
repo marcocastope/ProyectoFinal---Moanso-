@@ -33,17 +33,17 @@ namespace CapaAccesoDatos
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("spListarTipoCliente", cn);
+                cmd = new SqlCommand("spListarTiposCliente", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     entTipoCliente Tipo = new entTipoCliente();
-                    Tipo.IdTipoCliente= Convert.ToInt32(dr["IdTipoCliente"]);
-                    Tipo.TipoCliente = dr["TipoCliente"].ToString();
-                    Tipo.DescripcionTipoCliente = dr["DescripcionTipoCliente"].ToString();
-                    Tipo.EstadoTipoCliente =Convert.ToBoolean(dr["EstadoTipoCliente"]);
+                    Tipo.IdTipoCliente= Convert.ToInt32(dr["TipoclienteID"]);
+                    Tipo.TipoCliente = dr["Tipo"].ToString();
+                    Tipo.DescripcionTipoCliente = dr["Descripcion"].ToString();
+                    Tipo.EstadoTipoCliente =Convert.ToBoolean(dr["Estado"]);
                     lista.Add(Tipo);
                 }
 
@@ -75,9 +75,9 @@ namespace CapaAccesoDatos
 
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@TipoCliente", Tipo.TipoCliente);
-                cmd.Parameters.AddWithValue("@DescripcionTipoCliente", Tipo.DescripcionTipoCliente);
-                cmd.Parameters.AddWithValue("@EstadoTipoCliente", Tipo.EstadoTipoCliente);
+                cmd.Parameters.AddWithValue("@Tipo", Tipo.TipoCliente);
+                cmd.Parameters.AddWithValue("@Descripcion", Tipo.DescripcionTipoCliente);
+                cmd.Parameters.AddWithValue("@Estado", Tipo.EstadoTipoCliente);
                           
                 cn.Open();
 

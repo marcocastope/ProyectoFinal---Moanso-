@@ -143,7 +143,7 @@ namespace CapaPresentacion
                 c.IdTipoCliente = Convert.ToInt32(comboBoxTipoCliente.SelectedValue);
                 c.IdCiudad = Convert.ToInt32(comboBoxCiudad.SelectedValue);
                 c.estAtencionCliente = cbkestAtencionCliente.Checked;
-                c.fecRegCliente = dtPickerRegCliente.Value;
+                //c.fecRegCliente = dtPickerRegCliente.Value;
 
                 logCliente.Instancia.insertaCliente(c);
             }
