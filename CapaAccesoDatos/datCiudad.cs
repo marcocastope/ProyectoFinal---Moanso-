@@ -41,10 +41,11 @@ namespace CapaAccesoDatos
                     Ciu.IdCiudad= Convert.ToInt32(dr["CiudadID"]);
                     Ciu.Ciudad = dr["Ciudad"].ToString();
                     Ciu.EstadoCiudad= Convert.ToBoolean(dr["Estado"]);
+                    Ciu.Createdat = Convert.ToDateTime(dr["Createdat"]);
+                    Ciu.Updateat = Convert.ToDateTime(dr["Updateat"]);
 
                     lista.Add(Ciu);
                 }
-
             }
 
             catch (Exception e)
@@ -115,9 +116,9 @@ namespace CapaAccesoDatos
 
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@IdCiudad", Ciu.IdCiudad);
+                cmd.Parameters.AddWithValue("@CiudadID", Ciu.IdCiudad);
                 cmd.Parameters.AddWithValue("@Ciudad", Ciu.Ciudad);
-                cmd.Parameters.AddWithValue("@EstadoCiudad", Ciu.EstadoCiudad);
+                cmd.Parameters.AddWithValue("@Estado", Ciu.EstadoCiudad);
 
                 cn.Open();
 

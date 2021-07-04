@@ -33,15 +33,14 @@ namespace CapaPresentacion
             this.btnCiudad = new System.Windows.Forms.Button();
             this.btnTipoCliente = new System.Windows.Forms.Button();
             this.mantTipoHabitacionBtn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.mantHabitacionBtn = new System.Windows.Forms.Button();
+            this.coreReservaBtn = new System.Windows.Forms.Button();
             this.mantenedorClienteBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.salirBtn = new System.Windows.Forms.Button();
             this.containerForm = new System.Windows.Forms.Panel();
-            this.coreReservaBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -53,7 +52,6 @@ namespace CapaPresentacion
             this.panel1.Controls.Add(this.btnCiudad);
             this.panel1.Controls.Add(this.btnTipoCliente);
             this.panel1.Controls.Add(this.mantTipoHabitacionBtn);
-            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.mantHabitacionBtn);
             this.panel1.Controls.Add(this.coreReservaBtn);
@@ -67,7 +65,7 @@ namespace CapaPresentacion
             // btnCiudad
             // 
             this.btnCiudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCiudad.Location = new System.Drawing.Point(12, 220);
+            this.btnCiudad.Location = new System.Drawing.Point(12, 276);
             this.btnCiudad.Name = "btnCiudad";
             this.btnCiudad.Size = new System.Drawing.Size(120, 50);
             this.btnCiudad.TabIndex = 4;
@@ -78,7 +76,7 @@ namespace CapaPresentacion
             // btnTipoCliente
             // 
             this.btnTipoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTipoCliente.Location = new System.Drawing.Point(12, 164);
+            this.btnTipoCliente.Location = new System.Drawing.Point(12, 220);
             this.btnTipoCliente.Name = "btnTipoCliente";
             this.btnTipoCliente.Size = new System.Drawing.Size(120, 50);
             this.btnTipoCliente.TabIndex = 3;
@@ -96,17 +94,6 @@ namespace CapaPresentacion
             this.mantTipoHabitacionBtn.Text = "Tipo Habitación";
             this.mantTipoHabitacionBtn.UseVisualStyleBackColor = true;
             this.mantTipoHabitacionBtn.Click += new System.EventHandler(this.mantTipoHabitacionBtn_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(12, 276);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 50);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Servicio";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel3
             // 
@@ -140,10 +127,21 @@ namespace CapaPresentacion
             this.mantHabitacionBtn.UseVisualStyleBackColor = true;
             this.mantHabitacionBtn.Click += new System.EventHandler(this.mantHabitacionBtn_Click);
             // 
+            // coreReservaBtn
+            // 
+            this.coreReservaBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coreReservaBtn.Location = new System.Drawing.Point(12, 56);
+            this.coreReservaBtn.Name = "coreReservaBtn";
+            this.coreReservaBtn.Size = new System.Drawing.Size(120, 50);
+            this.coreReservaBtn.TabIndex = 2;
+            this.coreReservaBtn.Text = "Reservas";
+            this.coreReservaBtn.UseVisualStyleBackColor = true;
+            this.coreReservaBtn.Click += new System.EventHandler(this.coreReservasBtn_Click);
+            // 
             // mantenedorClienteBtn
             // 
             this.mantenedorClienteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mantenedorClienteBtn.Location = new System.Drawing.Point(12, 108);
+            this.mantenedorClienteBtn.Location = new System.Drawing.Point(12, 164);
             this.mantenedorClienteBtn.Name = "mantenedorClienteBtn";
             this.mantenedorClienteBtn.Size = new System.Drawing.Size(120, 50);
             this.mantenedorClienteBtn.TabIndex = 2;
@@ -183,17 +181,6 @@ namespace CapaPresentacion
             this.containerForm.Size = new System.Drawing.Size(650, 401);
             this.containerForm.TabIndex = 2;
             // 
-            // coreReservaBtn
-            // 
-            this.coreReservaBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.coreReservaBtn.Location = new System.Drawing.Point(12, 56);
-            this.coreReservaBtn.Name = "coreReservaBtn";
-            this.coreReservaBtn.Size = new System.Drawing.Size(120, 50);
-            this.coreReservaBtn.TabIndex = 2;
-            this.coreReservaBtn.Text = "Reservas";
-            this.coreReservaBtn.UseVisualStyleBackColor = true;
-            this.coreReservaBtn.Click += new System.EventHandler(this.coreReservasBtn_Click);
-            // 
             // FormInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,7 +202,6 @@ namespace CapaPresentacion
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button mantHabitacionBtn;
         private System.Windows.Forms.Button mantenedorClienteBtn;
         private System.Windows.Forms.Panel panel2;

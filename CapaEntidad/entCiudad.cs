@@ -11,5 +11,7 @@ namespace CapaEntidad
         public int IdCiudad { get; set; }
         public string Ciudad { get; set; }
         public Boolean EstadoCiudad { get; set; }
+        public DateTime Createdat { get; set; }
+        public DateTime Updateat { get; set; }
     }
 }

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class MantenedorTipoHabitacion : Form
+    public partial class MantenedorTipoHabitacion : Form, CustomUserInterface
     {
         public MantenedorTipoHabitacion()
         {
@@ -81,6 +81,7 @@ namespace CapaPresentacion
         private void listarTiposHabitacion()
         {
             listaTiposHabitacionGridView.DataSource = logTipoHabitacion.Instance.listarTipoHabitacion();
+            setCustomColumHeader();
         }
 
         private void limpiarFormulario()
@@ -162,6 +163,17 @@ namespace CapaPresentacion
         private void showMessage(string message)
         {
             MessageBox.Show(message);
+        }
+
+        public void setCustomColumHeader()
+        {
+            listaTiposHabitacionGridView.Columns[0].HeaderText = "ID";
+            listaTiposHabitacionGridView.Columns[1].HeaderText = "Tipo";
+            listaTiposHabitacionGridView.Columns[2].HeaderText = "Descripción";
+            listaTiposHabitacionGridView.Columns[3].HeaderText = "Estado";
+            listaTiposHabitacionGridView.Columns[4].HeaderText = "Registro";
+            listaTiposHabitacionGridView.Columns[5].HeaderText = "Modificación";
+
         }
     }
 }

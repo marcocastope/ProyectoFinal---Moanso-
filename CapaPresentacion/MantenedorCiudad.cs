@@ -12,7 +12,7 @@ using CapaLogicaNegocio;
 
 namespace CapaPresentacion
 {
-    public partial class MantenedorCiudad : Form
+    public partial class MantenedorCiudad : Form, CustomUserInterface
     {
         public MantenedorCiudad()
         {
@@ -25,6 +25,7 @@ namespace CapaPresentacion
         public void ListarCiudad()
         {
             dgVCiudad.DataSource = logCiudad.Instancia.ListarCiudad();
+            setCustomColumHeader();
         }
 
         private void limpiarFormulario()
@@ -128,6 +129,15 @@ namespace CapaPresentacion
                 textBoxCiudad.Text = FilaActualMouse.Cells[1].Value.ToString();
                 checkBoxEstado.Checked = Convert.ToBoolean(FilaActualMouse.Cells[2].Value.ToString());
             
+        }
+
+        public void setCustomColumHeader()
+        {
+            dgVCiudad.Columns[0].HeaderText = "ID";
+            dgVCiudad.Columns[1].HeaderText = "Ciudad";
+            dgVCiudad.Columns[2].HeaderText = "Estado";
+            dgVCiudad.Columns[3].HeaderText = "Creación";
+            dgVCiudad.Columns[4].HeaderText = "Modificación";
         }
     }
 }

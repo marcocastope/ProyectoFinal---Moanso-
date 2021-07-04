@@ -15,6 +15,7 @@ namespace CapaEntidad
         public string pisoHabitacion { get; set; }
         public double precio { get; set; }
         public Boolean estadoHabitacion { get; set; }
+        public string disponibilidad { get; set; }
         public int idTipoHabitacion { get; set; }
     }
 }

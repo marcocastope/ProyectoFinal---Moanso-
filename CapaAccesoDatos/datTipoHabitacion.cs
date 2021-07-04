@@ -41,6 +41,8 @@ namespace CapaAccesoDatos
                     tipoHabitacion.Tipo = reader["Tipo"].ToString();
                     tipoHabitacion.Descripcion = reader["Descripcion"].ToString();
                     tipoHabitacion.Estado = Convert.ToBoolean(reader["Estado"]);
+                    tipoHabitacion.Createdat = Convert.ToDateTime(reader["Createdat"]);
+                    tipoHabitacion.Updateat = Convert.ToDateTime(reader["Updateat"]);
                     tipos.Add(tipoHabitacion);
                 }
             } catch (Exception e)
@@ -72,10 +74,10 @@ namespace CapaAccesoDatos
             var connection = Conexion.Instancia.Conectar();
             command = new SqlCommand("spEditarTipoHabitacion", connection);
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@tipo", tipoHabitacion.Tipo);
-            command.Parameters.AddWithValue("@descripcion", tipoHabitacion.Descripcion);
-            command.Parameters.AddWithValue("@estTipoHab", tipoHabitacion.Estado);
-            command.Parameters.AddWithValue("@idTipoHab", tipoHabitacion.Id);
+            command.Parameters.AddWithValue("@Tipo", tipoHabitacion.Tipo);
+            command.Parameters.AddWithValue("@Descripcion", tipoHabitacion.Descripcion);
+            command.Parameters.AddWithValue("@Estado", tipoHabitacion.Estado);
+            command.Parameters.AddWithValue("@TipohabitacionID", tipoHabitacion.Id);
             connection.Open();
 
             command.ExecuteNonQuery();
